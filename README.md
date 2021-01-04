@@ -1,2 +1,2 @@
-# puppyd
+# Puppyd
 Dapp For Animal Registration

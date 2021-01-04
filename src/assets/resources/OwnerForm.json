@@ -1,0 +1,72 @@
+[
+    {
+        "col": "col-sm-12",
+        "id": "ownerType",
+        "type": "text",
+        "required": false,
+        "placeholder": "owner type"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "name",
+        "type": "text",
+        "required": false,
+        "placeholder": "name"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "surname",
+        "type": "text",
+        "required": false,
+        "placeholder": "surname"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "birthDate",
+        "type": "text",
+        "required": false,
+        "placeholder": "birthDate"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "homeAddress",
+        "type": "text",
+        "required": false,
+        "placeholder": "home address"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "phone",
+        "type": "text",
+        "required": false,
+        "placeholder": "phone"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "town",
+        "type": "text",
+        "required": false,
+        "placeholder": "town"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "zipCode",
+        "type": "text",
+        "required": false,
+        "placeholder": "zip code"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "country",
+        "type": "text",
+        "required": false,
+        "placeholder": "country"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "fiscalCode",
+        "type": "text",
+        "required": false,
+        "placeholder": "fiscal code"
+    }
+]

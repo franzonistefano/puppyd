@@ -1,0 +1,52 @@
+[
+    {    
+        "col": "col-sm-4",
+        "title_pos": "top",
+        "title": "Title 1",
+        "subtitle": "Subtitle 1",
+        "link": "https://www.google.com/",
+        "header" :        
+                {
+                    "path": "https://via.placeholder.com/250"
+                }
+            ,
+        "footer" : 
+                {
+                "type": "text",
+                "text": "Footer Title"
+                }
+            ,
+        "content": 
+                {
+                    "type": "text",
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur." 
+                }
+    },
+
+    {    
+        "col": "col-sm-4",
+        "title_pos": "top",
+        "title": "Title 2",
+        "subtitle": "Subtitle 2",
+        "link": "https://www.google.com/",
+        "content": 
+                {
+                    "type": "text",
+                    "text": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur." 
+                }
+    },
+
+    {    
+        "col": "col-sm-4",
+        "title_pos": "bottom",
+        "title": "Title 3",
+        "link": "https://www.google.com/",
+        "header" :        
+                {
+                    "path": "https://via.placeholder.com/250"
+                }
+    }
+
+
+
+]

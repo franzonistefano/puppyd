@@ -1,0 +1,72 @@
+[
+    {
+        "col": "col-sm-12",
+        "id": "type",
+        "type": "text",
+        "required": false,
+        "placeholder": "puppy type"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "sex",
+        "type": "text",
+        "required": false,
+        "placeholder": "sex"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "name",
+        "type": "text",
+        "required": false,
+        "placeholder": "name"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "breed",
+        "type": "text",
+        "required": false,
+        "placeholder": "breed"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "birthDate",
+        "type": "text",
+        "required": false,
+        "placeholder": "birthDate"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "distinguishingMarks",
+        "type": "text",
+        "required": false,
+        "placeholder": "Distinguishing Marks"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "microchipId",
+        "type": "text",
+        "required": false,
+        "placeholder": "microchipId"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "dadAddress",
+        "type": "text",
+        "required": false,
+        "placeholder": "dadAddress"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "momAddress",
+        "type": "text",
+        "required": false,
+        "placeholder": "momAddress"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "ownerAddress",
+        "type": "text",
+        "required": false,
+        "placeholder": "ownerAddress"
+    }
+]

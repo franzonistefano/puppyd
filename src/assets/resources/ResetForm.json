@@ -1,0 +1,20 @@
+[
+    {
+        "col": "col-sm-12",
+        "id": "password",
+        "type": "password",
+        "required": true,
+        "placeholder": "password",
+        "regex": "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})",
+        "feedback": true
+    },
+    {
+        "col": "col-sm-12",
+        "id": "passwordConfirm",
+        "type": "password",
+        "required": true,
+        "placeholder": "password confirm",
+        "regex": "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})",
+        "feedback": false
+    }
+]

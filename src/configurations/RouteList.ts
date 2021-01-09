@@ -4,6 +4,8 @@ import HomeContainer from "../containers/HomeContainer";
 import TestContainer from "../containers/TestContainer";
 import NotFoundContainer from "../containers/NotFoundContainer";
 import ResetContainer from "../containers/ResetContainer";
+import RegisterContainer from "../containers/RegisterContainer";
+import GetterContainer from "../containers/GetterContainer";
 
 export const RouteList =
     [
@@ -18,6 +20,22 @@ export const RouteList =
         {
             "path": "/test",
             "component": TestContainer,
+            "_private": false,
+            "redirectTo": "",
+            "children": [],
+            "exact": true
+        },
+        {
+            "path": "/register",
+            "component": RegisterContainer,
+            "_private": false,
+            "redirectTo": "",
+            "children": [],
+            "exact": true
+        },
+        {
+            "path": "/getter",
+            "component": GetterContainer,
             "_private": false,
             "redirectTo": "",
             "children": [],

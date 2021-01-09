@@ -46,3 +46,29 @@ export function getVeterinarian(config: any, vetAddress: any) {
     }
 
 }
+
+export function getOwnerData(data: any) {
+    console.log("[++++++++++ Dispatch Action - Get Owner Data ++++++++++++] ", data)
+    return { type: GET_OWNER, data }
+}
+
+export const getOwner = async (config: any, ownerAddress: any) => {
+
+    return (dispatch: any) => {
+
+        console.log('----- Config ------', config)
+        console.log('----- Get Owner Data ------', ownerAddress)
+        let response = "";
+
+        config.contract?.methods.getOwnerData(ownerAddress).call()
+            .then((res: any) => {
+                console.log("[++++++++++ Get Owner Data ++++++++++++] ", res)
+                //response = res
+                dispatch(getOwnerData(res))
+            })
+            .catch((err: any) => {
+                console.log(err)
+            })
+
+    }
+}

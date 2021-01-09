@@ -32,7 +32,7 @@ const TestComponent = (props: any) => {
     }
 
     return (
-        <div id='Login' className="background-yellow">
+        <div id='Login' className="background-primary">
             <div className="container custom-container">
                 <div className='row full-height justify-content-center align-items-center'>
 

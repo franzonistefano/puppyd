@@ -251,5 +251,30 @@
     .profile{
         color: $secondaryColor;
     }
+
+    //Tabs
+    .p-tabview .p-tabview-nav {
+        justify-content: center;
+        background: $primaryColor;
+    }
+
+    .p-tabview .p-tabview-panels {
+        background: $primaryColor;
+    }
+
+    .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+        background: $primaryColor;
+        border-color: $secondaryColor;
+        color:$secondaryColor;
+    }
+
+    .p-tabview .p-tabview-nav li .p-tabview-nav-link {
+        background: $primaryColor;
+    }
+
+    .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link:enabled:hover  {
+        border-color: $inputBorderColorHover;
+    }
+
 }
 

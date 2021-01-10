@@ -65,7 +65,7 @@ const RegisterComponent = (props: any) => {
                                         </div>
 
                                         <FormComponent
-                                            json={props.PuppyJSON}
+                                            json={props.OwnerJSON}
                                             onChange={props.onChange}
                                             data={props.data}
                                         />
@@ -96,7 +96,7 @@ const RegisterComponent = (props: any) => {
                                         </div>
 
                                         <FormComponent
-                                            json={props.OwnerJSON}
+                                            json={props.PuppyJSON}
                                             onChange={props.onChange}
                                             data={props.data}
                                         />

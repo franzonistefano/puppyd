@@ -9,11 +9,11 @@ const GetterComponent = (props: any) => {
     const [address, setAddress] = useState("")
 
     const getPuppyData = () => {
-        props.getPuppyData(address)
+        props.getPuppy(address)
     }
 
     const getOwnerData = () => {
-        props.getOwnerData(address)
+        props.getOwner(address)
     }
 
     const getVeterinarianData = () => {

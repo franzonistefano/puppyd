@@ -10,7 +10,7 @@ export class FormUtil {
         log.debug("[initFormData]")
         let data: any = {};
         FormJSON.map((field: FormState) => {
-            let valueField = (field.type === CHECKBOX_FIELD) ? false : '';
+            let valueField = (field.type === CHECKBOX_FIELD) ? false : "";
             let newField: FormFieldState = {
                 value: valueField,
                 valid: !field.required,
@@ -49,6 +49,7 @@ export class FormUtil {
     //Change FormData
     static onChange = (event: any, formData: any) => {
         log.debug("[OnChange] - Event ", event.target.type, ": ", event)
+        console.log("[OnChange - FormData] - Event ", event.target.type, ": ", event)
         let newData: any = { ...formData };
 
         switch (event.target.type) {
@@ -57,8 +58,9 @@ export class FormUtil {
                 newData[event.target.id].valid = newData[event.target.id].required ? event.checked : true;
                 break;
             case TEXT_FIELD:
+                console.log("[OnChange - TEXT_FIELD] - value ", event.target.value)
                 newData[event.target.id].value = event.target.value;
-                newData[event.target.id].valid = FormUtil.isValid(event.target.value, newData[event.target.id].regex);// (event.target.value !== '') ? true : false;
+                //newData[event.target.id].valid = FormUtil.isValid(event.target.value, newData[event.target.id].regex);// (event.target.value !== '') ? true : false;
                 break;
             case PASSWORD_FIELD:
                 newData[event.target.id].value = event.target.value;

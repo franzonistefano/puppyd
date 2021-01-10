@@ -1,4 +1,5 @@
 export interface Puppy {
+    puppyAddress?: string;
     type: number;
     sex: number;
     name: string;
@@ -12,6 +13,7 @@ export interface Puppy {
 }
 
 export interface Owner {
+    ownerAddress?: string;
     ownerType: number;
     name: string;
     surname: string;

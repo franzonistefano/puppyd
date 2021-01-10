@@ -3,7 +3,7 @@ import { injectIntl } from "react-intl";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import GetterComponent from "../components/custom/Getter/GetterComponent";
-import { getVeterinarian } from "../store/action/test";
+import { getOwner, getPuppy, getVeterinarian } from "../store/action/test";
 import { initBlockchain } from "../utils/ContractUtil";
 import { FormUtil } from "../utils/FormUtil";
 
@@ -43,23 +43,30 @@ const GetterContainer = (props: any) => {
     return (
         <GetterComponent
             account={account}
-            // getPuppyData={(data: any) => getPuppyData(data)}
-            // getOwnerData={(data: any) => getOwnerData(data)}
+            getPuppy={(data: any) => props.getPuppy(config, data)}
+            getOwner={(data: any) => props.getOwner(config, data)}
             getVeterinarian={(data: any) => props.getVeterinarian(config, data)}
             loading={props.loading}
             veterinarian={props.veterinarian}
+            owner={props.owner}
+            puppy={props.puppy}
+
         />
     )
 }
 
 const mapDispatchToProps = (dispatch: any) => ({
-    getVeterinarian: (config: any, data: string) => dispatch(getVeterinarian(config, data))
+    getVeterinarian: (config: any, data: string) => dispatch(getVeterinarian(config, data)),
+    getOwner: (config: any, data: string) => dispatch(getOwner(config, data)),
+    getPuppy: (config: any, data: string) => dispatch(getPuppy(config, data))
 });
 
 
 const mapStateToProps = (state: any) => ({
     loading: state.testReducer.loading,
     veterinarian: state.testReducer.veterinarian,
+    owner: state.testReducer.owner,
+    puppy: state.testReducer.puppy
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(injectIntl(GetterContainer)));

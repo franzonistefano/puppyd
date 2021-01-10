@@ -22,38 +22,10 @@
     },
     {
         "col": "col-sm-12",
-        "id": "homeAddress",
-        "type": "text",
-        "required": false,
-        "placeholder": "home address"
-    },
-    {
-        "col": "col-sm-12",
         "id": "phone",
         "type": "text",
         "required": false,
         "placeholder": "phone"
-    },
-    {
-        "col": "col-sm-12",
-        "id": "town",
-        "type": "text",
-        "required": false,
-        "placeholder": "town"
-    },
-    {
-        "col": "col-sm-12",
-        "id": "zipCode",
-        "type": "text",
-        "required": false,
-        "placeholder": "zip code"
-    },
-    {
-        "col": "col-sm-12",
-        "id": "country",
-        "type": "text",
-        "required": false,
-        "placeholder": "country"
     },
     {
         "col": "col-sm-12",

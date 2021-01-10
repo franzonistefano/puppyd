@@ -4,5 +4,6 @@ export default interface TestState {
     loading: boolean,
     veterinarian: Veterinarian,
     owner: Owner,
-    puppy: Puppy
+    puppy: Puppy,
+    getter: string
 }

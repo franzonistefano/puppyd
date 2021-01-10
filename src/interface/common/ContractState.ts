@@ -21,8 +21,8 @@ export interface Owner {
     homeAddress: string;
     phone: string;
     town: string;
-    zipCode: string;
-    country: string;
+    //zipCode: string;
+    //country: string;
     fiscalCode: string;
 }
 
@@ -31,11 +31,11 @@ export interface Veterinarian {
     name: string;
     surname: string;
     birthDate: string;
-    homeAddress?: string;
+    //homeAddress?: string;
     phone: string;
-    town?: string;
-    zipCode?: string;
-    country?: string;
+    //town?: string;
+    //zipCode?: string;
+    //country?: string;
     fiscalCode: string;
     number: string;
     provincia: string;

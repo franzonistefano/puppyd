@@ -2,30 +2,48 @@ import _ from "lodash";
 import { Fragment, useEffect } from "react";
 import { ANIMAL, OWNER, VETERINARIAN } from "../../assets/resources/UserType";
 import VetProfile from '../../assets/img/vet.png'
+import OwnerProfile from '../../assets/img/owner.png'
+import PuppyProfile from '../../assets/img/animal.png'
 
 const ProfileComponent = (props: any) => {
 
-    const getVeterinarianComponent = () => {
+    const getProfile = (profile: string) => {
 
-console.log("[++++ Profile Address ++++] ", props.data.address)
+        console.log("[++++ Profile Address ++++] ", props.data.vetAddress)
+
+        let address = '';
+        let img = '';
+        if(profile === VETERINARIAN){
+            img = VetProfile
+            address = props.data.vetAddress
+        }
+        else if (profile === OWNER){
+            img = OwnerProfile
+            address = props.data.ownerAddress
+        }
+        else{
+            img = PuppyProfile
+            address = props.data.puppyAddress
+        }
+
 
         return (
             <Fragment>
                 <div className='row justify-content-center'>
                     <div className='col-sm-12 mb-3'>
-                        <img alt="profile" src={VetProfile} className="m-2 img-circled" />
+                        <img alt="profile" src={img} className="m-2 img-circled" />
                     </div>
                 </div>
 
                 <div className='row justify-content-center'>
                     <div className='col-sm-12 mb-3'>
-                        <h1>Veterinarian</h1>
+                        <h1>{profile}</h1>
                     </div>
                 </div>
 
                 <div className='row justify-content-center'>
                     <div className='col-sm-12 mb-3'>
-                        <h4>{props.data[0]}</h4>
+                        <h4>{address}</h4>
                     </div>
                 </div>
 
@@ -45,46 +63,9 @@ console.log("[++++ Profile Address ++++] ", props.data.address)
 
                     </div>
                 </div>
-
-
             </Fragment>
         )
     }
-
-    const getAnimalComponent = () => {
-        return (
-            <Fragment>
-                Animal
-            </Fragment>
-        )
-    }
-
-    const getOwnerComponent = () => {
-        return (
-            <Fragment>
-                Owner
-            </Fragment>
-        )
-    }
-
-    const getProfile = () => {
-        switch (props.type) {
-            case VETERINARIAN:
-                return getVeterinarianComponent();
-                break;
-            case ANIMAL:
-                return getAnimalComponent();
-                break;
-            case OWNER:
-                return getOwnerComponent();
-                break;
-            default:
-                break;
-        }
-
-    }
-
-
 
     return (
         <div id='Login' className="background-primary profile">
@@ -94,7 +75,7 @@ console.log("[++++ Profile Address ++++] ", props.data.address)
 
                         {
                             (() => {
-                                return getProfile()
+                                return getProfile(props.type)
                             })()
 
                         }

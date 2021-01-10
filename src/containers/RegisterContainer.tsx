@@ -8,7 +8,7 @@ import OwnerJSON from '../assets/resources/OwnerForm.json'
 import PuppyJSON from '../assets/resources/PuppyForm.json'
 import VeterinarianJSON from '../assets/resources/VeterinarianForm.json'
 import { initBlockchain } from "../utils/ContractUtil";
-import { registerPuppy, registerVeterinarian } from "../store/action/test";
+import { registerOwner, registerPuppy, registerVeterinarian } from "../store/action/test";
 import _ from "lodash";
 
 
@@ -94,6 +94,7 @@ const RegisterContainer = (props: any) => {
             PuppyJSON={PuppyJSON}
             onSubmitVeterinarian={() => props.registerVeterinarian(config, _.mapValues(formData, (o) => { return o.value; }))}
             onSubmitPuppy={() => props.registerPuppy(config, _.mapValues(formData, (o) => { return o.value; }))}
+            onSubmitOwner={() => props.registerOwner(config, _.mapValues(formData, (o) => { return o.value; }))}
         />
     )
 }
@@ -102,7 +103,7 @@ const mapDispatchToProps = (dispatch: any) => ({
     //getVeterinarian: (config: any, data: string) => dispatch(getVeterinarian(config, data))
     registerVeterinarian: (config: any, data: string) => dispatch(registerVeterinarian(config, data)),
     registerPuppy: (config: any, data: string) => dispatch(registerPuppy(config, data)),
-
+    registerOwner: (config: any, data: string) => dispatch(registerOwner(config, data)),
 });
 
 

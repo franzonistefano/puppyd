@@ -1,4 +1,4 @@
-export const contractAddress = '0x1889AdA150821AD902C1ed6cbD38F0237fA0cf4D';//'0x54219c57A08CA947Ac96E93fD98E849994C2Bd3D';
+export const contractAddress = '0x03f01cE27Cb2C6df0D02C0E76967d091B44a257d';
 
 export const abiContract:any = [
 	{
@@ -64,16 +64,6 @@ export const abiContract:any = [
 			{
 				"internalType": "string",
 				"name": "_town",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_zipCode",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_country",
 				"type": "string"
 			},
 			{
@@ -164,27 +154,7 @@ export const abiContract:any = [
 			},
 			{
 				"internalType": "string",
-				"name": "_homeAddress",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
 				"name": "_phone",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_town",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_zipCode",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_country",
 				"type": "string"
 			},
 			{
@@ -276,16 +246,6 @@ export const abiContract:any = [
 					{
 						"internalType": "string",
 						"name": "town",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "zipCode",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "country",
 						"type": "string"
 					},
 					{
@@ -570,16 +530,6 @@ export const abiContract:any = [
 			{
 				"internalType": "string",
 				"name": "town",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "zipCode",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "country",
 				"type": "string"
 			},
 			{

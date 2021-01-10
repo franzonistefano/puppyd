@@ -50,20 +50,6 @@
     },
     {
         "col": "col-sm-12",
-        "id": "zipCode",
-        "type": "text",
-        "required": false,
-        "placeholder": "zip code"
-    },
-    {
-        "col": "col-sm-12",
-        "id": "country",
-        "type": "text",
-        "required": false,
-        "placeholder": "country"
-    },
-    {
-        "col": "col-sm-12",
         "id": "fiscalCode",
         "type": "text",
         "required": false,

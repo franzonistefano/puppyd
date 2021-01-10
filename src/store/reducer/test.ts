@@ -1,11 +1,13 @@
-import { GENERAL_REQUEST, GET_OWNER, GET_PUPPY, GET_TEST, GET_VETERINARIAN, REGISTER_OWNER, REGISTER_PUPPY, REGISTER_VETERINARIAN } from '../type/test'
+import { ADD_VACCINE, GENERAL_REQUEST, GET_OWNER, GET_PUPPY, GET_TEST, GET_VETERINARIAN, REGISTER_OWNER, REGISTER_PUPPY, REGISTER_VETERINARIAN } from '../type/test'
 import TestState from '../../interface/common/TestState'
+import { ANIMAL, OWNER, VETERINARIAN } from '../../assets/resources/UserType'
 
 const defaultState: TestState = {
     loading: false,
     veterinarian: null,
     owner: null,
-    puppy: null
+    puppy: null,
+    getter: null
 }
 
 export default (state = defaultState, action: any) => {
@@ -18,20 +20,23 @@ export default (state = defaultState, action: any) => {
         case GET_VETERINARIAN:
             return {
                 ...state,
-                loading: true,
-                veterinarian: action.data
+                loading: false,
+                veterinarian: action.data,
+                getter: VETERINARIAN
             }
         case GET_OWNER:
             return {
                 ...state,
-                loading: true,
-                owner: action.data
+                loading: false,
+                owner: action.data,
+                getter: OWNER
             }
         case GET_PUPPY:
             return {
                 ...state,
-                loading: true,
-                puppy: action.data
+                loading: false,
+                puppy: action.data,
+                getter: ANIMAL
             }
         case GENERAL_REQUEST:
             return {
@@ -49,6 +54,11 @@ export default (state = defaultState, action: any) => {
                 loading: false,
             }
         case REGISTER_OWNER:
+            return {
+                ...state,
+                loading: false,
+            }
+        case ADD_VACCINE:
             return {
                 ...state,
                 loading: false,

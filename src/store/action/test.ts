@@ -1,12 +1,9 @@
 import {
-    GET_TEST, GET_VETERINARIAN, GET_OWNER, GET_PUPPY, REGISTER_VETERINARIAN, GENERAL_REQUEST
+    GET_TEST, GET_VETERINARIAN, GET_OWNER, GET_PUPPY, REGISTER_VETERINARIAN, GENERAL_REQUEST, REGISTER_OWNER, ADD_VACCINE
 } from '../type/test'
 import TestState from '../../interface/common/TestState'
 import { TestApi } from '../api/TestApi'
-
-export function GeneralRequest() {
-    return { type: GENERAL_REQUEST }
-}
+import { Vaccine } from '../../interface/common/ContractState'
 
 export function getTest(test: TestState[]) {
     return { type: GET_TEST, test }
@@ -25,6 +22,10 @@ export function startGetPosts() {
     }
 }
 
+export function GeneralRequest() {
+    return { type: GENERAL_REQUEST }
+}
+
 /***********************/
 /*       GETTERS       */
 /***********************/
@@ -39,6 +40,7 @@ export function getVeterinarian(config: any, vetAddress: any) {
 
     return (dispatch: any) => {
 
+        dispatch(GeneralRequest())
         console.log('----- Config ------', config)
         console.log('----- Get Veterinarian Data ------', vetAddress)
         let response = "";
@@ -65,6 +67,7 @@ export function getOwner(config: any, ownerAddress: any) {
 
     return (dispatch: any) => {
 
+        dispatch(GeneralRequest())
         console.log('----- Config ------', config)
         console.log('----- Get Owner Data ------', ownerAddress)
         let response = "";
@@ -93,6 +96,7 @@ export function getPuppy(config: any, puppyAddress: any) {
 
     return (dispatch: any) => {
 
+        dispatch(GeneralRequest())
         console.log('----- Config ------', config)
         console.log('----- Get Puppy ------', puppyAddress)
         let response: any = null;
@@ -123,6 +127,7 @@ export const registerVeterinarian = async (config: any, data: any) => {
 
     return (dispatch: any) => {
 
+        dispatch(GeneralRequest())
         console.log('----- Config ------', config)
         console.log('----- Register Veterinarian - Data ----- ', data)
         config.contract.methods.registerVeterinarian(
@@ -164,7 +169,7 @@ export const registerPuppy = (config: any, data: any) => {
         dispatch(GeneralRequest())
         console.log('----- Config ------', config)
         console.log('----- Register Puppy with value ----- ', data)
-    
+
         config.contract?.methods.registerPuppy(
             1,
             1,
@@ -178,13 +183,85 @@ export const registerPuppy = (config: any, data: any) => {
             data.dadAddress,
             data.momAddress,
             data.ownerAddress
-        ).send({ from: config.accounts[0] }) 
+        ).send({ from: config.accounts[0] })
             .then((res: any) => {
                 console.log('----- Response Register Puppy ----- ', res);
                 dispatch(registerPuppyData(res))
             })
             .catch((err: any) => {
                 console.log('----- Register Puppy Error ----- ', err);
+            })
+
+    }
+
+}
+
+export function registerOwnerData(data: any) {
+    console.log("[++++++++++ Dispatch Action - Register Owner Data ++++++++++++] ", data)
+    return { type: REGISTER_OWNER, data }
+}
+
+export const registerOwner = (config: any, data: any) => {
+
+    return (dispatch: any) => {
+
+        dispatch(GeneralRequest())
+        console.log('----- Config ------', config)
+        console.log('----- Register Owner - Data ----- ', data)
+        config.contract?.methods.registerOwner(
+            //data.ownerType,
+            1,
+            data.name,
+            data.surname,
+            data.birthDate,
+            data.homeAddress,
+            data.phone,
+            data.town,
+            //data.zipCode,
+            //data.country,
+            data.fiscalCode
+        ).send({ from: config.accounts[0] })
+            .then((res: any) => {
+                console.log('----- Response Register Owner ----- ', res);
+                dispatch(registerOwnerData(res))
+            })
+            .catch((err: any) => {
+                console.log('----- Register Owner Error ----- ', err);
+            })
+
+    }
+
+}
+
+/****************************/
+/*          SETTERS         */
+/****************************/
+
+export function addVaccineData(data: any) {
+    console.log("[++++++++++ Dispatch Action - add Vaccine Data ++++++++++++] ", data)
+    return { type: ADD_VACCINE, data }
+}
+
+export const addVaccine = (config: any, data: Vaccine) => {
+
+    return (dispatch: any) => {
+
+        dispatch(GeneralRequest())
+        console.log('----- Config ------', config)
+        console.log('----- addVaccine - Data ----- ', data)
+        config.contract.methods.registerVeterinarian(
+            data.puppyAddress,
+            data.vaccineBatch,
+            data.date,
+            data.vaccineType
+
+        ).send({ from: config.accounts[0] })
+            .then((res: any) => {
+                console.log('----- Response Register Owner ----- ', res);
+                dispatch(addVaccineData(res))
+            })
+            .catch((err: any) => {
+                console.log('----- Register Owner Error ----- ', err);
             })
 
     }

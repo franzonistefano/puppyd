@@ -56,28 +56,28 @@ export const registerPuppy = async (config: any, data: Puppy) => {
 
 export const registerOwner = async (config: any, data: Owner) => {
 
-    console.log('----- Config ------', config)
-    console.log('----- Register Owner - Data ----- ', data)
-    config.contract?.methods.registerOwner(
-        //data.ownerType,
-        1,
-        data.name,
-        data.surname,
-        data.birthDate,
-        data.homeAddress,
-        data.phone,
-        data.town,
-        data.zipCode,
-        data.country,
-        data.fiscalCode
-    ).send({ from: config.accounts[0] })
-        .then((res: any) => {
+    // console.log('----- Config ------', config)
+    // console.log('----- Register Owner - Data ----- ', data)
+    // config.contract?.methods.registerOwner(
+    //     //data.ownerType,
+    //     1,
+    //     data.name,
+    //     data.surname,
+    //     data.birthDate,
+    //     data.homeAddress,
+    //     data.phone,
+    //     data.town,
+    //     data.zipCode,
+    //     data.country,
+    //     data.fiscalCode
+    // ).send({ from: config.accounts[0] })
+    //     .then((res: any) => {
 
-            console.log('----- Response Register Owner ----- ', res);
-        })
-        .catch((err: any) => {
-            console.log('----- Register Owner Error ----- ', err);
-        })
+    //         console.log('----- Response Register Owner ----- ', res);
+    //     })
+    //     .catch((err: any) => {
+    //         console.log('----- Register Owner Error ----- ', err);
+    //     })
 
 }
 

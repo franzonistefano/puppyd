@@ -2,7 +2,7 @@ import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import React, { useState } from 'react';
 import ProfileComponent from '../../common/ProfileComponent';
-import { VETERINARIAN } from '../../../assets/resources/UserType';
+import { ANIMAL, OWNER, VETERINARIAN } from '../../../assets/resources/UserType';
 
 const GetterComponent = (props: any) => {
 
@@ -18,6 +18,52 @@ const GetterComponent = (props: any) => {
 
     const getVeterinarianData = () => {
         props.getVeterinarian(address)
+    }
+
+    const getVeterinarianProfile = () => {
+        return (
+            <ProfileComponent
+                type={VETERINARIAN}
+                data={props.veterinarian}
+            />
+        )
+    }
+
+    const getOwnerProfile = () => {
+        return (
+            <ProfileComponent
+                type={OWNER}
+                data={props.owner}
+            />
+        )
+    }
+
+    const getPuppyProfile = () => {
+        return (
+            <ProfileComponent
+                type={ANIMAL}
+                data={props.puppy}
+            />
+        )
+    }
+
+    const getData = () => {
+        if (props.loading == false) {
+
+            switch (props.getter) {
+                case VETERINARIAN:
+                    return getVeterinarianProfile();
+                    break;
+                case OWNER:
+                    return getOwnerProfile();
+                    break;
+                case ANIMAL:
+                    return getPuppyProfile();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     return (
@@ -60,20 +106,26 @@ const GetterComponent = (props: any) => {
                             </div>
 
 
-                            {(props.loading == true) ? (
-                                <div className='col-sm-12 mb-3'>
-                                    <ProfileComponent
-                                        type={VETERINARIAN}
-                                        data={props.veterinarian}
-                                    />
-                                    <p>{props.veterinarian.data}</p>
-                                </div>
-                            ) : null}
+                            { }
 
                         </div>
                     </div>
 
                 </div>
+
+                <div className='row full-height justify-content-center align-items-center m-4'>
+                    <div className="col-12 justify-content-center text-center">
+
+                        {(props.loading == false) ?
+                            <div className='col-sm-12 mb-3'>
+                                {(() => { return getData() })()}
+                            </div>
+                            :
+                            null
+                        }
+                    </div>
+                </div>
+
             </div>
         </div>
     )

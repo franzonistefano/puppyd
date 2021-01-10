@@ -50,7 +50,7 @@ const GetterContainer = (props: any) => {
             veterinarian={props.veterinarian}
             owner={props.owner}
             puppy={props.puppy}
-
+            getter={props.getter}
         />
     )
 }
@@ -66,7 +66,8 @@ const mapStateToProps = (state: any) => ({
     loading: state.testReducer.loading,
     veterinarian: state.testReducer.veterinarian,
     owner: state.testReducer.owner,
-    puppy: state.testReducer.puppy
+    puppy: state.testReducer.puppy,
+    getter: state.testReducer.getter,
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(injectIntl(GetterContainer)));

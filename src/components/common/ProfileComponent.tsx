@@ -43,23 +43,21 @@ const ProfileComponent = (props: any) => {
 
                 <div className='row justify-content-center'>
                     <div className='col-sm-12 mb-3'>
-                        <h4>{address}</h4>
+                        <h2>{address}</h2>
                     </div>
                 </div>
 
-                <div className='row justify-content-start'>
+                <div className='row justify-content-center'>
                     <div className='col-sm-12 mb-3'>
-                        <ul>
                             {
                                 props.data.map((field: any) => {
                                     return (
-                                        <li>
-                                            {field}
-                                        </li>
+                                        <div className="row justify-content-center">
+                                            <h4>{field}</h4>
+                                        </div>
                                     )
                                 })
                             }
-                        </ul>
 
                     </div>
                 </div>

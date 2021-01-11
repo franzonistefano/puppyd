@@ -3,9 +3,11 @@ import { injectIntl } from "react-intl";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import GetterComponent from "../components/custom/Getter/GetterComponent";
-import { getOwner, getPuppy, getVeterinarian } from "../store/action/test";
+import { addVaccine, getOwner, getPuppy, getVeterinarian } from "../store/action/test";
 import { initBlockchain } from "../utils/ContractUtil";
 import { FormUtil } from "../utils/FormUtil";
+import VaccineJSON from '../assets/resources/VaccineForm.json'
+import _ from "lodash";
 
 const GetterContainer = (props: any) => {
 
@@ -17,8 +19,14 @@ const GetterContainer = (props: any) => {
     const [contract, setContract] = useState();
     const [account, setAccount] = useState();
 
+    const [formData, setFormData] = useState<any>({});
+    const [submitEnabled, setSubmitEnabled] = useState(false)
+
 
     useEffect(() => {
+
+        setFormData(FormUtil.initFormData(VaccineJSON));
+        console.log("[Init] - formData: ", formData)
     
         initBlockchain().then(res => {
     
@@ -38,6 +46,13 @@ const GetterContainer = (props: any) => {
         })
     
       }, [account])
+
+      const onChange = (event: any) => {
+        console.log("[onChange] - event: ", event)
+        console.log("[onChange] - formData: ", formData)
+        setFormData(FormUtil.onChange(event, formData));
+        setSubmitEnabled(FormUtil.isSubmitEnabled(formData));
+      }
     
 
     return (
@@ -51,6 +66,10 @@ const GetterContainer = (props: any) => {
             owner={props.owner}
             puppy={props.puppy}
             getter={props.getter}
+            VaccineJSON={VaccineJSON}
+            data={formData}
+            onChange={onChange}
+            onSubmitVaccine={() => props.addVaccine(config, _.mapValues(formData, (o) => { return o.value; }))}
         />
     )
 }
@@ -58,7 +77,8 @@ const GetterContainer = (props: any) => {
 const mapDispatchToProps = (dispatch: any) => ({
     getVeterinarian: (config: any, data: string) => dispatch(getVeterinarian(config, data)),
     getOwner: (config: any, data: string) => dispatch(getOwner(config, data)),
-    getPuppy: (config: any, data: string) => dispatch(getPuppy(config, data))
+    getPuppy: (config: any, data: string) => dispatch(getPuppy(config, data)),
+    addVaccine: (config: any, data: any) => dispatch(addVaccine(config, data))
 });
 
 

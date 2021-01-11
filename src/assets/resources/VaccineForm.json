@@ -1,0 +1,30 @@
+[
+    {
+        "col": "col-sm-12",
+        "id": "puppyAddress",
+        "type": "text",
+        "required": false,
+        "placeholder": "puppy address"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "vaccineBatch",
+        "type": "text",
+        "required": false,
+        "placeholder": "vaccine batch"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "date",
+        "type": "text",
+        "required": false,
+        "placeholder": "date"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "vaccineType",
+        "type": "text",
+        "required": false,
+        "placeholder": "vaccineType"
+    }
+]

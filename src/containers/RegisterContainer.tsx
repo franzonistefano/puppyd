@@ -77,12 +77,6 @@ const RegisterContainer = (props: any) => {
         setSubmitEnabled(FormUtil.isSubmitEnabled(formData));
       }
 
-    const registerPuppy = () => {
-        console.log("[registerPuppy] - Form Data: ", formData)
-        let data = _.mapValues(formData, (o) => { return o.value; }); //_.values(formData)
-        console.log("[Form Data Array] - ", data)
-    };
-
     return (
         <RegisterComponent
             changeIndex={(e: any) => changeIndex(e)}

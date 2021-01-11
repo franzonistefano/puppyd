@@ -1,8 +1,9 @@
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import ProfileComponent from '../../common/ProfileComponent';
 import { ANIMAL, OWNER, VETERINARIAN } from '../../../assets/resources/UserType';
+import FormComponent from '../../common/FormComponent';
 
 const GetterComponent = (props: any) => {
 
@@ -22,10 +23,35 @@ const GetterComponent = (props: any) => {
 
     const getVeterinarianProfile = () => {
         return (
-            <ProfileComponent
-                type={VETERINARIAN}
-                data={props.veterinarian}
-            />
+            <Fragment>
+                <ProfileComponent
+                    type={VETERINARIAN}
+                    data={props.veterinarian}
+                />
+                <div className="row justify-content-center">
+                    <div className='col-lg-8 col-md-12 justify-content-center text-center'>
+
+                        <div className="card p-5">
+                            <div className='col-sm-12 mb-4'>
+                                <div className="p-field">
+                                    <h1>Aggiungi Vaccino</h1>
+                                </div>
+                            </div>
+
+                            <FormComponent
+                                json={props.VaccineJSON}
+                                onChange={props.onChange}
+                                data={props.data}
+                            />
+
+                            <div className='col-sm-12 mb-3'>
+                                <Button label='Add Vaccine' onClick={() => props.onSubmitVaccine()} />
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </Fragment>
         )
     }
 

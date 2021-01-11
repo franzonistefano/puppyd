@@ -123,7 +123,7 @@ export function registerVeterinarianData(data: any) {
     return { type: REGISTER_VETERINARIAN, data }
 }
 
-export const registerVeterinarian = async (config: any, data: any) => {
+export const registerVeterinarian = (config: any, data: any) => {
 
     return (dispatch: any) => {
 
@@ -134,11 +134,11 @@ export const registerVeterinarian = async (config: any, data: any) => {
             data.name,
             data.surname,
             data.birthDate,
-            data.homeAddress,
+            //data.homeAddress,
             data.phone,
-            data.town,
-            data.zipCode,
-            data.country,
+            //data.town,
+            //data.zipCode,
+            //data.country,
             data.fiscalCode,
             data.number,
             data.provincia
@@ -209,7 +209,7 @@ export const registerOwner = (config: any, data: any) => {
         console.log('----- Config ------', config)
         console.log('----- Register Owner - Data ----- ', data)
         config.contract?.methods.registerOwner(
-            //data.ownerType,
+            //Number(data.ownerType),
             1,
             data.name,
             data.surname,
@@ -249,10 +249,10 @@ export const addVaccine = (config: any, data: Vaccine) => {
         dispatch(GeneralRequest())
         console.log('----- Config ------', config)
         console.log('----- addVaccine - Data ----- ', data)
-        config.contract.methods.registerVeterinarian(
+        config.contract.methods.addVaccine(
             data.puppyAddress,
             data.vaccineBatch,
-            data.date,
+            Number(data.date),
             data.vaccineType
 
         ).send({ from: config.accounts[0] })

@@ -1,4 +1,4 @@
-export const contractAddress = '0x03f01cE27Cb2C6df0D02C0E76967d091B44a257d';
+export const contractAddress = '0xD509F9367239a9e6832e5e012044B0cD5CD8F4c3'; //'0x03f01cE27Cb2C6df0D02C0E76967d091B44a257d';
 
 export const abiContract:any = [
 	{
@@ -14,9 +14,9 @@ export const abiContract:any = [
 				"type": "string"
 			},
 			{
-				"internalType": "uint256",
+				"internalType": "string",
 				"name": "_date",
-				"type": "uint256"
+				"type": "string"
 			},
 			{
 				"internalType": "string",
@@ -337,9 +337,9 @@ export const abiContract:any = [
 								"type": "string"
 							},
 							{
-								"internalType": "uint256",
+								"internalType": "string",
 								"name": "date",
-								"type": "uint256"
+								"type": "string"
 							},
 							{
 								"internalType": "string",
@@ -398,9 +398,9 @@ export const abiContract:any = [
 						"type": "string"
 					},
 					{
-						"internalType": "uint256",
+						"internalType": "string",
 						"name": "date",
-						"type": "uint256"
+						"type": "string"
 					},
 					{
 						"internalType": "string",

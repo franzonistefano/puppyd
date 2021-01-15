@@ -3,33 +3,25 @@
     "app.notFound.title": "Oooops! Pagina non trovata",
     "app.notFound.text": "404 - ",
     "app.notFound.link": "Torna alla home",
-    "homepage.section1.title": "Overview Complessiva",
-    "homepage.section1.text": "Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua.",
-    "homepage.section2.esg": "ESG",
-    "homepage.section2.esg.text": "Lorem ipsum dolor sit amet, consectetur adipisci elit...",
-    "homepage.section2.refferal": "Refferal",
-    "homepage.section2.refferal.text": "Lorem ipsum dolor sit amet, consectetur adipisci elit...",
-    "homepage.section2.boost": "Boost",
-    "homepage.section2.boost.text": "Lorem ipsum dolor sit amet, consectetur adipisci elit...",
-    "homepage.section3.title": "Piano di azione Benchmarking",
-    "homepage.section3.subtitle": "Visualizza le tue performance",
-    "homepage.section3.performanceESG": "Performance ESG in confronto ai Peer",
-    "homepage.section4.title": "Reportistica Avanzata",
-    "homepage.section4.subtitle": "Lorem ipsum dolor sit amet, consectetur adipisci elit...",
-    "homepage.marketplace.title": "Marketplace",
-    "homepage.marketplace.button.providers": "Nuovi Service Provider",
-    "homepage.marketplace.button.promotions": "Scopri le nuove promozioni sulla piattaforma",
-    "homepage.marketplace.button.promote": "Promuovi i tuoi prodotti e servizi",
-    "homepage.boostplatform.title": "Boostplatform",
-    "homepage.boostplatform.button.mostClicked": "I più cliccati",
-    "homepage.boostplatform.button.shareExperience": "Condividi la tua esperienza di successo",
-    "homepage.boostplatform.button.askImprovements": "Chiedi alla comunità come si può migliorare",
-    
-    
-    "homepage.button.validation": "Utente non validato",
-    "homepage.button.dashboard": "Vai alla Dashboard",
-    "homepage.button.visualize": "Visualizza",
-    "homepage.button.buy": "Compra",
-    "homepage.button.premium": "Accedi alla versione Premium"
+
+    "homepage.timeline.step1": "Scarica Metamask",
+    "homepage.timeline.step2": "Registrati",
+    "homepage.timeline.step3": "Accedi ai dati",
+
+    "homepage.timeline.step1.text": "Olaaa",
+    "homepage.timeline.step2.text": "Olaaa",
+    "homepage.timeline.step3.text": "Olaaa",
+
+    "homepage.feature.data.title": "Gestione dei dati",
+    "homepage.feature.data.text": "Trasparente e organizzata. Accesso istantaneo allo storico delle visite e libretto sanitario dell'animale. Utile per il veterinario, i padroni e le associazioni.",
+
+    "homepage.feature.track.title": "Tracciabilità",
+    "homepage.feature.track.text": "In caso di smarrimento o di trasferimento dell'animale sarà più semplice risalire ai dati ad esso collegati. Ogni animale avrà un QRCode personale contenente tutti i dati salvati su Blockchain.",
+
+    "homepage.feature.genealogy.title": "Genealogia",
+    "homepage.feature.genealogy.text": "Garantendo trasparenza e tracciabilità dell'animale si facilita la costruzione della genealogia dello stesso. Oltre a migliorare significativamente la prevenzione nei confronti di eventuali patologie ereditarie."
+
+
+
 
 }

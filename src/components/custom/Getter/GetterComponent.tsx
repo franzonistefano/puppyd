@@ -1,13 +1,25 @@
 import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
+import TreeNode from 'primereact/components/treenode/TreeNode';
+import { Tree } from 'primereact/tree';
 import React, { Fragment, useState } from 'react';
 import ProfileComponent from '../../common/ProfileComponent';
 import { ANIMAL, OWNER, VETERINARIAN } from '../../../assets/resources/UserType';
 import FormComponent from '../../common/FormComponent';
+import ModalFormComponent from '../../common/Modal/ModalFormComponent';
+import { FormUtil } from '../../../utils/FormUtil';
 
 const GetterComponent = (props: any) => {
 
     const [address, setAddress] = useState("")
+    const [modal, setModal] = useState<any>({
+        title: '',
+        content: props.VaccineJSON,
+        visible: false
+    })
+
+    const [formData, setFormData] = useState<any>({});
+    const [submitEnabled, setSubmitEnabled] = useState(false)
 
     const getPuppyData = () => {
         props.getPuppy(address)
@@ -19,6 +31,44 @@ const GetterComponent = (props: any) => {
 
     const getVeterinarianData = () => {
         props.getVeterinarian(address)
+
+            console.log("Veterinarian in Getter: ", props.veterinarian)
+    }
+
+    const handleChange = (e: any) => {
+        setFormData(FormUtil.onChange(e, formData));
+        setSubmitEnabled(FormUtil.isSubmitEnabled(formData));
+    }
+    const handleSubmit = (e: any) => {
+        // log.debug(formData)
+        console.log(formData)
+    }
+
+    const onClick = () => {
+        setModal({
+            ...modal,
+            visible: true,
+            title: 'Add Vaccine',
+            buttonAccept: {
+                label: "accept",
+                icon: "pi pi-check",
+                autofocus: true
+            },
+            buttonReject: {
+                label: "reject",
+                icon: "pi pi-times",
+                autofocus: false
+            }
+        })
+        setFormData(FormUtil.initFormData(modal.content));
+    }
+
+    const onHide = () => {
+        setModal({
+            ...modal,
+            visible: false,
+            title: '',
+        })
     }
 
     const getVeterinarianProfile = () => {
@@ -31,24 +81,13 @@ const GetterComponent = (props: any) => {
                 <div className="row justify-content-center">
                     <div className='col-lg-8 col-md-12 justify-content-center text-center'>
 
-                        <div className="card p-5">
-                            <div className='col-sm-12 mb-4'>
-                                <div className="p-field">
-                                    <h1>Aggiungi Vaccino</h1>
-                                </div>
-                            </div>
+                        <ModalFormComponent {...modal}
+                            onHide={onHide}
+                            handleChange={props.onChange}
+                            handleSubmit={props.onSubmitVaccine}
+                            formData={props.data} />
+                        <Button className='btn-third' label='Register Vaccine' onClick={() => onClick()} />
 
-                            <FormComponent
-                                json={props.VaccineJSON}
-                                onChange={props.onChange}
-                                data={props.data}
-                            />
-
-                            <div className='col-sm-12 mb-3'>
-                                <Button label='Add Vaccine' onClick={() => props.onSubmitVaccine()} />
-                            </div>
-
-                        </div>
                     </div>
                 </div>
             </Fragment>
@@ -139,7 +178,7 @@ const GetterComponent = (props: any) => {
 
                 </div>
 
-                <div className='row full-height justify-content-center align-items-center m-4'>
+                <div className='row full-height justify-content-center align-items-center pt-4 pb-4'>
                     <div className="col-12 justify-content-center text-center">
 
                         {(props.loading == false) ?

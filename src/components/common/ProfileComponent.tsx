@@ -7,21 +7,59 @@ import PuppyProfile from '../../assets/img/animal.png'
 
 const ProfileComponent = (props: any) => {
 
+
+    console.log("Data Profile Received: ", props.data)
+
+    const getVetProfileInfo = () => {
+
+        return (
+            <Fragment>
+                <div className="row justify-content-center">
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Address: </h4> <p className="ml-4">{props.data.vetAddress}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Name: </h4> <p className="ml-4">{props.data.name}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Surname: </h4> <p className="ml-4">{props.data.surname}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Birthday: </h4> <p className="ml-4">{props.data.birthDate}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Phone: </h4> <p className="ml-4">{props.data.phone}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Fiscal Code: </h4> <p className="ml-4">{props.data.fiscalCode}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Number: </h4> <p className="ml-4">{props.data.number}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Provincia: </h4> <p className="ml-4">{props.data.provincia}</p>
+                    </div>
+                </div>
+            </Fragment>
+        )
+    }
+
+
     const getProfile = (profile: string) => {
 
         console.log("[++++ Profile Address ++++] ", props.data.vetAddress)
 
         let address = '';
         let img = '';
-        if(profile === VETERINARIAN){
+        if (profile === VETERINARIAN) {
             img = VetProfile
             address = props.data.vetAddress
         }
-        else if (profile === OWNER){
+        else if (profile === OWNER) {
             img = OwnerProfile
             address = props.data.ownerAddress
         }
-        else{
+        else {
             img = PuppyProfile
             address = props.data.puppyAddress
         }
@@ -48,17 +86,18 @@ const ProfileComponent = (props: any) => {
                 </div>
 
                 <div className='row justify-content-center'>
-                    <div className='col-sm-12 mb-3'>
-                            {
-                                props.data.map((field: any) => {
-                                    return (
-                                        <div className="row justify-content-center">
-                                            <h4>{field}</h4>
-                                        </div>
-                                    )
-                                })
-                            }
-
+                    <div className='col-sm-5 mb-3'>
+                        {/* {
+                            props.data.map((field: any) => {
+                                console.log("Profile Field: ", field)
+                                return (
+                                    <div className="row justify-content-between">
+                                        <h4>{field}</h4>
+                                    </div>
+                                )
+                            })
+                        } */}
+                        {(() => { return getVetProfileInfo() })()}
                     </div>
                 </div>
             </Fragment>
@@ -67,18 +106,16 @@ const ProfileComponent = (props: any) => {
 
     return (
         <div id='Login' className="background-primary profile">
-            <div className="container custom-container">
-                <div className='row full-height justify-content-center align-items-center'>
-                    <div className='col-sm-12 mb-3'>
+            <div className='row justify-content-center align-items-center'>
+                <div className='col-sm-12 mb-3'>
 
-                        {
-                            (() => {
-                                return getProfile(props.type)
-                            })()
+                    {
+                        (() => {
+                            return getProfile(props.type)
+                        })()
 
-                        }
+                    }
 
-                    </div>
                 </div>
             </div>
         </div>

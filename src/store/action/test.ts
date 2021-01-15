@@ -43,12 +43,12 @@ export function getVeterinarian(config: any, vetAddress: any) {
         dispatch(GeneralRequest())
         console.log('----- Config ------', config)
         console.log('----- Get Veterinarian Data ------', vetAddress)
-        let response = "";
 
         config.contract?.methods.getVeterinarianData(vetAddress).call()
             .then((res: any) => {
                 console.log("[++++++++++ Get Veterinarian Data ++++++++++++] ", res)
-                dispatch(getVeterinarianData(res))
+                if(res.isRegistered)
+                    dispatch(getVeterinarianData(res))
             })
             .catch((err: any) => {
                 console.log(err)
@@ -70,13 +70,12 @@ export function getOwner(config: any, ownerAddress: any) {
         dispatch(GeneralRequest())
         console.log('----- Config ------', config)
         console.log('----- Get Owner Data ------', ownerAddress)
-        let response = "";
 
         config.contract?.methods.getOwnerData(ownerAddress).call()
             .then((res: any) => {
                 console.log("[++++++++++ Get Owner Data ++++++++++++] ", res)
-                //response = res
-                dispatch(getOwnerData(res))
+                if(res.isRegistered)
+                    dispatch(getOwnerData(res))
             })
             .catch((err: any) => {
                 console.log(err)
@@ -99,13 +98,12 @@ export function getPuppy(config: any, puppyAddress: any) {
         dispatch(GeneralRequest())
         console.log('----- Config ------', config)
         console.log('----- Get Puppy ------', puppyAddress)
-        let response: any = null;
 
         config.contract?.methods.getPuppyData(puppyAddress).call()
             .then((res: any) => {
                 console.log("[++++++++++ Get Puppies ++++++++++++] ", res)
-                response = res
-                dispatch(getPuppyData(res))
+                if(res.isRegistered)
+                    dispatch(getPuppyData(res))
             })
             .catch((err: any) => {
                 console.log(err)

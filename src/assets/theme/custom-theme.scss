@@ -5,7 +5,7 @@
     font-family: $fontFamily;
     font-size: $fontSize;
 
-    .strong{
+    .strong {
         font-weight: $strongText;
     }
 
@@ -28,7 +28,7 @@
         color: $buttonTextColor;
         border-radius: $borderRadius;
         min-width: 100px;
-        width: auto;//$buttonWidth;
+        width: auto; //$buttonWidth;
         text-align: center;
         align-items: center;
 
@@ -69,9 +69,9 @@
         color: $primaryColor;
     }
 
-    
 
-    
+
+
     //Label
     label {
         margin-bottom: 0px;
@@ -84,7 +84,7 @@
     }
 
     //Backgrounds
-    .background-opacity{
+    .background-opacity {
         background-color: rgb(18, 26, 32, 0.2);
     }
 
@@ -190,9 +190,11 @@
     .btn-primary {
         background-color: $primaryColor;
     }
+
     .btn-secondary {
         background-color: $secondaryColor;
     }
+
     .btn-third {
         background-color: $thirdColor;
         color: $primaryColor;
@@ -207,5 +209,57 @@
             margin-bottom: 0;
         }
     }
-    
+
+    //Tabs
+    .p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .header {
+
+        .card {
+            border: none;
+            border-radius: 0px;
+        }
+
+        .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover {
+            background: $primaryColor;
+            color: $secondaryColor;
+            text-decoration: underline;
+        }
+
+        .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+            color: $secondaryColor;
+        }
+
+        .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
+            color: $secondaryColor;
+        }
+
+        .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:focus {
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        @media screen and (max-width: 960px) {
+
+            .p-menubar .p-menubar-button:hover {
+                margin-right: 2%;
+                color: $secondaryColor;
+                background: $primaryColor;
+            }
+
+            .p-menubar .p-menubar-root-list {
+                color: $secondaryColor;
+                background: $primaryColor;
+            }
+
+            .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
+                color: $secondaryColor;
+            }
+        }
+
+    }
+
 }

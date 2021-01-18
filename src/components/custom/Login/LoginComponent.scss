@@ -39,12 +39,19 @@
         background-size: 100% 100%;
     }
 
+    @media screen and (max-width: 960px) {
+
+        .footer {
+            background-size: cover;
+        }
+    }
+
     h1 {
         margin-top: auto;
         font-size: $fontSizeH1;
         font-weight: $fontWeightBold;
     }
-    
+
     h2 {
         margin-top: auto;
         font-size: $fontSizeH2;
@@ -79,7 +86,9 @@
 
     //Component
     .bordered-component {
-        .p-component, .p-component * {
+
+        .p-component,
+        .p-component * {
             border-radius: $cardBorderRadius;
         }
     }
@@ -139,7 +148,9 @@
 
     //Card
     .bordered-card {
-        .p-component, .p-component * {
+
+        .p-component,
+        .p-component * {
             border-radius: $cardBorderRadius;
         }
     }
@@ -203,7 +214,7 @@
     }
 
     //Password
-    .p-field{
+    .p-field {
         position: relative;
 
         .p-password-panel {
@@ -241,7 +252,7 @@
     }
 
     //Home -> Benchmark Section
-    .benchmark{
+    .benchmark {
 
         .p-progressbar {
             background: $progressbarBg;
@@ -266,10 +277,10 @@
         border-radius: 500px;
         height: 150px;
         background-color: $secondaryColor;
-      }
+    }
 
     //Profile
-    .profile{
+    .profile {
         color: $secondaryColor;
     }
 
@@ -287,19 +298,18 @@
         background: $primaryColor;
     }
 
-    .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link{
+    .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
         background: $primaryColor;
         border-color: $secondaryColor;
-        color:$secondaryColor;
+        color: $secondaryColor;
     }
 
     .p-tabview .p-tabview-nav li .p-tabview-nav-link {
         background: $primaryColor;
     }
 
-    .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link:enabled:hover  {
+    .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link:enabled:hover {
         border-color: $inputBorderColorHover;
     }
 
 }
-

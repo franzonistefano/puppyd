@@ -11,7 +11,7 @@ const HeaderComponent = (props: any) => {
     const items = [
         {
             label: 'Home',
-            url: '/home'
+            url: '/'
         },
         {
             label: 'Getter',
@@ -44,7 +44,7 @@ const HeaderComponent = (props: any) => {
 
         // </div>
 
-        <div>
+        <div className="header">
             <div className="card">
                 <Menubar model={items} start={start} />
             </div>

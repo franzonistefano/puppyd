@@ -15,13 +15,6 @@
     },
     {
         "col": "col-sm-12",
-        "id": "birthDate",
-        "type": "text",
-        "required": false,
-        "placeholder": "birthDate"
-    },
-    {
-        "col": "col-sm-12",
         "id": "phone",
         "type": "text",
         "required": false,

@@ -3,7 +3,7 @@ import {
 } from '../type/test'
 import TestState from '../../interface/common/TestState'
 import { TestApi } from '../api/TestApi'
-import { Vaccine } from '../../interface/common/ContractState'
+import { Owner, Puppy, Transfer, Vaccine, Veterinarian } from '../../interface/common/ContractState'
 
 export function getTest(test: TestState[]) {
     return { type: GET_TEST, test }
@@ -46,9 +46,10 @@ export function getVeterinarian(config: any, vetAddress: any) {
 
         config.contract?.methods.getVeterinarianData(vetAddress).call()
             .then((res: any) => {
-                console.log("[++++++++++ Get Veterinarian Data ++++++++++++] ", res)
-                if(res.isRegistered)
-                    dispatch(getVeterinarianData(res))
+                let response: Veterinarian = res;
+                console.log("[++++++++++ Get Veterinarian Data ++++++++++++] ", response)
+                if(response.isRegistered)
+                    dispatch(getVeterinarianData(response))
             })
             .catch((err: any) => {
                 console.log(err)
@@ -72,7 +73,7 @@ export function getOwner(config: any, ownerAddress: any) {
         console.log('----- Get Owner Data ------', ownerAddress)
 
         config.contract?.methods.getOwnerData(ownerAddress).call()
-            .then((res: any) => {
+            .then((res: Owner) => {
                 console.log("[++++++++++ Get Owner Data ++++++++++++] ", res)
                 if(res.isRegistered)
                     dispatch(getOwnerData(res))
@@ -100,7 +101,7 @@ export function getPuppy(config: any, puppyAddress: any) {
         console.log('----- Get Puppy ------', puppyAddress)
 
         config.contract?.methods.getPuppyData(puppyAddress).call()
-            .then((res: any) => {
+            .then((res: Puppy) => {
                 console.log("[++++++++++ Get Puppies ++++++++++++] ", res)
                 if(res.isRegistered)
                     dispatch(getPuppyData(res))
@@ -131,7 +132,7 @@ export const registerVeterinarian = (config: any, data: any) => {
         config.contract.methods.registerVeterinarian(
             data.name,
             data.surname,
-            data.birthDate,
+            //data.birthDate,
             //data.homeAddress,
             data.phone,
             //data.town,
@@ -160,7 +161,7 @@ export function registerPuppyData(data: any) {
     return { type: REGISTER_VETERINARIAN, data }
 }
 
-export const registerPuppy = (config: any, data: any) => {
+export const registerPuppy = (config: any, puppyType: number, puppySex: number, data: any) => {
 
     return (dispatch: any) => {
 
@@ -169,8 +170,8 @@ export const registerPuppy = (config: any, data: any) => {
         console.log('----- Register Puppy with value ----- ', data)
 
         config.contract?.methods.registerPuppy(
-            1,
-            1,
+            puppyType,
+            puppySex,
             //data.type,
             //data.sex,
             data.name,
@@ -199,7 +200,7 @@ export function registerOwnerData(data: any) {
     return { type: REGISTER_OWNER, data }
 }
 
-export const registerOwner = (config: any, data: any) => {
+export const registerOwner = (config: any, ownerType: number, data: any) => {
 
     return (dispatch: any) => {
 
@@ -208,11 +209,11 @@ export const registerOwner = (config: any, data: any) => {
         console.log('----- Register Owner - Data ----- ', data)
         config.contract?.methods.registerOwner(
             //Number(data.ownerType),
-            1,
+            ownerType,
             data.name,
-            data.surname,
-            data.birthDate,
-            data.homeAddress,
+            //data.surname,
+            //data.birthDate,
+            //data.homeAddress,
             data.phone,
             data.town,
             //data.zipCode,
@@ -260,6 +261,29 @@ export const addVaccine = (config: any, data: Vaccine) => {
             })
             .catch((err: any) => {
                 console.log('----- Register Owner Error ----- ', err);
+            })
+
+    }
+
+}
+
+export const transferPuppyOwnership = (config: any, data: Transfer) => {
+
+    return (dispatch: any) => {
+
+        dispatch(GeneralRequest())
+        console.log('----- Config ------', config)
+        console.log('----- transferPuppyOwnership - Data ----- ', data)
+        config.contract.methods.transferOwner(
+            data.puppyAddress,
+            data.newOwner
+        ).send({ from: config.accounts[0] })
+            .then((res: any) => {
+                console.log('----- Response transferPuppyOwnership ----- ', res);
+                dispatch(addVaccineData(res))
+            })
+            .catch((err: any) => {
+                console.log('-----transferPuppyOwnership Error ----- ', err);
             })
 
     }

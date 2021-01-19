@@ -223,26 +223,35 @@
             border-radius: 0px;
         }
 
-        .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover {
+        .p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link:not(.p-disabled):hover {
             background: $primaryColor;
             color: $secondaryColor;
             text-decoration: underline;
         }
 
-        .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link {
+        .p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link {
             color: $secondaryColor;
         }
 
-        .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
+        .p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link:not(.p-disabled):hover .p-menuitem-text {
             color: $secondaryColor;
         }
 
-        .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link:focus {
+        .p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link:focus {
             -webkit-box-shadow: none;
             box-shadow: none;
         }
 
         @media screen and (max-width: 960px) {
+
+            .p-menubar .p-menubar-button {
+                margin-right: 2%;
+            }
+
+            .p-menubar .p-menubar-button:focus {
+                -webkit-box-shadow: none;
+                box-shadow: none;
+            }
 
             .p-menubar .p-menubar-button:hover {
                 margin-right: 2%;
@@ -255,7 +264,7 @@
                 background: $primaryColor;
             }
 
-            .p-menubar .p-menubar-root-list > .p-menuitem > .p-menuitem-link .p-menuitem-text {
+            .p-menubar .p-menubar-root-list>.p-menuitem>.p-menuitem-link .p-menuitem-text {
                 color: $secondaryColor;
             }
         }

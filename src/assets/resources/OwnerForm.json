@@ -1,38 +1,10 @@
 [
     {
         "col": "col-sm-12",
-        "id": "ownerType",
-        "type": "text",
-        "required": false,
-        "placeholder": "owner type"
-    },
-    {
-        "col": "col-sm-12",
         "id": "name",
         "type": "text",
         "required": false,
         "placeholder": "name"
-    },
-    {
-        "col": "col-sm-12",
-        "id": "surname",
-        "type": "text",
-        "required": false,
-        "placeholder": "surname"
-    },
-    {
-        "col": "col-sm-12",
-        "id": "birthDate",
-        "type": "text",
-        "required": false,
-        "placeholder": "birthDate"
-    },
-    {
-        "col": "col-sm-12",
-        "id": "homeAddress",
-        "type": "text",
-        "required": false,
-        "placeholder": "home address"
     },
     {
         "col": "col-sm-12",

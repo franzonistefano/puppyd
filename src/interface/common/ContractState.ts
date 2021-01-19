@@ -1,5 +1,5 @@
 export interface Puppy {
-    puppyAddress?: string;
+    petAddress?: string;
     type: number;
     sex: number;
     name: string;
@@ -10,27 +10,30 @@ export interface Puppy {
     dadAddress: string;
     momAddress: string;
     ownerAddress: string;
+    isRegistered?: boolean;
 }
 
 export interface Owner {
     ownerAddress?: string;
     ownerType: number;
     name: string;
-    surname: string;
-    birthDate: string;
-    homeAddress: string;
+    //surname: string;
+    //birthDate: string;
+    //homeAddress: string;
     phone: string;
     town: string;
     //zipCode: string;
     //country: string;
+    puppies?: any[];
     fiscalCode: string;
+    isRegistered?: boolean;
 }
 
 export interface Veterinarian {
     vetAddress?: string;
     name: string;
     surname: string;
-    birthDate: string;
+    //birthDate: string;
     //homeAddress?: string;
     phone: string;
     //town?: string;
@@ -39,6 +42,7 @@ export interface Veterinarian {
     fiscalCode: string;
     number: string;
     provincia: string;
+    isRegistered?: boolean;
 }
 
 export interface Vaccine {
@@ -46,4 +50,9 @@ export interface Vaccine {
     vaccineBatch: string,
     date: string,
     vaccineType: string
+}
+
+export interface Transfer {
+    puppyAddress: string,
+    newOwner: string
 }

@@ -68,7 +68,7 @@ const TestContainer = (props: any) => {
     let vet:Veterinarian = {
       name: data.name,
       surname: data.surname,
-      birthDate: data.birthDate,
+      //birthDate: data.birthDate,
       //homeAddress: data.homeAddress,
       phone: data.phone,
       //town: data.town,

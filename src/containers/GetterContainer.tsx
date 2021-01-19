@@ -3,10 +3,11 @@ import { injectIntl } from "react-intl";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import GetterComponent from "../components/custom/Getter/GetterComponent";
-import { addVaccine, getOwner, getPuppy, getVeterinarian } from "../store/action/test";
+import { addVaccine, getOwner, getPuppy, getVeterinarian, transferPuppyOwnership } from "../store/action/test";
 import { initBlockchain } from "../utils/ContractUtil";
 import { FormUtil } from "../utils/FormUtil";
 import VaccineJSON from '../assets/resources/VaccineForm.json'
+import TransferOwnershipJSON from '../assets/resources/TransferOwnershipForm.json'
 import _ from "lodash";
 
 const GetterContainer = (props: any) => {
@@ -22,11 +23,16 @@ const GetterContainer = (props: any) => {
     const [formData, setFormData] = useState<any>({});
     const [submitEnabled, setSubmitEnabled] = useState(false)
 
+    const [transferOwnershipFormData, setTransferOwnershipFormData] = useState<any>({});
+
 
     useEffect(() => {
 
         setFormData(FormUtil.initFormData(VaccineJSON));
         console.log("[Init] - formData: ", formData)
+
+        setTransferOwnershipFormData(FormUtil.initFormData(TransferOwnershipJSON));
+        console.log("[++++ Init +++++] - transferOwnershipFormData: ", transferOwnershipFormData)
     
         initBlockchain().then(res => {
     
@@ -47,11 +53,11 @@ const GetterContainer = (props: any) => {
     
       }, [account])
 
-      const onChange = (event: any) => {
+      const onChange = (form:any, event: any) => {
         console.log("[onChange] - event: ", event)
-        console.log("[onChange] - formData: ", formData)
-        setFormData(FormUtil.onChange(event, formData));
-        setSubmitEnabled(FormUtil.isSubmitEnabled(formData));
+        console.log("[onChange] - formData: ", form)
+        setFormData(FormUtil.onChange(event, form));
+        setSubmitEnabled(FormUtil.isSubmitEnabled(form));
       }
     
 
@@ -68,8 +74,12 @@ const GetterContainer = (props: any) => {
             getter={props.getter}
             VaccineJSON={VaccineJSON}
             data={formData}
-            onChange={onChange}
+            onChange={(e:any) =>onChange(formData, e)}
+            transferOwnershipFormData={transferOwnershipFormData}
+            onChangeOwnershipForm = {(e:any) =>onChange(transferOwnershipFormData, e)}
+            TransferOwnershipJSON = {TransferOwnershipJSON}
             onSubmitVaccine={() => props.addVaccine(config, _.mapValues(formData, (o) => { return o.value; }))}
+            transferPuppyOwnership={() => props.transferPuppyOwnership(config, _.mapValues(transferOwnershipFormData, (o) => { return o.value; }))}
         />
     )
 }
@@ -78,7 +88,8 @@ const mapDispatchToProps = (dispatch: any) => ({
     getVeterinarian: (config: any, data: string) => dispatch(getVeterinarian(config, data)),
     getOwner: (config: any, data: string) => dispatch(getOwner(config, data)),
     getPuppy: (config: any, data: string) => dispatch(getPuppy(config, data)),
-    addVaccine: (config: any, data: any) => dispatch(addVaccine(config, data))
+    addVaccine: (config: any, data: any) => dispatch(addVaccine(config, data)),
+    transferPuppyOwnership: (config: any, data: any) => dispatch(transferPuppyOwnership(config, data))
 });
 
 

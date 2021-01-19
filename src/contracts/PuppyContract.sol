@@ -36,9 +36,9 @@ contract PuppyContract {
         address ownerAddress;
         OwnerType ownerType;
         string name;
-        string surname;
-        string birthDate;
-        string homeAddress;
+        //string surname;
+        //string birthDate;
+        //string homeAddress;
         string phone;
         string town;
         //string zipCode;
@@ -53,7 +53,7 @@ contract PuppyContract {
         address vetAddress;
         string name;
         string surname;
-        string birthDate;
+        //string birthDate;
         //string homeAddress;
         string phone;
         //string town;
@@ -71,6 +71,22 @@ contract PuppyContract {
         address fromAddress;
         address toAddress;
         uint timestamp;
+    }
+
+    //Insurance Contract model
+    enum InsuranceType { HEALTH, DAMAGE }
+    struct InsuranceContract {
+        address insuranceCoAddress;
+        address puppyAddress;
+        InsuranceType insuranceType;
+        //uint insuranceAmount;
+        //uint maxCostCovered;
+    }
+
+    //Insurance Company model
+    struct InsuranceCo {
+        address companyAddress;
+        uint contractNum;
     }
     
     //veterinarians, owners and puppies on the network mapped with their address
@@ -110,7 +126,7 @@ contract PuppyContract {
     //register sender as Veterinarian
     function registerVeterinarian ( string memory _name, 
                                     string memory _surname, 
-                                    string memory _birthDate,
+                                    //string memory _birthDate,
                                     //string memory _homeAddress,
                                     string memory _phone,
                                     //string memory _town,
@@ -131,7 +147,7 @@ contract PuppyContract {
       v.vetAddress = msg.sender;
       v.name = _name;
       v.surname = _surname;
-      v.birthDate = _birthDate;
+      //v.birthDate = _birthDate;
       //v.homeAddress = _homeAddress;
       v.phone = _phone;
       //v.town = _town;
@@ -179,15 +195,16 @@ contract PuppyContract {
       p.ownerAddress = _ownerAddress;
       p.isRegistered = true;
       puppies[msg.sender] = p;
-        
+
+      owners[_ownerAddress].puppies.push(msg.sender);
     }
     
     //register sender as Owner
     function registerOwner (OwnerType _ownerType,
                             string memory _name, 
-                            string memory _surname, 
-                            string memory _birthDate,
-                            string memory _homeAddress,
+                            //string memory _surname, 
+                            //string memory _birthDate,
+                            //string memory _homeAddress,
                             string memory _phone,
                             string memory _town,
                             //string memory _zipCode,
@@ -205,9 +222,9 @@ contract PuppyContract {
       o.ownerAddress = msg.sender;
       o.ownerType = _ownerType;
       o.name = _name;
-      o.surname = _surname;
-      o.birthDate = _birthDate;
-      o.homeAddress = _homeAddress;
+      //o.surname = _surname;
+      //o.birthDate = _birthDate;
+      //o.homeAddress = _homeAddress;
       o.phone = _phone;
       o.town = _town;
       //o.zipCode = _zipCode;

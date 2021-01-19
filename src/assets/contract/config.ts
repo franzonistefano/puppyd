@@ -1,4 +1,4 @@
-export const contractAddress = '0xD509F9367239a9e6832e5e012044B0cD5CD8F4c3'; //'0x03f01cE27Cb2C6df0D02C0E76967d091B44a257d';
+export const contractAddress = '0x3AB6AE5530442Cf96827D3B0893620C2155Aa292'; //'0xD509F9367239a9e6832e5e012044B0cD5CD8F4c3'; //'0x03f01cE27Cb2C6df0D02C0E76967d091B44a257d';
 
 export const abiContract:any = [
 	{
@@ -39,21 +39,6 @@ export const abiContract:any = [
 			{
 				"internalType": "string",
 				"name": "_name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_surname",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_birthDate",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "_homeAddress",
 				"type": "string"
 			},
 			{
@@ -149,11 +134,6 @@ export const abiContract:any = [
 			},
 			{
 				"internalType": "string",
-				"name": "_birthDate",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
 				"name": "_phone",
 				"type": "string"
 			},
@@ -221,21 +201,6 @@ export const abiContract:any = [
 					{
 						"internalType": "string",
 						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "surname",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "birthDate",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
-						"name": "homeAddress",
 						"type": "string"
 					},
 					{
@@ -445,11 +410,6 @@ export const abiContract:any = [
 					},
 					{
 						"internalType": "string",
-						"name": "birthDate",
-						"type": "string"
-					},
-					{
-						"internalType": "string",
 						"name": "phone",
 						"type": "string"
 					},
@@ -505,21 +465,6 @@ export const abiContract:any = [
 			{
 				"internalType": "string",
 				"name": "name",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "surname",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "birthDate",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "homeAddress",
 				"type": "string"
 			},
 			{
@@ -623,6 +568,40 @@ export const abiContract:any = [
 	{
 		"inputs": [
 			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "transfers",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "puppyAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "fromAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "toAddress",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "timestamp",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
 				"internalType": "address",
 				"name": "",
 				"type": "address"
@@ -643,11 +622,6 @@ export const abiContract:any = [
 			{
 				"internalType": "string",
 				"name": "surname",
-				"type": "string"
-			},
-			{
-				"internalType": "string",
-				"name": "birthDate",
 				"type": "string"
 			},
 			{
@@ -679,4 +653,4 @@ export const abiContract:any = [
 		"stateMutability": "view",
 		"type": "function"
 	}
-];
+]

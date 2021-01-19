@@ -18,7 +18,15 @@ const GetterComponent = (props: any) => {
         visible: false
     })
 
+    const [transferModal, setTransferModal] = useState<any>({
+        title: '',
+        content: props.TransferOwnershipJSON,
+        visible: false
+    })
+
     const [formData, setFormData] = useState<any>({});
+    const [transferFormData, setTransferFormData] = useState<any>({});
+
     const [submitEnabled, setSubmitEnabled] = useState(false)
 
     const getPuppyData = () => {
@@ -31,8 +39,7 @@ const GetterComponent = (props: any) => {
 
     const getVeterinarianData = () => {
         props.getVeterinarian(address)
-
-            console.log("Veterinarian in Getter: ", props.veterinarian)
+        console.log("Veterinarian in Getter: ", props.veterinarian)
     }
 
     const handleChange = (e: any) => {
@@ -71,6 +78,33 @@ const GetterComponent = (props: any) => {
         })
     }
 
+    const onTransferClick = () => {
+        setTransferModal({
+            ...transferModal,
+            visible: true,
+            title: 'Transfer Puppy Ownership',
+            buttonAccept: {
+                label: "Submit",
+                icon: "pi pi-check",
+                autofocus: true
+            },
+            buttonReject: {
+                label: "Cancel",
+                icon: "pi pi-times",
+                autofocus: false
+            }
+        })
+        setTransferFormData(FormUtil.initFormData(transferModal.content));
+    }
+
+    const onTransferHide = () => {
+        setTransferModal({
+            ...transferModal,
+            visible: false,
+            title: '',
+        })
+    }
+
     const getVeterinarianProfile = () => {
         return (
             <Fragment>
@@ -96,10 +130,26 @@ const GetterComponent = (props: any) => {
 
     const getOwnerProfile = () => {
         return (
-            <ProfileComponent
-                type={OWNER}
-                data={props.owner}
-            />
+            <Fragment>
+                <ProfileComponent
+                    type={OWNER}
+                    data={props.owner}
+                />
+
+                <div className="row justify-content-center">
+                    <div className='col-lg-8 col-md-12 justify-content-center text-center'>
+
+                        <ModalFormComponent 
+                            {...transferModal}
+                            onHide={onTransferHide}
+                            handleChange={props.onChangeOwnershipForm}
+                            handleSubmit={props.transferPuppyOwnership}
+                            formData={props.transferOwnershipFormData} />
+                        <Button className='btn-third' label='Transfer Puppy Ownership' onClick={() => onTransferClick()} />
+
+                    </div>
+                </div>
+            </Fragment>
         )
     }
 

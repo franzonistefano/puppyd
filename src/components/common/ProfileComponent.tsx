@@ -10,6 +10,86 @@ const ProfileComponent = (props: any) => {
 
     console.log("Data Profile Received: ", props.data)
 
+    const getPuppyProfileInfo = () => {
+
+        return (
+            <Fragment>
+                <div className="row justify-content-center">
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Address: </h4> <p className="ml-4">{props.data.petAddress}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Puppy Type: </h4> <p className="ml-4">{props.data.puppyType}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Sex: </h4> <p className="ml-4">{props.data.sex}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Name: </h4> <p className="ml-4">{props.data.name}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Breed: </h4> <p className="ml-4">{props.data.breed}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Birthday: </h4> <p className="ml-4">{props.data.birthDate}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Distinguishing Marks: </h4> <p className="ml-4">{props.data.distinguishingMarks}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Microchip: </h4> <p className="ml-4">{props.data.microchipId}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Dad: </h4> <p className="ml-4">{props.data.dad}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Mom: </h4> <p className="ml-4">{props.data.mom}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Owner Address: </h4> <p className="ml-4">{props.data.ownerAddress}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Childred: </h4> <p className="ml-4">{props.data.children}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Vaccines: </h4> <p className="ml-4">{props.data.vaccines}</p>
+                    </div>
+                </div>
+            </Fragment>
+        )
+    }
+
+    
+    const getOwnerProfileInfo = () => {
+        return (
+            <Fragment>
+                <div className="row justify-content-center">
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Address: </h4> <p className="ml-4">{props.data.ownerAddress}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Owner Type: </h4> <p className="ml-4">{props.data.ownerType}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Name: </h4> <p className="ml-4">{props.data.name}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Phone: </h4> <p className="ml-4">{props.data.phone}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Town: </h4> <p className="ml-4">{props.data.town}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Fiscal Code: </h4> <p className="ml-4">{props.data.fiscalCode}</p>
+                    </div>
+                    <div className="col-12 profile-item">
+                        <h4 className="bold">Puppies: </h4> <p className="ml-4">{props.data.puppies}</p>
+                    </div>
+                </div>
+            </Fragment>
+        )
+    }
+
     const getVetProfileInfo = () => {
 
         return (
@@ -48,20 +128,24 @@ const ProfileComponent = (props: any) => {
     const getProfile = (profile: string) => {
 
         console.log("[++++ Profile Address ++++] ", props.data.vetAddress)
+        let getToCall: any = null;
 
         let address = '';
         let img = '';
         if (profile === VETERINARIAN) {
             img = VetProfile
             address = props.data.vetAddress
+            getToCall = getVetProfileInfo();
         }
         else if (profile === OWNER) {
             img = OwnerProfile
             address = props.data.ownerAddress
+            getToCall = getOwnerProfileInfo();
         }
         else {
             img = PuppyProfile
             address = props.data.puppyAddress
+            getToCall = getPuppyProfileInfo();
         }
 
 
@@ -97,7 +181,9 @@ const ProfileComponent = (props: any) => {
                                 )
                             })
                         } */}
-                        {(() => { return getVetProfileInfo() })()}
+                        {   
+                          (() => { return getToCall })()
+                        }
                     </div>
                 </div>
             </Fragment>

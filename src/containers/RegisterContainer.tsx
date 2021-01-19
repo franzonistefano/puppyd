@@ -87,8 +87,8 @@ const RegisterContainer = (props: any) => {
             VeterinarianJSON={VeterinarianJSON}
             PuppyJSON={PuppyJSON}
             onSubmitVeterinarian={() => props.registerVeterinarian(config, _.mapValues(formData, (o) => { return o.value; }))}
-            onSubmitPuppy={() => props.registerPuppy(config, _.mapValues(formData, (o) => { return o.value; }))}
-            onSubmitOwner={() => props.registerOwner(config, _.mapValues(formData, (o) => { return o.value; }))}
+            onSubmitPuppy={(puppyType: number, puppySex: number) => props.registerPuppy(config, puppyType, puppySex, _.mapValues(formData, (o) => { return o.value; }))}
+            onSubmitOwner={(ownerType: number) => props.registerOwner(config, ownerType,  _.mapValues(formData, (o) => { return o.value; }))}
         />
     )
 }
@@ -96,8 +96,8 @@ const RegisterContainer = (props: any) => {
 const mapDispatchToProps = (dispatch: any) => ({
     //getVeterinarian: (config: any, data: string) => dispatch(getVeterinarian(config, data))
     registerVeterinarian: (config: any, data: string) => dispatch(registerVeterinarian(config, data)),
-    registerPuppy: (config: any, data: string) => dispatch(registerPuppy(config, data)),
-    registerOwner: (config: any, data: string) => dispatch(registerOwner(config, data)),
+    registerPuppy: (config: any, puppyType: number, puppySex: number, data: string) => dispatch(registerPuppy(config, puppyType, puppySex, data)),
+    registerOwner: (config: any, ownerType: number, data: string) => dispatch(registerOwner(config, ownerType, data)),
 });
 
 

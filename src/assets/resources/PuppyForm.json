@@ -1,20 +1,6 @@
 [
     {
         "col": "col-sm-12",
-        "id": "ownerType",
-        "type": "text",
-        "required": false,
-        "placeholder": "puppy type"
-    },
-    {
-        "col": "col-sm-12",
-        "id": "sex",
-        "type": "text",
-        "required": false,
-        "placeholder": "sex"
-    },
-    {
-        "col": "col-sm-12",
         "id": "name",
         "type": "text",
         "required": false,

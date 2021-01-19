@@ -1,0 +1,16 @@
+[
+    {
+        "col": "col-sm-12",
+        "id": "puppyAddress",
+        "type": "text",
+        "required": true,
+        "placeholder": "puppy address"
+    },
+    {
+        "col": "col-sm-12",
+        "id": "newOwner",
+        "type": "text",
+        "required": true,
+        "placeholder": "new owner"
+    }
+]

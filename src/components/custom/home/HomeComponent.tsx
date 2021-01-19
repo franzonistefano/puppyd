@@ -14,7 +14,7 @@ import Feature1 from '../../../assets/img/feature/feature1.png'
 import Feature2 from '../../../assets/img/feature/feature2.png'
 import Feature3 from '../../../assets/img/feature/feature3.png'
 import MetamaskImg from '../../../assets/img/timeline/metamask.png'
-import { injectIntl } from 'react-intl';
+import { FormattedMessage, injectIntl } from 'react-intl';
 import { NavLink } from 'react-router-dom';
 
 
@@ -23,7 +23,7 @@ const HomeComponent = (props: any) => {
     const { intl } = props
 
     const events1 = [
-        { title: intl.formatMessage({ id: 'homepage.timeline.step1' }), text: intl.formatMessage({ id: 'homepage.timeline.step1.text' }), step: 1, icon: 'pi pi-shopping-cart', color: '#F8D6B9', image: MetamaskImg },
+        { title: intl.formatMessage({ id: 'homepage.timeline.step1' }), text: intl.formatMessage({ id: 'homepage.timeline.step1.text' }), linkText: intl.formatMessage({ id: 'homepage.timeline.step1.download' }), link: "https://metamask.io/", step: 1, icon: 'pi pi-shopping-cart', color: '#F8D6B9', image: MetamaskImg },
         { title: intl.formatMessage({ id: 'homepage.timeline.step2' }), text: intl.formatMessage({ id: 'homepage.timeline.step2.text' }), step: 2, icon: 'pi pi-cog', color: '#F8D6B9' },
         { title: intl.formatMessage({ id: 'homepage.timeline.step3' }), text: intl.formatMessage({ id: 'homepage.timeline.step3.text' }), step: 3, icon: 'pi pi-shopping-cart', color: '#F8D6B9' }
     ];
@@ -59,7 +59,8 @@ const HomeComponent = (props: any) => {
         return (
             <Card title={item.title} subTitle={item.subtitle}>
                 { item.image && <img src={item.image} onError={(e: any) => e.target.src = 'https://www.primefaces.org/wp-content/uploads/2020/05/placeholder.png'} alt={item.name} width={150} className="p-shadow-2" />}
-                <p>{item.text}</p>
+                <h6>{item.text}</h6>
+                {item.link && <a className="bold" href={item.link}>{item.linkText}</a>}
                 {/* <Button label="Read more" className="p-button-text"></Button> */}
             </Card>
         );
@@ -134,8 +135,8 @@ const HomeComponent = (props: any) => {
                                 }}
                             >
                                 <div className='row justify-content-start align-items-center p-2'>
-                                    <div className="main-title">Perchè ?</div>
-                                    <div className="sub-paragraph">Grazie alla tecnologia Blockchain è possibile garantire la totale trasparenza e tracciabilità dei dati sugli animali</div>
+                                    <div className="main-title"><FormattedMessage id="homepage.why.title"></FormattedMessage></div>
+                                    <div className="sub-paragraph"><FormattedMessage id="homepage.why.text"></FormattedMessage></div>
                                 </div>
                             </motion.div>
 
@@ -216,8 +217,8 @@ const HomeComponent = (props: any) => {
                             >
 
                                 <div className='row justify-content-start align-items-center p-2'>
-                                    <div className="main-title">Come ?</div>
-                                    <div className="sub-paragraph">Grazie allo sviluppo di Smart Contract</div>
+                                    <div className="main-title"><FormattedMessage id="homepage.how.title"></FormattedMessage></div>
+                                    <div className="sub-paragraph"><FormattedMessage id="homepage.how.text"></FormattedMessage></div>
                                 </div>
 
 

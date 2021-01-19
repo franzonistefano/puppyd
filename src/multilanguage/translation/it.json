@@ -4,11 +4,17 @@
     "app.notFound.text": "404 - ",
     "app.notFound.link": "Torna alla home",
 
+    "homepage.why.title": "Perchè ?",
+    "homepage.why.text": "Grazie alla tecnologia Blockchain è possibile garantire la totale trasparenza e tracciabilità dei dati sugli animali. Proprietari, Veterinari e Associazioni potranno gestire i propri animali avendo un registro globale, immutabile e accessibile in qualunque momento, contenente tutte le informazioni relative all'animale",
+    "homepage.how.title": "Come ?",
+    "homepage.how.text": "Grazie allo sviluppo di smart contract. Questi contratti intelligenti in seguito all'azione degli utenti andranno a registrare o modificare dati eseguendo transazioni su una rete blockchain. Gli smart contract sono depositati su rete Ethereum, una Network Blockchain pubblica",
+
     "homepage.timeline.step1": "Scarica Metamask",
     "homepage.timeline.step2": "Registrati",
     "homepage.timeline.step3": "Accedi ai dati",
 
-    "homepage.timeline.step1.text": "Olaaa",
+    "homepage.timeline.step1.text": "Scarica Metamask per chrome, iscriviti seguendo pochi semplici passaggi e crea il tuo wallet personale da usare su PuppyId.",
+    "homepage.timeline.step1.download": "Scarica Qui",
     "homepage.timeline.step2.text": "Olaaa",
     "homepage.timeline.step3.text": "Olaaa",
 

@@ -4,7 +4,13 @@
     "app.notFound.text": "404 - ",
     "app.notFound.link": "Go home",
 
+    "homepage.why.title": "Why ?",
+    "homepage.why.text": "Thanks to blockchain technology it's possible to grant a total transparency and traceability of the animals data. Owners, Veterinarian and Associations can handle the data in an easy way thanks to global and immutable register stored over the blockchain network, accessible from everywhere.",
+    "homepage.how.title": "How ?",
+    "homepage.how.text": "Thanks to smart contracts. When the user performs an action over the platform the smart contract is invoked and a specific transaction is performed over the Blockchain network",
+
     "homepage.timeline.step1": "Download Metamask",
+    "homepage.timeline.step1.download": "Download Here",
     "homepage.timeline.step2": "Register User",
     "homepage.timeline.step3": "Easy Access to your data",
     "homepage.timeline.step4": "Download Metamask",

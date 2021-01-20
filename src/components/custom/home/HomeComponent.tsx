@@ -24,8 +24,14 @@ const HomeComponent = (props: any) => {
 
     const events1 = [
         { title: intl.formatMessage({ id: 'homepage.timeline.step1' }), text: intl.formatMessage({ id: 'homepage.timeline.step1.text' }), linkText: intl.formatMessage({ id: 'homepage.timeline.step1.download' }), link: "https://metamask.io/", step: 1, icon: 'pi pi-shopping-cart', color: '#F8D6B9', image: MetamaskImg },
-        { title: intl.formatMessage({ id: 'homepage.timeline.step2' }), text: intl.formatMessage({ id: 'homepage.timeline.step2.text' }), step: 2, icon: 'pi pi-cog', color: '#F8D6B9' },
-        { title: intl.formatMessage({ id: 'homepage.timeline.step3' }), text: intl.formatMessage({ id: 'homepage.timeline.step3.text' }), step: 3, icon: 'pi pi-shopping-cart', color: '#F8D6B9' }
+        { title: intl.formatMessage({ id: 'homepage.timeline.step2' }), text: intl.formatMessage({ id: 'homepage.timeline.step2.text' }), linkText: intl.formatMessage({ id: 'homepage.timeline.step2.download' }), link: "/register", step: 2, icon: 'pi pi-cog', color: '#F8D6B9' },
+        { title: intl.formatMessage({ id: 'homepage.timeline.step3' }), text: intl.formatMessage({ id: 'homepage.timeline.step3.text' }), linkText: intl.formatMessage({ id: 'homepage.timeline.step3.download' }), link: "/getter", step: 3, icon: 'pi pi-shopping-cart', color: '#F8D6B9' }
+    ];
+
+    const roadmapFields = [
+        { title: intl.formatMessage({ id: 'homepage.roadmap.step1.title' }), text: intl.formatMessage({ id: 'homepage.roadmap.step1.text' }), step: 1, icon: 'pi pi-shopping-cart', color: '#147735'},
+        { title: intl.formatMessage({ id: 'homepage.roadmap.step2.title' }), text: intl.formatMessage({ id: 'homepage.roadmap.step2.text' }), step: 2, icon: 'pi pi-cog', color: '#F8D6B9' },
+        { title: intl.formatMessage({ id: 'homepage.roadmap.step3.title' }), text: intl.formatMessage({ id: 'homepage.roadmap.step3.text' }), step: 3, icon: 'pi pi-shopping-cart', color: '#F8D6B9' }
     ];
 
     const controls = useAnimation();
@@ -108,8 +114,8 @@ const HomeComponent = (props: any) => {
 
                             </div>
                             <div className="col-sm-12 col-lg-6  text-center m-4">
-                                    <NavLink className="p-button third m-2" to="/register">Register</NavLink>
-                                    <NavLink className="p-button third m-2" to="/getter">Get Informations</NavLink>
+                                <NavLink className="p-button third m-2" to="/register">Register</NavLink>
+                                <NavLink className="p-button third m-2" to="/getter">Get Informations</NavLink>
                             </div>
 
                         </div>
@@ -186,7 +192,7 @@ const HomeComponent = (props: any) => {
 
                 {/* How */}
                 <div id="#why">
-                    <div className='row justify-content-around align-items-center mt-4 mb-4 pt-4 pb-4'>
+                    <div className='row justify-content-around align-items-center pt-4 pb-4'>
 
                         <div className='col-lg-6 col-md-12 justify-content-center text-center align-items-center full-height'>
 
@@ -235,20 +241,30 @@ const HomeComponent = (props: any) => {
 
                     <div className="row justify-content-around bordered-card pt-4 pb-4">
 
-                        <motion.div
-                            initial="hidden"
-                            variants={{
-                                visible: { opacity: 1, x: 0 },
-                                hidden: { opacity: 0, x: -300 }
-                            }}
-                        >
-                            <div className='row justify-content-start align-items-center'>
-                                <div className="main-title">Come Funziona?</div>
-                            </div>
-                        </motion.div>
+
+                        <div className='row justify-content-start align-items-center'>
+                            <div className="main-title mb-4">Come Funziona?</div>
+                        </div>
 
                         <div className="col-12 bordered-card timeline-demo">
                             <Timeline value={events1} align="alternate" className="customized-timeline" marker={customizedMarker} content={customizedContent} />
+                        </div>
+
+                    </div>
+                </div>
+
+                {/* Roadmap */}
+                <div id="#roadmap">
+
+                    <div className="row justify-content-around bordered-card pt-4 pb-4">
+
+
+                        <div className='row justify-content-start align-items-center'>
+                            <div className="main-title mb-4">RoadMap</div>
+                        </div>
+
+                        <div className="col-12 bordered-card timeline-demo">
+                            <Timeline value={roadmapFields} align="alternate" className="customized-timeline" marker={customizedMarker} content={customizedContent} />
                         </div>
 
                     </div>

@@ -15,8 +15,18 @@
 
     "homepage.timeline.step1.text": "Scarica Metamask per chrome, iscriviti seguendo pochi semplici passaggi e crea il tuo wallet personale da usare su PuppyId.",
     "homepage.timeline.step1.download": "Scarica Qui",
-    "homepage.timeline.step2.text": "Olaaa",
-    "homepage.timeline.step3.text": "Olaaa",
+    "homepage.timeline.step2.text": "Registrati su PuppyId come Proprietario, Animale o Veterinario. Ogni utente ha determinati permessi e informazioni associate.",
+    "homepage.timeline.step2.download": "Registrati Qui",
+    "homepage.timeline.step3.text": "Una volta connesso Metamask e registrato su PuppyId si può accedere ai propri dati aggiornati.",
+    "homepage.timeline.step3.download": "Accedi Qui",
+
+    "homepage.roadmap.step1.title" : "Versione Beta",
+    "homepage.roadmap.step1.text" : "Lancio della prima versione su testnet Ethereum Ropsten. Questa fase servirà a migliorare il flusso di registrazione e gestione dei dati con l'idea di implementare le fix nella versione Alpha",
+    "homepage.roadmap.step3.title" : "Nuovi attori coinvolti",
+    "homepage.roadmap.step3.text" : "Aggiunta di nuove funzionalità e nuovi attori coinvolti. Il prossimo step sarà integrare società assicurative sulla piattaforma, in modo da permettere agli utenti sottoscrivere contratti assicurativi in mariera estremamente semplice, gestendo in pochi click dati, libretto sanitario e assicurazioni legate ai propri cuccioli.",
+    "homepage.roadmap.step2.title" : "Collaborazioni",
+    "homepage.roadmap.step2.text" : "Ricerca di collaborazioni con università per implementare nuove funzionalità. Le collaborazioni avverranno anche con Associazioni e società ai fini di limare il caso d'uso e gli sviluppi da implementare.",
+    
 
     "homepage.feature.data.title": "Gestione dei dati",
     "homepage.feature.data.text": "Trasparente e organizzata. Accesso istantaneo allo storico delle visite e libretto sanitario dell'animale. Utile per il veterinario, i padroni e le associazioni.",

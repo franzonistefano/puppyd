@@ -2,7 +2,7 @@ import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import TreeNode from 'primereact/components/treenode/TreeNode';
 import { Tree } from 'primereact/tree';
-import React, { Fragment, useState } from 'react';
+import React, { Fragment, useEffect, useState } from 'react';
 import ProfileComponent from '../../common/ProfileComponent';
 import { ANIMAL, OWNER, VETERINARIAN } from '../../../assets/resources/UserType';
 import FormComponent from '../../common/FormComponent';

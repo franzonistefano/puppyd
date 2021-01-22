@@ -8,6 +8,13 @@
     },
     {
         "col": "col-sm-12",
+        "id": "surname",
+        "type": "text",
+        "required": false,
+        "placeholder": "surname"
+    },
+    {
+        "col": "col-sm-12",
         "id": "phone",
         "type": "text",
         "required": false,

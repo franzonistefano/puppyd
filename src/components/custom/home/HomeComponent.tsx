@@ -29,8 +29,8 @@ const HomeComponent = (props: any) => {
     ];
 
     const roadmapFields = [
-        { title: intl.formatMessage({ id: 'homepage.roadmap.step1.title' }), text: intl.formatMessage({ id: 'homepage.roadmap.step1.text' }), step: 1, icon: 'pi pi-shopping-cart', color: '#147735'},
-        { title: intl.formatMessage({ id: 'homepage.roadmap.step2.title' }), text: intl.formatMessage({ id: 'homepage.roadmap.step2.text' }), step: 2, icon: 'pi pi-cog', color: '#F8D6B9' },
+        { title: intl.formatMessage({ id: 'homepage.roadmap.step1.title' }), text: intl.formatMessage({ id: 'homepage.roadmap.step1.text' }), step: 1, icon: 'pi pi-shopping-cart', color: '#00C59D'},
+        { title: intl.formatMessage({ id: 'homepage.roadmap.step2.title' }), text: intl.formatMessage({ id: 'homepage.roadmap.step2.text' }), step: 2, icon: 'pi pi-cog', color: '#00C59D' },
         { title: intl.formatMessage({ id: 'homepage.roadmap.step3.title' }), text: intl.formatMessage({ id: 'homepage.roadmap.step3.text' }), step: 3, icon: 'pi pi-shopping-cart', color: '#F8D6B9' }
     ];
 

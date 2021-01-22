@@ -2,7 +2,8 @@
 import { Button } from 'primereact/button';
 import { Checkbox } from 'primereact/checkbox';
 import { TabView, TabPanel } from 'primereact/tabview';
-import React, { useState } from 'react';
+import { Toast } from 'primereact/toast';
+import React, { useEffect, useRef, useState } from 'react';
 import FormComponent from '../../common/FormComponent';
 import '../Login/LoginComponent.scss';
 
@@ -19,6 +20,11 @@ export const RABBIT: number = 2;
 
 
 const RegisterComponent = (props: any) => {
+
+    useEffect(() => {
+    }, [props.toast.loading])
+
+    const toast:any = useRef(null);
 
     const [activeIndex, setActiveIndex] = useState(0);
     //Owner Registration
@@ -41,8 +47,19 @@ const RegisterComponent = (props: any) => {
         props.onSubmitPuppy(puppyType, puppySex)
     }
 
+    const showToast = () => {
+        toast.current.show({severity:'success', summary: 'Success Message', detail:'Message Content', life: 3000});
+    }
+
     return (
         <div id='Login' className="background-primary">
+
+            {
+                props.toast.loading &&
+                (() => showToast())
+            }
+
+            <Toast ref={toast} />
 
 
             <TabView activeIndex={activeIndex} onTabChange={(e: any) => changeActiveIndex(e.index)}>

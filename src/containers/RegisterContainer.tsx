@@ -89,6 +89,7 @@ const RegisterContainer = (props: any) => {
             onSubmitVeterinarian={() => props.registerVeterinarian(config, _.mapValues(formData, (o) => { return o.value; }))}
             onSubmitPuppy={(puppyType: number, puppySex: number) => props.registerPuppy(config, puppyType, puppySex, _.mapValues(formData, (o) => { return o.value; }))}
             onSubmitOwner={(ownerType: number) => props.registerOwner(config, ownerType,  _.mapValues(formData, (o) => { return o.value; }))}
+            toast={props.toast}
         />
     )
 }
@@ -104,6 +105,7 @@ const mapDispatchToProps = (dispatch: any) => ({
 const mapStateToProps = (state: any) => ({
     loading: state.testReducer.loading,
     veterinarian: state.testReducer.veterinarian,
+    toast: state.toastReducer
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(injectIntl(RegisterContainer)));

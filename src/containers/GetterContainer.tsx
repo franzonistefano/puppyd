@@ -9,11 +9,12 @@ import { FormUtil } from "../utils/FormUtil";
 import VaccineJSON from '../assets/resources/VaccineForm.json'
 import TransferOwnershipJSON from '../assets/resources/TransferOwnershipForm.json'
 import _ from "lodash";
+import Web3 from "web3";
 
 const GetterContainer = (props: any) => {
 
 
-    let web3;
+    let web3: Web3;
 
     const [config, setConfig] = useState({})
 
@@ -50,7 +51,9 @@ const GetterContainer = (props: any) => {
           console.log("[++++++++++ Homepage - Account +++++++++] - ", account)
     
         })
-    
+
+        //web3.currentProvider?.publicConfigStore.on('update', () => {window.location.reload();});
+
       }, [account])
 
       const onChange = (form:any, event: any) => {

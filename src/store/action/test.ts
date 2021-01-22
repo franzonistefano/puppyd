@@ -4,6 +4,7 @@ import {
 import TestState from '../../interface/common/TestState'
 import { TestApi } from '../api/TestApi'
 import { Owner, Puppy, Transfer, Vaccine, Veterinarian } from '../../interface/common/ContractState'
+import { hideToast, showToast } from './toast'
 
 export function getTest(test: TestState[]) {
     return { type: GET_TEST, test }
@@ -145,10 +146,22 @@ export const registerVeterinarian = (config: any, data: any) => {
             .then((res: any) => {
                 console.log('----- Response Register Veterinarian ----- ', res);
                 dispatch(registerVeterinarianData(res))
+                
+                let data: any
+                data.message = "Registration Successful"
+                data.type = "success"
+                dispatch(showToast(data))
             })
             .catch((err: any) => {
-
+                let data: any = {
+                    message: "Registration Failed: ERROR " + err,
+                    type: "error"
+                }
+                dispatch(showToast(data))
                 console.log('----- Register Owner Error ----- ', err);
+            })
+            .finally(() => {
+                dispatch(hideToast())
             })
 
     }
@@ -202,7 +215,33 @@ export function registerOwnerData(data: any) {
 
 export const registerOwner = (config: any, ownerType: number, data: any) => {
 
-    return (dispatch: any) => {
+    return async (dispatch: any) => {
+
+        let gasLimit = 7000000;
+        let block = await config.web3.eth.getBlock("latest").then((block:any) => {
+            console.log("-- Register Owner BLOCK --", block);
+            console.log("Transactions Lenght: ", block.transactions.length)
+            //gasLimit =  Math.floor(block.gasLimit/block.transactions.length);
+            gasLimit = block.gasLimit;
+        })
+        
+        // let gasLimit = config.contract.eth.getBlock("latest")
+        console.log("-- Register Owner GAS LIMIT --", gasLimit);
+
+        // let gasEstimation = await config.contract?.methods.registerOwner(
+        //     ownerType,
+        //     data.name,
+        //     data.phone,
+        //     data.town,
+        //     data.fiscalCode
+        // ).estimateGas().then((gasAmount: any) => {
+        //     console.log("Gas estimation: ", gasAmount)
+        // })
+        // .catch((err:any) => {
+        //     console.log("Error gas estimation: ", err)
+        // });
+        
+        // console.log("-- Register Owner GAS ESTIMATION --", gasEstimation);
 
         dispatch(GeneralRequest())
         console.log('----- Config ------', config)
@@ -211,7 +250,7 @@ export const registerOwner = (config: any, ownerType: number, data: any) => {
             //Number(data.ownerType),
             ownerType,
             data.name,
-            //data.surname,
+            data.surname,
             //data.birthDate,
             //data.homeAddress,
             data.phone,
@@ -219,7 +258,7 @@ export const registerOwner = (config: any, ownerType: number, data: any) => {
             //data.zipCode,
             //data.country,
             data.fiscalCode
-        ).send({ from: config.accounts[0] })
+        ).send({ from: config.accounts[0]})//, gas: gasLimit  })
             .then((res: any) => {
                 console.log('----- Response Register Owner ----- ', res);
                 dispatch(registerOwnerData(res))

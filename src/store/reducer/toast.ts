@@ -14,7 +14,7 @@ export default (state = defaultState, action: any) => {
                 ...state,
                 loading: true,
                 message: action.message,
-                severity: action.type
+                severity: action.severity
             }
         case HIDE_TOAST:
             return {

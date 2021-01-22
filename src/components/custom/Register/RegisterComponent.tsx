@@ -21,10 +21,10 @@ export const RABBIT: number = 2;
 
 const RegisterComponent = (props: any) => {
 
+    const toast = useRef<Toast>(null)
+
     useEffect(() => {
     }, [props.toast.loading])
-
-    const toast:any = useRef(null);
 
     const [activeIndex, setActiveIndex] = useState(0);
     //Owner Registration
@@ -48,15 +48,15 @@ const RegisterComponent = (props: any) => {
     }
 
     const showToast = () => {
-        toast.current.show({severity:'success', summary: 'Success Message', detail:'Message Content', life: 3000});
+        toast.current?.show({severity: props.toast.severity, summary: 'Message', detail: props.toast.message, life: 3000});
     }
 
     return (
         <div id='Login' className="background-primary">
 
             {
-                props.toast.loading &&
-                (() => showToast())
+                props.toast.loading === true &&
+                (() => showToast())()
             }
 
             <Toast ref={toast} />

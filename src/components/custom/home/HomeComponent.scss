@@ -1,5 +1,13 @@
 @import "../../../assets/theme/variables.scss"; 
 
+.faq {
+
+    h6 {
+        color: $thirdColor;
+    }
+
+}
+
 .timeline-demo .custom-marker {
     display: flex;
     width: 2rem;
@@ -88,5 +96,6 @@
         position: absolute;
         right: 0.5rem;
     }
+
 }
                 

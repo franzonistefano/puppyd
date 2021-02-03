@@ -14,6 +14,8 @@ import Feature1 from '../../../assets/img/feature/feature1.png'
 import Feature2 from '../../../assets/img/feature/feature2.png'
 import Feature3 from '../../../assets/img/feature/feature3.png'
 import MetamaskImg from '../../../assets/img/timeline/metamask.png'
+import { Messages } from 'primereact/messages';
+import { Message } from 'primereact/message';
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { NavLink } from 'react-router-dom';
 import { Accordion, AccordionTab } from 'primereact/accordion';
@@ -22,6 +24,7 @@ import { Accordion, AccordionTab } from 'primereact/accordion';
 const HomeComponent = (props: any) => {
 
     const { intl } = props
+
 
     const events1 = [
         { title: intl.formatMessage({ id: 'homepage.timeline.step1' }), text: intl.formatMessage({ id: 'homepage.timeline.step1.text' }), linkText: intl.formatMessage({ id: 'homepage.timeline.step1.download' }), link: "https://metamask.io/", step: 1, icon: 'pi pi-shopping-cart', color: '#F8D6B9', image: MetamaskImg },
@@ -259,7 +262,7 @@ const HomeComponent = (props: any) => {
                 </div>
 
                 {/* FAQ */}
-                <div id="#faq">
+                <div id="#faq" className="faq">
                     <div className="row justify-content-around pt-4 pb-4">
 
                         <div className='col-12 text-center'>
@@ -269,14 +272,16 @@ const HomeComponent = (props: any) => {
                         <div className="col-12 custom-accordion">
 
                             <Accordion multiple>
-                                <AccordionTab header={headerTemplate("Title I")}>
-                                    Content I
+                                <AccordionTab header={headerTemplate(intl.formatMessage({ id: "app.homepage.faq.question1.title" }))}>
+                                    <h6><FormattedMessage id="app.homepage.faq.question1.content" /></h6>
                                 </AccordionTab>
-                                <AccordionTab header={headerTemplate("Title II")}>
-                                    Content II
+                                <AccordionTab header={headerTemplate(intl.formatMessage({ id: "app.homepage.faq.question2.title" }))}>
+                                    <h6><FormattedMessage id="app.homepage.faq.question2.content" /></h6>
+                                    <Message className="mt-2 mb-2" severity="info" text={intl.formatMessage({ id: "app.homepage.faq.question2.message" })} />
                                 </AccordionTab>
-                                <AccordionTab header={headerTemplate("Title III")}>
-                                    Content III
+                                <AccordionTab header={headerTemplate(intl.formatMessage({ id: "app.homepage.faq.question3.title" }))}>
+                                    <h6><FormattedMessage id="app.homepage.faq.question3.content" /></h6>
+                                    <Message className="mt-2 mb-2" severity="info" text={intl.formatMessage({ id: "app.homepage.faq.question3.message" })} />
                                 </AccordionTab>
                             </Accordion>
 

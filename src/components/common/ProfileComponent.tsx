@@ -1,9 +1,11 @@
 import _ from "lodash";
-import { Fragment, useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 import { ANIMAL, OWNER, VETERINARIAN } from "../../assets/resources/UserType";
 import VetProfile from '../../assets/img/vet.png'
 import OwnerProfile from '../../assets/img/owner.png'
 import PuppyProfile from '../../assets/img/animal.png'
+import { injectIntl } from "react-intl";
+import UserProfileComponent from "./Profiles/UserProfileComponent";
 
 const ProfileComponent = (props: any) => {
 
@@ -141,6 +143,7 @@ const ProfileComponent = (props: any) => {
             img = OwnerProfile
             address = props.data.ownerAddress
             getToCall = getOwnerProfileInfo();
+            return <UserProfileComponent data={props.data} address={props.data.ownerAddress} />
         }
         else {
             img = PuppyProfile
@@ -208,4 +211,4 @@ const ProfileComponent = (props: any) => {
     )
 }
 
-export default ProfileComponent;
+export default injectIntl(ProfileComponent);

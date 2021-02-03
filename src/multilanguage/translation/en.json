@@ -26,8 +26,18 @@
     "homepage.feature.track.text": "In caso di smarrimento o di trasferimento dell'animale sarà più semplice risalire ai dati ad esso collegati. Ogni animale avrà un QRCode personale contenente tutti i dati salvati su Blockchain.",
 
     "homepage.feature.genealogy.title": "Genealogy",
-    "homepage.feature.genealogy.text": "Garantendo trasparenza e tracciabilità dell'animale si facilita la costruzione della genealogia dello stesso. Oltre a migliorare significativamente la prevenzione nei confronti di eventuali patologie ereditarie."
+    "homepage.feature.genealogy.text": "Garantendo trasparenza e tracciabilità dell'animale si facilita la costruzione della genealogia dello stesso. Oltre a migliorare significativamente la prevenzione nei confronti di eventuali patologie ereditarie.",
 
+    "app.homepage.faq.question1.title": "Who can access to the platform ?",
+    "app.homepage.faq.question1.content": "Owners, Associations, Veterinarians and Insurance companies. Each type of user have specific permissions over the platform, allowing users to perform a set of actions inside it.",
+
+    "app.homepage.faq.question2.title": "How the is certified the Vets and Insurance companies registration?",
+    "app.homepage.faq.question2.content": "Once the Vets and Insurance companies send the registration request, an admin cares about approve or reject the registration request. Once the registration is approved, the user address is added inside the vets or insurace list.",
+    "app.homepage.faq.question2.message": "During the Beta the registration is automatically approved",
+
+    "app.homepage.faq.question3.title": "How is certified the ownership of the animal inside the platform?",
+    "app.homepage.faq.question3.content": "The Veterinarian confirms the ownership request of the animal that can access to overall information about owner and animal.",
+    "app.homepage.faq.question3.message": "During the Beta the ownership is automatically approved"
 
 
 }

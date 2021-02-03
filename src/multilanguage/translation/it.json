@@ -35,8 +35,18 @@
     "homepage.feature.track.text": "In caso di smarrimento o di trasferimento dell'animale sarà più semplice risalire ai dati ad esso collegati. Ogni animale avrà un QRCode personale contenente tutti i dati salvati su Blockchain.",
 
     "homepage.feature.genealogy.title": "Genealogia",
-    "homepage.feature.genealogy.text": "Garantendo trasparenza e tracciabilità dell'animale si facilita la costruzione della genealogia dello stesso. Oltre a migliorare significativamente la prevenzione nei confronti di eventuali patologie ereditarie."
+    "homepage.feature.genealogy.text": "Garantendo trasparenza e tracciabilità dell'animale si facilita la costruzione della genealogia dello stesso. Oltre a migliorare significativamente la prevenzione nei confronti di eventuali patologie ereditarie.",
 
+    "app.homepage.faq.question1.title": "Chi può accedere alla piattaforma ?",
+    "app.homepage.faq.question1.content": "Proprietari, Associazioni, Veterinari e società Assicurative. Opereranno all'interno della piattaforma con permessi dedicati ed in base al ruolo potranno effettuare una serie di operazioni",
+
+    "app.homepage.faq.question2.title": "Come viene certificata la registrazione dei Veterinari e società Assicurative?",
+    "app.homepage.faq.question2.content": "Una volta inviata la richiesta di registrazione da parte di Veterinari o Assicurazioni, rimarrà in pending fin quando un admin approverà la registrazione alla piattaforma validando l'indirizzo nella lista dei Veterinari o delle Assicurazioni.",
+    "app.homepage.faq.question2.message": "Nella fase beta l'approvazione della registrazione sarà automatica, senza passare dall'approvazione degli admin",
+    
+    "app.homepage.faq.question3.title": "Come viene certificata la proprietà dell'animale sulla piattaforma?",
+    "app.homepage.faq.question3.content": "L'attribuzione della proprietà dell'animale al proprietario verrà confermata dal veterinario, avente una visione globale dello stato e della proprietà del microchip installato sull'animale.",
+    "app.homepage.faq.question3.message": "Nella fase beta l'approvazione della proprietà sarà automatica, senza passare dall'approvazione dai veterinari"
 
 
 

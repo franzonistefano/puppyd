@@ -9,6 +9,9 @@ import FormComponent from '../../common/FormComponent';
 import ModalFormComponent from '../../common/Modal/ModalFormComponent';
 import { FormUtil } from '../../../utils/FormUtil';
 import { Toast } from 'primereact/toast';
+import UserProfileComponent from '../../common/Profiles/UserProfileComponent';
+import VetProfileComponent from '../../common/Profiles/VetProfileComponent';
+import AnimalProfileComponent from '../../common/Profiles/AnimalProfileComponent';
 
 const GetterComponent = (props: any) => {
 
@@ -117,11 +120,9 @@ const GetterComponent = (props: any) => {
 
     const getVeterinarianProfile = () => {
         return (
-            <Fragment>
-                <ProfileComponent
-                    type={VETERINARIAN}
-                    data={props.veterinarian}
-                />
+            <Fragment>               
+                <VetProfileComponent data={props.veterinarian} address={props.veterinarian.vetAddress} />
+                
                 <div className="row justify-content-center">
                     <div className='col-lg-8 col-md-12 justify-content-center text-center'>
 
@@ -141,10 +142,7 @@ const GetterComponent = (props: any) => {
     const getOwnerProfile = () => {
         return (
             <Fragment>
-                <ProfileComponent
-                    type={OWNER}
-                    data={props.owner}
-                />
+                <UserProfileComponent data={props.owner} address={props.owner.ownerAddress} />
 
                 <div className="row justify-content-center">
                     <div className='col-lg-8 col-md-12 justify-content-center text-center'>
@@ -165,10 +163,7 @@ const GetterComponent = (props: any) => {
 
     const getPuppyProfile = () => {
         return (
-            <ProfileComponent
-                type={ANIMAL}
-                data={props.puppy}
-            />
+            <AnimalProfileComponent data={props.puppy} address={props.puppy.puppyAddress} />
         )
     }
 

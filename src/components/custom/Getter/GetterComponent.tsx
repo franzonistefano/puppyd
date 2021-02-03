@@ -2,14 +2,17 @@ import { InputText } from 'primereact/inputtext';
 import { Button } from 'primereact/button';
 import TreeNode from 'primereact/components/treenode/TreeNode';
 import { Tree } from 'primereact/tree';
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { Fragment, useEffect, useRef, useState } from 'react';
 import ProfileComponent from '../../common/ProfileComponent';
 import { ANIMAL, OWNER, VETERINARIAN } from '../../../assets/resources/UserType';
 import FormComponent from '../../common/FormComponent';
 import ModalFormComponent from '../../common/Modal/ModalFormComponent';
 import { FormUtil } from '../../../utils/FormUtil';
+import { Toast } from 'primereact/toast';
 
 const GetterComponent = (props: any) => {
+
+    const toast = useRef<Toast>(null)
 
     const [address, setAddress] = useState("")
     const [modal, setModal] = useState<any>({
@@ -28,6 +31,9 @@ const GetterComponent = (props: any) => {
     const [transferFormData, setTransferFormData] = useState<any>({});
 
     const [submitEnabled, setSubmitEnabled] = useState(false)
+
+    useEffect(() => {
+    }, [props.toast.loading])
 
     const getPuppyData = () => {
         props.getPuppy(address)
@@ -105,6 +111,10 @@ const GetterComponent = (props: any) => {
         })
     }
 
+    const showToast = () => {
+        toast.current?.show({ severity: props.toast.severity, summary: props.toast.summary, detail: props.toast.message, life: 3000 });
+    }
+
     const getVeterinarianProfile = () => {
         return (
             <Fragment>
@@ -139,7 +149,7 @@ const GetterComponent = (props: any) => {
                 <div className="row justify-content-center">
                     <div className='col-lg-8 col-md-12 justify-content-center text-center'>
 
-                        <ModalFormComponent 
+                        <ModalFormComponent
                             {...transferModal}
                             onHide={onTransferHide}
                             handleChange={props.onChangeOwnershipForm}
@@ -186,6 +196,12 @@ const GetterComponent = (props: any) => {
             <div className="container custom-container">
                 <div className='row full-height justify-content-center align-items-center'>
 
+                    {
+                        props.toast.loading === true &&
+                        (() => showToast())()
+                    }
+
+                    <Toast ref={toast} />
 
                     <div className='col-lg-10 col-md-12 justify-content-center text-center'>
                         <div className="card p-5">

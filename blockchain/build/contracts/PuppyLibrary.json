@@ -1,0 +1,2843 @@
+{
+  "contractName": "PuppyLibrary",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.8.0+commit.c7dfd78e\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"/C/Users/franz/OneDrive/Desktop/Dev/puppyId/puppyd/blockchain/contracts/PuppyLibrary.sol\":\"PuppyLibrary\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/franz/OneDrive/Desktop/Dev/puppyId/puppyd/blockchain/contracts/PuppyLibrary.sol\":{\"keccak256\":\"0x69b2aaf2c9ff87a8fe69314076ea9be57cd7a58d0b8ed50c57b661d3fca4237e\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://199a512d095a57dd4833f0266dd877139263efbb6525dd2ea009dceb3e91365f\",\"dweb:/ipfs/QmVX1K1sjMrbQVnrPvvptNimfBVTTdeeU8EmXHsyxPq9Nv\"]}},\"version\":1}",
+  "bytecode": "0x60566050600b82828239805160001a6073146043577f4e487b7100000000000000000000000000000000000000000000000000000000600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212200920750a0c266d10e917d4693d799e63145958c9b39adf05ce1d968a04048c6564736f6c63430008000033",
+  "deployedBytecode": "0x73000000000000000000000000000000000000000030146080604052600080fdfea26469706673582212200920750a0c266d10e917d4693d799e63145958c9b39adf05ce1d968a04048c6564736f6c63430008000033",
+  "immutableReferences": {},
+  "generatedSources": [],
+  "deployedGeneratedSources": [],
+  "sourceMap": "68:2096:1:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "68:2096:1:-:0;;;;;;;;",
+  "source": "// SPDX-License-Identifier: MIT\r\npragma solidity >=0.4.0 <0.9.0;\r\n\r\nlibrary PuppyLibrary {\r\n\r\n     //model Animal\r\n    enum Sex { M, F }\r\n    enum PuppyType { Dog, Cat, Rabbit }\r\n    struct Puppy {\r\n        address petAddress;\r\n        PuppyType puppyType;\r\n        Sex sex;\r\n        string name;\r\n        string breed;\r\n        string birthDate;\r\n        string  distinguishingMarks;\r\n        string microchipId;\r\n        address[] children;\r\n        Vaccine[] vaccines;\r\n        address dad;\r\n        address mom;\r\n        address ownerAddress;\r\n        bool isRegistered;\r\n    }\r\n    \r\n    //model Vaccine\r\n    struct Vaccine {\r\n        string vaccineBatch;\r\n        string date;\r\n        string vaccineType;\r\n    }\r\n    \r\n    //model Owner\r\n    enum OwnerType {Private, Association}\r\n    struct Owner {\r\n        address ownerAddress;\r\n        OwnerType ownerType;\r\n        string name;\r\n        string surname;\r\n        //string birthDate;\r\n        //string homeAddress;\r\n        string phone;\r\n        string town;\r\n        //string zipCode;\r\n        //string country;\r\n        string fiscalCode;\r\n        address[] puppies;\r\n        bool isRegistered;\r\n    }\r\n    \r\n    //model Veterinarian\r\n    struct Veterinarian {\r\n        address vetAddress;\r\n        string name;\r\n        string surname;\r\n        //string birthDate;\r\n        //string homeAddress;\r\n        string phone;\r\n        //string town;\r\n        //string zipCode;\r\n        //string country;\r\n        string fiscalCode;\r\n        string number;\r\n        string provincia;\r\n        bool isRegistered;\r\n    }\r\n    \r\n    //Transfer model\r\n    struct Transfer {\r\n        address puppyAddress;\r\n        address fromAddress;\r\n        address toAddress;\r\n        uint timestamp;\r\n    }\r\n\r\n    //Insurance Contract model\r\n    enum InsuranceType { HEALTH, DAMAGE }\r\n    struct InsuranceContract {\r\n        address insuranceCoAddress;\r\n        address puppyAddress;\r\n        InsuranceType insuranceType;\r\n        //uint insuranceAmount;\r\n        //uint maxCostCovered;\r\n    }\r\n\r\n    //Insurance Company model\r\n    struct InsuranceCo {\r\n        address companyAddress;\r\n        uint contractNum;\r\n    }\r\n\r\n}",
+  "sourcePath": "C:\\Users\\franz\\OneDrive\\Desktop\\Dev\\puppyId\\puppyd\\blockchain\\contracts\\PuppyLibrary.sol",
+  "ast": {
+    "absolutePath": "/C/Users/franz/OneDrive/Desktop/Dev/puppyId/puppyd/blockchain/contracts/PuppyLibrary.sol",
+    "exportedSymbols": {
+      "PuppyLibrary": [
+        772
+      ]
+    },
+    "id": 773,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 657,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "id": 772,
+        "linearizedBaseContracts": [
+          772
+        ],
+        "name": "PuppyLibrary",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "PuppyLibrary.Sex",
+            "id": 660,
+            "members": [
+              {
+                "id": 658,
+                "name": "M",
+                "nodeType": "EnumValue",
+                "src": "130:1:1"
+              },
+              {
+                "id": 659,
+                "name": "F",
+                "nodeType": "EnumValue",
+                "src": "133:1:1"
+              }
+            ],
+            "name": "Sex",
+            "nodeType": "EnumDefinition",
+            "src": "119:17:1"
+          },
+          {
+            "canonicalName": "PuppyLibrary.PuppyType",
+            "id": 664,
+            "members": [
+              {
+                "id": 661,
+                "name": "Dog",
+                "nodeType": "EnumValue",
+                "src": "159:3:1"
+              },
+              {
+                "id": 662,
+                "name": "Cat",
+                "nodeType": "EnumValue",
+                "src": "164:3:1"
+              },
+              {
+                "id": 663,
+                "name": "Rabbit",
+                "nodeType": "EnumValue",
+                "src": "169:6:1"
+              }
+            ],
+            "name": "PuppyType",
+            "nodeType": "EnumDefinition",
+            "src": "142:35:1"
+          },
+          {
+            "canonicalName": "PuppyLibrary.Puppy",
+            "id": 698,
+            "members": [
+              {
+                "constant": false,
+                "id": 666,
+                "mutability": "mutable",
+                "name": "petAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "207:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 665,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "207:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 669,
+                "mutability": "mutable",
+                "name": "puppyType",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "236:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_PuppyType_$664",
+                  "typeString": "enum PuppyLibrary.PuppyType"
+                },
+                "typeName": {
+                  "id": 668,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 667,
+                    "name": "PuppyType",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 664,
+                    "src": "236:9:1"
+                  },
+                  "referencedDeclaration": 664,
+                  "src": "236:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_PuppyType_$664",
+                    "typeString": "enum PuppyLibrary.PuppyType"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 672,
+                "mutability": "mutable",
+                "name": "sex",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "266:7:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Sex_$660",
+                  "typeString": "enum PuppyLibrary.Sex"
+                },
+                "typeName": {
+                  "id": 671,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 670,
+                    "name": "Sex",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 660,
+                    "src": "266:3:1"
+                  },
+                  "referencedDeclaration": 660,
+                  "src": "266:3:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Sex_$660",
+                    "typeString": "enum PuppyLibrary.Sex"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 674,
+                "mutability": "mutable",
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "284:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 673,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "284:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 676,
+                "mutability": "mutable",
+                "name": "breed",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "306:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 675,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "306:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 678,
+                "mutability": "mutable",
+                "name": "birthDate",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "329:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 677,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "329:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 680,
+                "mutability": "mutable",
+                "name": "distinguishingMarks",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "356:27:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 679,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "356:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 682,
+                "mutability": "mutable",
+                "name": "microchipId",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "394:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 681,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "394:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 685,
+                "mutability": "mutable",
+                "name": "children",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "423:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                  "typeString": "address[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 683,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "423:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 684,
+                  "nodeType": "ArrayTypeName",
+                  "src": "423:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                    "typeString": "address[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 689,
+                "mutability": "mutable",
+                "name": "vaccines",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "452:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_Vaccine_$705_storage_$dyn_storage_ptr",
+                  "typeString": "struct PuppyLibrary.Vaccine[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 687,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 686,
+                      "name": "Vaccine",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 705,
+                      "src": "452:7:1"
+                    },
+                    "referencedDeclaration": 705,
+                    "src": "452:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Vaccine_$705_storage_ptr",
+                      "typeString": "struct PuppyLibrary.Vaccine"
+                    }
+                  },
+                  "id": 688,
+                  "nodeType": "ArrayTypeName",
+                  "src": "452:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Vaccine_$705_storage_$dyn_storage_ptr",
+                    "typeString": "struct PuppyLibrary.Vaccine[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 691,
+                "mutability": "mutable",
+                "name": "dad",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "481:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 690,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "481:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 693,
+                "mutability": "mutable",
+                "name": "mom",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "503:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 692,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "503:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 695,
+                "mutability": "mutable",
+                "name": "ownerAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "525:20:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 694,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "525:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 697,
+                "mutability": "mutable",
+                "name": "isRegistered",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "556:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 696,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "556:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Puppy",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "183:398:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PuppyLibrary.Vaccine",
+            "id": 705,
+            "members": [
+              {
+                "constant": false,
+                "id": 700,
+                "mutability": "mutable",
+                "name": "vaccineBatch",
+                "nodeType": "VariableDeclaration",
+                "scope": 705,
+                "src": "640:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 699,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "640:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 702,
+                "mutability": "mutable",
+                "name": "date",
+                "nodeType": "VariableDeclaration",
+                "scope": 705,
+                "src": "670:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 701,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "670:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 704,
+                "mutability": "mutable",
+                "name": "vaccineType",
+                "nodeType": "VariableDeclaration",
+                "scope": 705,
+                "src": "692:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 703,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "692:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Vaccine",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "614:104:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PuppyLibrary.OwnerType",
+            "id": 708,
+            "members": [
+              {
+                "id": 706,
+                "name": "Private",
+                "nodeType": "EnumValue",
+                "src": "765:7:1"
+              },
+              {
+                "id": 707,
+                "name": "Association",
+                "nodeType": "EnumValue",
+                "src": "774:11:1"
+              }
+            ],
+            "name": "OwnerType",
+            "nodeType": "EnumDefinition",
+            "src": "749:37:1"
+          },
+          {
+            "canonicalName": "PuppyLibrary.Owner",
+            "id": 729,
+            "members": [
+              {
+                "constant": false,
+                "id": 710,
+                "mutability": "mutable",
+                "name": "ownerAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "816:20:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 709,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "816:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 713,
+                "mutability": "mutable",
+                "name": "ownerType",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "847:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_OwnerType_$708",
+                  "typeString": "enum PuppyLibrary.OwnerType"
+                },
+                "typeName": {
+                  "id": 712,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 711,
+                    "name": "OwnerType",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 708,
+                    "src": "847:9:1"
+                  },
+                  "referencedDeclaration": 708,
+                  "src": "847:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_OwnerType_$708",
+                    "typeString": "enum PuppyLibrary.OwnerType"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 715,
+                "mutability": "mutable",
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "877:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 714,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "877:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 717,
+                "mutability": "mutable",
+                "name": "surname",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "899:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 716,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "899:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 719,
+                "mutability": "mutable",
+                "name": "phone",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "984:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 718,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "984:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 721,
+                "mutability": "mutable",
+                "name": "town",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "1007:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 720,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1007:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 723,
+                "mutability": "mutable",
+                "name": "fiscalCode",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "1083:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 722,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1083:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 726,
+                "mutability": "mutable",
+                "name": "puppies",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "1111:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                  "typeString": "address[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 724,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1111:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 725,
+                  "nodeType": "ArrayTypeName",
+                  "src": "1111:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                    "typeString": "address[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 728,
+                "mutability": "mutable",
+                "name": "isRegistered",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "1139:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 727,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1139:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Owner",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "792:372:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PuppyLibrary.Veterinarian",
+            "id": 746,
+            "members": [
+              {
+                "constant": false,
+                "id": 731,
+                "mutability": "mutable",
+                "name": "vetAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1233:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 730,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1233:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 733,
+                "mutability": "mutable",
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1262:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 732,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1262:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 735,
+                "mutability": "mutable",
+                "name": "surname",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1284:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 734,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1284:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 737,
+                "mutability": "mutable",
+                "name": "phone",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1369:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 736,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1369:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 739,
+                "mutability": "mutable",
+                "name": "fiscalCode",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1470:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 738,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1470:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 741,
+                "mutability": "mutable",
+                "name": "number",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1498:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 740,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1498:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 743,
+                "mutability": "mutable",
+                "name": "provincia",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1522:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 742,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1522:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 745,
+                "mutability": "mutable",
+                "name": "isRegistered",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1549:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 744,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1549:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Veterinarian",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "1202:372:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PuppyLibrary.Transfer",
+            "id": 755,
+            "members": [
+              {
+                "constant": false,
+                "id": 748,
+                "mutability": "mutable",
+                "name": "puppyAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 755,
+                "src": "1635:20:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 747,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1635:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 750,
+                "mutability": "mutable",
+                "name": "fromAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 755,
+                "src": "1666:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 749,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1666:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 752,
+                "mutability": "mutable",
+                "name": "toAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 755,
+                "src": "1696:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 751,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1696:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 754,
+                "mutability": "mutable",
+                "name": "timestamp",
+                "nodeType": "VariableDeclaration",
+                "scope": 755,
+                "src": "1724:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 753,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1724:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Transfer",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "1608:138:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PuppyLibrary.InsuranceType",
+            "id": 758,
+            "members": [
+              {
+                "id": 756,
+                "name": "HEALTH",
+                "nodeType": "EnumValue",
+                "src": "1807:6:1"
+              },
+              {
+                "id": 757,
+                "name": "DAMAGE",
+                "nodeType": "EnumValue",
+                "src": "1815:6:1"
+              }
+            ],
+            "name": "InsuranceType",
+            "nodeType": "EnumDefinition",
+            "src": "1786:37:1"
+          },
+          {
+            "canonicalName": "PuppyLibrary.InsuranceContract",
+            "id": 766,
+            "members": [
+              {
+                "constant": false,
+                "id": 760,
+                "mutability": "mutable",
+                "name": "insuranceCoAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 766,
+                "src": "1865:26:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 759,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1865:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 762,
+                "mutability": "mutable",
+                "name": "puppyAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 766,
+                "src": "1902:20:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 761,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1902:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 765,
+                "mutability": "mutable",
+                "name": "insuranceType",
+                "nodeType": "VariableDeclaration",
+                "scope": 766,
+                "src": "1933:27:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_InsuranceType_$758",
+                  "typeString": "enum PuppyLibrary.InsuranceType"
+                },
+                "typeName": {
+                  "id": 764,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 763,
+                    "name": "InsuranceType",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 758,
+                    "src": "1933:13:1"
+                  },
+                  "referencedDeclaration": 758,
+                  "src": "1933:13:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_InsuranceType_$758",
+                    "typeString": "enum PuppyLibrary.InsuranceType"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "InsuranceContract",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "1829:204:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PuppyLibrary.InsuranceCo",
+            "id": 771,
+            "members": [
+              {
+                "constant": false,
+                "id": 768,
+                "mutability": "mutable",
+                "name": "companyAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 771,
+                "src": "2102:22:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 767,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2102:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 770,
+                "mutability": "mutable",
+                "name": "contractNum",
+                "nodeType": "VariableDeclaration",
+                "scope": 771,
+                "src": "2135:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 769,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2135:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "InsuranceCo",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "2072:87:1",
+            "visibility": "public"
+          }
+        ],
+        "scope": 773,
+        "src": "68:2096:1"
+      }
+    ],
+    "src": "33:2131:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/franz/OneDrive/Desktop/Dev/puppyId/puppyd/blockchain/contracts/PuppyLibrary.sol",
+    "exportedSymbols": {
+      "PuppyLibrary": [
+        772
+      ]
+    },
+    "id": 773,
+    "license": "MIT",
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 657,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".0",
+          "<",
+          "0.9",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:1"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "library",
+        "fullyImplemented": true,
+        "id": 772,
+        "linearizedBaseContracts": [
+          772
+        ],
+        "name": "PuppyLibrary",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "PuppyLibrary.Sex",
+            "id": 660,
+            "members": [
+              {
+                "id": 658,
+                "name": "M",
+                "nodeType": "EnumValue",
+                "src": "130:1:1"
+              },
+              {
+                "id": 659,
+                "name": "F",
+                "nodeType": "EnumValue",
+                "src": "133:1:1"
+              }
+            ],
+            "name": "Sex",
+            "nodeType": "EnumDefinition",
+            "src": "119:17:1"
+          },
+          {
+            "canonicalName": "PuppyLibrary.PuppyType",
+            "id": 664,
+            "members": [
+              {
+                "id": 661,
+                "name": "Dog",
+                "nodeType": "EnumValue",
+                "src": "159:3:1"
+              },
+              {
+                "id": 662,
+                "name": "Cat",
+                "nodeType": "EnumValue",
+                "src": "164:3:1"
+              },
+              {
+                "id": 663,
+                "name": "Rabbit",
+                "nodeType": "EnumValue",
+                "src": "169:6:1"
+              }
+            ],
+            "name": "PuppyType",
+            "nodeType": "EnumDefinition",
+            "src": "142:35:1"
+          },
+          {
+            "canonicalName": "PuppyLibrary.Puppy",
+            "id": 698,
+            "members": [
+              {
+                "constant": false,
+                "id": 666,
+                "mutability": "mutable",
+                "name": "petAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "207:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 665,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "207:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 669,
+                "mutability": "mutable",
+                "name": "puppyType",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "236:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_PuppyType_$664",
+                  "typeString": "enum PuppyLibrary.PuppyType"
+                },
+                "typeName": {
+                  "id": 668,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 667,
+                    "name": "PuppyType",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 664,
+                    "src": "236:9:1"
+                  },
+                  "referencedDeclaration": 664,
+                  "src": "236:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_PuppyType_$664",
+                    "typeString": "enum PuppyLibrary.PuppyType"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 672,
+                "mutability": "mutable",
+                "name": "sex",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "266:7:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_Sex_$660",
+                  "typeString": "enum PuppyLibrary.Sex"
+                },
+                "typeName": {
+                  "id": 671,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 670,
+                    "name": "Sex",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 660,
+                    "src": "266:3:1"
+                  },
+                  "referencedDeclaration": 660,
+                  "src": "266:3:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_Sex_$660",
+                    "typeString": "enum PuppyLibrary.Sex"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 674,
+                "mutability": "mutable",
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "284:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 673,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "284:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 676,
+                "mutability": "mutable",
+                "name": "breed",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "306:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 675,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "306:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 678,
+                "mutability": "mutable",
+                "name": "birthDate",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "329:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 677,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "329:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 680,
+                "mutability": "mutable",
+                "name": "distinguishingMarks",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "356:27:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 679,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "356:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 682,
+                "mutability": "mutable",
+                "name": "microchipId",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "394:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 681,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "394:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 685,
+                "mutability": "mutable",
+                "name": "children",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "423:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                  "typeString": "address[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 683,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "423:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 684,
+                  "nodeType": "ArrayTypeName",
+                  "src": "423:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                    "typeString": "address[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 689,
+                "mutability": "mutable",
+                "name": "vaccines",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "452:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_struct$_Vaccine_$705_storage_$dyn_storage_ptr",
+                  "typeString": "struct PuppyLibrary.Vaccine[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 687,
+                    "nodeType": "UserDefinedTypeName",
+                    "pathNode": {
+                      "id": 686,
+                      "name": "Vaccine",
+                      "nodeType": "IdentifierPath",
+                      "referencedDeclaration": 705,
+                      "src": "452:7:1"
+                    },
+                    "referencedDeclaration": 705,
+                    "src": "452:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_struct$_Vaccine_$705_storage_ptr",
+                      "typeString": "struct PuppyLibrary.Vaccine"
+                    }
+                  },
+                  "id": 688,
+                  "nodeType": "ArrayTypeName",
+                  "src": "452:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_struct$_Vaccine_$705_storage_$dyn_storage_ptr",
+                    "typeString": "struct PuppyLibrary.Vaccine[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 691,
+                "mutability": "mutable",
+                "name": "dad",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "481:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 690,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "481:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 693,
+                "mutability": "mutable",
+                "name": "mom",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "503:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 692,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "503:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 695,
+                "mutability": "mutable",
+                "name": "ownerAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "525:20:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 694,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "525:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 697,
+                "mutability": "mutable",
+                "name": "isRegistered",
+                "nodeType": "VariableDeclaration",
+                "scope": 698,
+                "src": "556:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 696,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "556:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Puppy",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "183:398:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PuppyLibrary.Vaccine",
+            "id": 705,
+            "members": [
+              {
+                "constant": false,
+                "id": 700,
+                "mutability": "mutable",
+                "name": "vaccineBatch",
+                "nodeType": "VariableDeclaration",
+                "scope": 705,
+                "src": "640:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 699,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "640:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 702,
+                "mutability": "mutable",
+                "name": "date",
+                "nodeType": "VariableDeclaration",
+                "scope": 705,
+                "src": "670:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 701,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "670:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 704,
+                "mutability": "mutable",
+                "name": "vaccineType",
+                "nodeType": "VariableDeclaration",
+                "scope": 705,
+                "src": "692:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 703,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "692:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Vaccine",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "614:104:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PuppyLibrary.OwnerType",
+            "id": 708,
+            "members": [
+              {
+                "id": 706,
+                "name": "Private",
+                "nodeType": "EnumValue",
+                "src": "765:7:1"
+              },
+              {
+                "id": 707,
+                "name": "Association",
+                "nodeType": "EnumValue",
+                "src": "774:11:1"
+              }
+            ],
+            "name": "OwnerType",
+            "nodeType": "EnumDefinition",
+            "src": "749:37:1"
+          },
+          {
+            "canonicalName": "PuppyLibrary.Owner",
+            "id": 729,
+            "members": [
+              {
+                "constant": false,
+                "id": 710,
+                "mutability": "mutable",
+                "name": "ownerAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "816:20:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 709,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "816:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 713,
+                "mutability": "mutable",
+                "name": "ownerType",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "847:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_OwnerType_$708",
+                  "typeString": "enum PuppyLibrary.OwnerType"
+                },
+                "typeName": {
+                  "id": 712,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 711,
+                    "name": "OwnerType",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 708,
+                    "src": "847:9:1"
+                  },
+                  "referencedDeclaration": 708,
+                  "src": "847:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_OwnerType_$708",
+                    "typeString": "enum PuppyLibrary.OwnerType"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 715,
+                "mutability": "mutable",
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "877:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 714,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "877:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 717,
+                "mutability": "mutable",
+                "name": "surname",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "899:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 716,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "899:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 719,
+                "mutability": "mutable",
+                "name": "phone",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "984:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 718,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "984:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 721,
+                "mutability": "mutable",
+                "name": "town",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "1007:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 720,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1007:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 723,
+                "mutability": "mutable",
+                "name": "fiscalCode",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "1083:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 722,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1083:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 726,
+                "mutability": "mutable",
+                "name": "puppies",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "1111:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                  "typeString": "address[]"
+                },
+                "typeName": {
+                  "baseType": {
+                    "id": 724,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1111:7:1",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 725,
+                  "nodeType": "ArrayTypeName",
+                  "src": "1111:9:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
+                    "typeString": "address[]"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 728,
+                "mutability": "mutable",
+                "name": "isRegistered",
+                "nodeType": "VariableDeclaration",
+                "scope": 729,
+                "src": "1139:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 727,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1139:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Owner",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "792:372:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PuppyLibrary.Veterinarian",
+            "id": 746,
+            "members": [
+              {
+                "constant": false,
+                "id": 731,
+                "mutability": "mutable",
+                "name": "vetAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1233:18:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 730,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1233:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 733,
+                "mutability": "mutable",
+                "name": "name",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1262:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 732,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1262:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 735,
+                "mutability": "mutable",
+                "name": "surname",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1284:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 734,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1284:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 737,
+                "mutability": "mutable",
+                "name": "phone",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1369:12:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 736,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1369:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 739,
+                "mutability": "mutable",
+                "name": "fiscalCode",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1470:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 738,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1470:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 741,
+                "mutability": "mutable",
+                "name": "number",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1498:13:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 740,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1498:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 743,
+                "mutability": "mutable",
+                "name": "provincia",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1522:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_string_storage_ptr",
+                  "typeString": "string"
+                },
+                "typeName": {
+                  "id": 742,
+                  "name": "string",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1522:6:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 745,
+                "mutability": "mutable",
+                "name": "isRegistered",
+                "nodeType": "VariableDeclaration",
+                "scope": 746,
+                "src": "1549:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_bool",
+                  "typeString": "bool"
+                },
+                "typeName": {
+                  "id": 744,
+                  "name": "bool",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1549:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Veterinarian",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "1202:372:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PuppyLibrary.Transfer",
+            "id": 755,
+            "members": [
+              {
+                "constant": false,
+                "id": 748,
+                "mutability": "mutable",
+                "name": "puppyAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 755,
+                "src": "1635:20:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 747,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1635:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 750,
+                "mutability": "mutable",
+                "name": "fromAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 755,
+                "src": "1666:19:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 749,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1666:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 752,
+                "mutability": "mutable",
+                "name": "toAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 755,
+                "src": "1696:17:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 751,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1696:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 754,
+                "mutability": "mutable",
+                "name": "timestamp",
+                "nodeType": "VariableDeclaration",
+                "scope": 755,
+                "src": "1724:14:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 753,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1724:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "Transfer",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "1608:138:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PuppyLibrary.InsuranceType",
+            "id": 758,
+            "members": [
+              {
+                "id": 756,
+                "name": "HEALTH",
+                "nodeType": "EnumValue",
+                "src": "1807:6:1"
+              },
+              {
+                "id": 757,
+                "name": "DAMAGE",
+                "nodeType": "EnumValue",
+                "src": "1815:6:1"
+              }
+            ],
+            "name": "InsuranceType",
+            "nodeType": "EnumDefinition",
+            "src": "1786:37:1"
+          },
+          {
+            "canonicalName": "PuppyLibrary.InsuranceContract",
+            "id": 766,
+            "members": [
+              {
+                "constant": false,
+                "id": 760,
+                "mutability": "mutable",
+                "name": "insuranceCoAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 766,
+                "src": "1865:26:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 759,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1865:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 762,
+                "mutability": "mutable",
+                "name": "puppyAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 766,
+                "src": "1902:20:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 761,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "1902:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 765,
+                "mutability": "mutable",
+                "name": "insuranceType",
+                "nodeType": "VariableDeclaration",
+                "scope": 766,
+                "src": "1933:27:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_enum$_InsuranceType_$758",
+                  "typeString": "enum PuppyLibrary.InsuranceType"
+                },
+                "typeName": {
+                  "id": 764,
+                  "nodeType": "UserDefinedTypeName",
+                  "pathNode": {
+                    "id": 763,
+                    "name": "InsuranceType",
+                    "nodeType": "IdentifierPath",
+                    "referencedDeclaration": 758,
+                    "src": "1933:13:1"
+                  },
+                  "referencedDeclaration": 758,
+                  "src": "1933:13:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_InsuranceType_$758",
+                    "typeString": "enum PuppyLibrary.InsuranceType"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "InsuranceContract",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "1829:204:1",
+            "visibility": "public"
+          },
+          {
+            "canonicalName": "PuppyLibrary.InsuranceCo",
+            "id": 771,
+            "members": [
+              {
+                "constant": false,
+                "id": 768,
+                "mutability": "mutable",
+                "name": "companyAddress",
+                "nodeType": "VariableDeclaration",
+                "scope": 771,
+                "src": "2102:22:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 767,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2102:7:1",
+                  "stateMutability": "nonpayable",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "visibility": "internal"
+              },
+              {
+                "constant": false,
+                "id": 770,
+                "mutability": "mutable",
+                "name": "contractNum",
+                "nodeType": "VariableDeclaration",
+                "scope": 771,
+                "src": "2135:16:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_uint256",
+                  "typeString": "uint256"
+                },
+                "typeName": {
+                  "id": 769,
+                  "name": "uint",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "2135:4:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  }
+                },
+                "visibility": "internal"
+              }
+            ],
+            "name": "InsuranceCo",
+            "nodeType": "StructDefinition",
+            "scope": 772,
+            "src": "2072:87:1",
+            "visibility": "public"
+          }
+        ],
+        "scope": 773,
+        "src": "68:2096:1"
+      }
+    ],
+    "src": "33:2131:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.8.0+commit.c7dfd78e.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.3.3",
+  "updatedAt": "2021-02-01T22:06:10.353Z",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {},
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  }
+}

@@ -48,7 +48,7 @@ const RegisterComponent = (props: any) => {
     }
 
     const showToast = () => {
-        toast.current?.show({severity: props.toast.severity, summary: 'Message', detail: props.toast.message, life: 3000});
+        toast.current?.show({severity: props.toast.severity, summary: props.toast.summary, detail: props.toast.message, life: 3000});
     }
 
     return (

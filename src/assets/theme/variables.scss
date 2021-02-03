@@ -7,6 +7,13 @@ Glossary
 - color-o: it's the color with an additional opacity. By default it's 0.5.
 
 */
+/*******************************/
+/*    Breakpoint Variables     */
+/*******************************/
+$breakpoint-small: 540px;
+$breakpoint-medium: 720px;
+$breakpoint-large: 960px;
+$breakpoint-xlarge: 1140px;
 
 /**************************/
 /*    Color Variables     */
@@ -29,6 +36,8 @@ $dark-loading: rgba(14, 13, 13, 0.8);
 $grey: #f3f3f3;
 $light-blue: #c4f8ff;
 $light-blue-o: rgb(65, 192, 240, 0.5);
+
+$dark-grey: #949596;
 
 /**************************/
 /*   General Variables    */
@@ -90,6 +99,9 @@ $checkboxActiveBorderColor: $secondaryColor;
 $checkboxActiveBg: $primaryColor;
 $checkboxShadow: 0 0 0 0.2rem $primaryColorBlur;
 
+//Header
+$inputShadow: 0 0 0 0.2rem $primaryColorBlur;
+
 //Card
 $cardShadow: 0 0 50px 0px $dark-o;
 
@@ -106,4 +118,13 @@ $cardMargin: 1em;
 //ProgressBar
 $progressbarBg: $thirdColor;
 
-
+//mixin
+@mixin ball-pin {
+    content: '';
+    width: 10px;
+    position: absolute;
+    height: 10px;
+    // top: 50%;
+    // transform: translate(-50%, 0);
+    border-radius: 50%;
+}

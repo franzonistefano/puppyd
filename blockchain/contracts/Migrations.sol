@@ -2,99 +2,15 @@
 pragma solidity >=0.4.0 <0.9.0;
 pragma experimental ABIEncoderV2;
 
+import { PuppyLibrary } from "./PuppyLibrary.sol";
+
 contract PuppyContract {
- 
-    //model Animal
-    enum Sex { M, F }
-    enum PuppyType { Dog, Cat, Rabbit }
-    struct Puppy {
-        address petAddress;
-        PuppyType puppyType;
-        Sex sex;
-        string name;
-        string breed;
-        string birthDate;
-        string  distinguishingMarks;
-        string microchipId;
-        address[] children;
-        Vaccine[] vaccines;
-        address dad;
-        address mom;
-        address ownerAddress;
-        bool isRegistered;
-    }
-    
-    //model Vaccine
-    struct Vaccine {
-        string vaccineBatch;
-        string date;
-        string vaccineType;
-    }
-    
-    //model Owner
-    enum OwnerType {Private, Association}
-    struct Owner {
-        address ownerAddress;
-        OwnerType ownerType;
-        string name;
-        string surname;
-        //string birthDate;
-        //string homeAddress;
-        string phone;
-        string town;
-        //string zipCode;
-        //string country;
-        string fiscalCode;
-        address[] puppies;
-        bool isRegistered;
-    }
-    
-    //model Veterinarian
-    struct Veterinarian {
-        address vetAddress;
-        string name;
-        string surname;
-        //string birthDate;
-        //string homeAddress;
-        string phone;
-        //string town;
-        //string zipCode;
-        //string country;
-        string fiscalCode;
-        string number;
-        string provincia;
-        bool isRegistered;
-    }
-    
-    //Transfer model
-    struct Transfer {
-        address puppyAddress;
-        address fromAddress;
-        address toAddress;
-        uint timestamp;
-    }
 
-    //Insurance Contract model
-    enum InsuranceType { HEALTH, DAMAGE }
-    struct InsuranceContract {
-        address insuranceCoAddress;
-        address puppyAddress;
-        InsuranceType insuranceType;
-        //uint insuranceAmount;
-        //uint maxCostCovered;
-    }
-
-    //Insurance Company model
-    struct InsuranceCo {
-        address companyAddress;
-        uint contractNum;
-    }
-    
     //veterinarians, owners and puppies on the network mapped with their address
-    mapping(address => Puppy) public puppies;
-    mapping(address => Owner) public owners;
-    mapping(address => Veterinarian) public veterinarians;
-    mapping(uint => Transfer) public transfers;
+    mapping(address => PuppyLibrary.Puppy) public puppies;
+    mapping(address => PuppyLibrary.Owner) public owners;
+    mapping(address => PuppyLibrary.Veterinarian) public veterinarians;
+    mapping(uint => PuppyLibrary.Transfer) public transfers;
     
     /***********************************************/
     /*                  Modifiers                  */
@@ -160,7 +76,7 @@ contract PuppyContract {
       //check msg.sender not existing in puppies
       require(!puppies[msg.sender].isRegistered, "Account already registered as Puppy");                        
       
-          Veterinarian storage v;
+          PuppyLibrary.Veterinarian storage v;
           v.vetAddress = msg.sender;
           v.name = _name;
           v.surname = _surname;
@@ -179,8 +95,8 @@ contract PuppyContract {
     }
     
     //register address as Puppy
-    function registerPuppy (PuppyType _type, 
-                            Sex _sex, 
+    function registerPuppy (PuppyLibrary.PuppyType _type, 
+                            PuppyLibrary.Sex _sex, 
                             string memory _name,
                             string memory _breed,
                             string memory _birthDate,
@@ -197,7 +113,7 @@ contract PuppyContract {
       //check msg.sender not existing in puppies
       require(!puppies[msg.sender].isRegistered, "Account already registered as Puppy");
       
-          Puppy storage p;
+          PuppyLibrary.Puppy storage p;
           p.petAddress = msg.sender;
           p.puppyType = _type;
           p.sex = _sex;
@@ -219,7 +135,7 @@ contract PuppyContract {
     }
     
     //register sender as Owner
-    function registerOwner (OwnerType _ownerType,
+    function registerOwner (PuppyLibrary.OwnerType _ownerType,
                             string memory _name, 
                             string memory _surname, 
                             //string memory _birthDate,
@@ -237,7 +153,7 @@ contract PuppyContract {
       //check msg.sender not existing in puppies
       require(!puppies[msg.sender].isRegistered, "Account already registered as Puppy");
       
-          Owner storage o;
+          PuppyLibrary.Owner storage o;
           o.ownerAddress = msg.sender;
           o.ownerType = _ownerType;
           o.name = _name;
@@ -262,22 +178,22 @@ contract PuppyContract {
     /***********************************************/
     
     //get Owner Data
-    function getOwnerData (address _ownerAddress) public view returns( Owner memory) {
+    function getOwnerData (address _ownerAddress) public view returns( PuppyLibrary.Owner memory) {
       return owners[_ownerAddress];
     }
     
     //get Puppy Data
-    function getPuppyData (address _puppyAddress) public view returns( Puppy memory) {
+    function getPuppyData (address _puppyAddress) public view returns( PuppyLibrary.Puppy memory) {
         return puppies[_puppyAddress];
     }
     
     //get Vaccine Data
-    function getVaccineData(address _puppyAddress) public view returns (Vaccine[] memory) {
+    function getVaccineData(address _puppyAddress) public view returns (PuppyLibrary.Vaccine[] memory) {
         return puppies[_puppyAddress].vaccines;
     }
     
     //get Veterinarian Data
-    function getVeterinarianData (address _veterinarianAddress) public view returns( Veterinarian memory) {
+    function getVeterinarianData (address _veterinarianAddress) public view returns( PuppyLibrary.Veterinarian memory) {
       return veterinarians[_veterinarianAddress];
     }
     
@@ -286,7 +202,7 @@ contract PuppyContract {
     /***********************************************/
     
     function addVaccine (address _puppyAddress, string memory _vaccineBatch, string memory _date, string memory _vaccineType) onlyVeterinarian public {
-        Vaccine memory v = Vaccine(_vaccineBatch, _date, _vaccineType);
+        PuppyLibrary.Vaccine memory v = PuppyLibrary.Vaccine(_vaccineBatch, _date, _vaccineType);
         //v.vaccineBatch = _vaccineBatch;
         //v.date = _date;
         //v.vaccineType = _vaccineType;
@@ -297,7 +213,7 @@ contract PuppyContract {
     
     function transferOwner (address _puppyAddress, address newOwner) onlyPuppyOwner(_puppyAddress) public {
         
-        Transfer storage t;
+        PuppyLibrary.Transfer storage t;
         t.puppyAddress = _puppyAddress;
         t.fromAddress = msg.sender;
         t.toAddress = newOwner;
@@ -305,7 +221,13 @@ contract PuppyContract {
         
         transfers[t.timestamp] = t;
         puppies[_puppyAddress].ownerAddress = newOwner;
+        
         //delete puppy from owner puppies array
+        for (uint i = 0; i< owners[msg.sender].puppies.length-1; i++){
+            if(owners[msg.sender].puppies[i] == _puppyAddress){
+                delete owners[msg.sender].puppies[i];
+            }
+        }
     } 
 
 }

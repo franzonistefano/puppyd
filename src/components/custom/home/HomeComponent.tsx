@@ -16,6 +16,7 @@ import Feature3 from '../../../assets/img/feature/feature3.png'
 import MetamaskImg from '../../../assets/img/timeline/metamask.png'
 import { FormattedMessage, injectIntl } from 'react-intl';
 import { NavLink } from 'react-router-dom';
+import { Accordion, AccordionTab } from 'primereact/accordion';
 
 
 const HomeComponent = (props: any) => {
@@ -29,7 +30,7 @@ const HomeComponent = (props: any) => {
     ];
 
     const roadmapFields = [
-        { title: intl.formatMessage({ id: 'homepage.roadmap.step1.title' }), text: intl.formatMessage({ id: 'homepage.roadmap.step1.text' }), step: 1, icon: 'pi pi-shopping-cart', color: '#00C59D'},
+        { title: intl.formatMessage({ id: 'homepage.roadmap.step1.title' }), text: intl.formatMessage({ id: 'homepage.roadmap.step1.text' }), step: 1, icon: 'pi pi-shopping-cart', color: '#00C59D' },
         { title: intl.formatMessage({ id: 'homepage.roadmap.step2.title' }), text: intl.formatMessage({ id: 'homepage.roadmap.step2.text' }), step: 2, icon: 'pi pi-cog', color: '#00C59D' },
         { title: intl.formatMessage({ id: 'homepage.roadmap.step3.title' }), text: intl.formatMessage({ id: 'homepage.roadmap.step3.text' }), step: 3, icon: 'pi pi-shopping-cart', color: '#F8D6B9' }
     ];
@@ -98,6 +99,10 @@ const HomeComponent = (props: any) => {
             </motion.div>
         );
     };
+
+    const headerTemplate = (title: string) => {
+        return (<div className="bold"><h2>{title}</h2></div>)
+    }
 
 
     return (
@@ -242,7 +247,7 @@ const HomeComponent = (props: any) => {
                     <div className="row justify-content-around bordered-card pt-4 pb-4">
 
 
-                        <div className='row justify-content-start align-items-center'>
+                        <div className='col-12 text-center'>
                             <div className="main-title mb-4">Come Funziona?</div>
                         </div>
 
@@ -250,6 +255,32 @@ const HomeComponent = (props: any) => {
                             <Timeline value={events1} align="alternate" className="customized-timeline" marker={customizedMarker} content={customizedContent} />
                         </div>
 
+                    </div>
+                </div>
+
+                {/* FAQ */}
+                <div id="#faq">
+                    <div className="row justify-content-around pt-4 pb-4">
+
+                        <div className='col-12 text-center'>
+                            <div className="main-title mb-4">FAQ</div>
+                        </div>
+
+                        <div className="col-12 custom-accordion">
+
+                            <Accordion multiple>
+                                <AccordionTab header={headerTemplate("Title I")}>
+                                    Content I
+                                </AccordionTab>
+                                <AccordionTab header={headerTemplate("Title II")}>
+                                    Content II
+                                </AccordionTab>
+                                <AccordionTab header={headerTemplate("Title III")}>
+                                    Content III
+                                </AccordionTab>
+                            </Accordion>
+
+                        </div>
                     </div>
                 </div>
 

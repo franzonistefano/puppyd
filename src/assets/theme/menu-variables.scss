@@ -1,0 +1,52 @@
+@import "./variables.scss";
+
+$menubarBackgroundColor: $primaryColor;
+$menuHeight: 55px;
+$menuHeightSmall: 88px;
+$menubarPadding: 0;
+$menubarMargin: 0;
+$menubarMarginBottom: 1.5rem;
+$menubarBorder: none;
+$menubarBorderRadius: 0;
+
+$logoHeight: 3rem;
+$logoMarginLeft: 0.5rem;
+
+$endMenubarMarginLeft: auto;
+
+$menuLinkShadow: none;
+
+$rootListMarginLeft: 1rem;
+$rootListLinkBorderRadius: 0;
+$rootListLinkBorder: none; //1px solid $white;
+$rootListLinkBorderBootom: none;
+$rootListLinkBorderBootomHover: none;
+$rootListBackgroundHover: $primaryHover;
+$rootListColorHover: $white;
+
+$rootListIconMarginRight: 0.4rem;
+$rootListIconColor: $white;
+$rootListIconColorHover: $primaryColor;
+
+$rootListBadgeFontSize: 0.8rem;
+$rootListBadgeColor: $primaryColor;
+$rootListBadgeBackground: $blue;
+$rootListBadgeBorderRadius: 48%;
+$rootListBadgePadding: 10px;
+$rootListSubmenuIconVisible: none; //visible
+
+
+//LEFT SIDEBAR
+$leftSidebarBackgroud: $light-blue;
+$leftSidebarHeight: 100vh;
+$leftSidebarZIndex: 100;
+$leftSidebarOpenWidth: 11.2rem;
+$leftSidebarCloseWidth: 1.2rem;
+
+$leftSidebarMenuBorder: none;
+
+
+$leftSidebarButtonBorder: 1px solid $leftSidebarBackgroud;
+$leftSidebarButtonRadius: 50%;
+$leftSidebarButtonWidth: 1.5rem;
+$leftSidebarButtonPadding: 0.05rem 0;

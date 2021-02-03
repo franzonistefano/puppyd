@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 import AppRouter from "./routing/AppRouter";
 import { Dialog } from 'primereact/dialog';
 import { Button } from "primereact/button";
-import HeaderComponent from "./components/common/HeaderComponent";
+import HeaderComponent from "./components/common/Header/HeaderComponent";
 import FooterComponent from "./components/common/FooterComponent";
+import { BrowserRouter } from "react-router-dom";
 
 const App = (props: any) => {
   const [dialog, setDialog] = useState({
@@ -57,9 +58,11 @@ const App = (props: any) => {
 
   return (
     <div className='GeneralStyle'>
-      <HeaderComponent/>
-      <AppRouter />
-      <FooterComponent/>
+      <BrowserRouter>
+        <HeaderComponent />
+        <AppRouter />
+        <FooterComponent />
+      </BrowserRouter>
       {serviceWorkerReducer.serviceWorkerUpdated && (
         <div className="p-col-12 p-md-3">
           <Dialog visible={dialog.visible} style={{ width: '50vw' }} footer={renderFooter()} onHide={() => onHide()}>

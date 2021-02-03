@@ -1,0 +1,348 @@
+@import "../../../assets/theme/menu-variables.scss";
+
+#top-header {
+    position: relative;
+    height: $menuHeight;
+    z-index: 400;
+    margin-right: 0;
+    margin-left: 0;
+    padding-right: 0;
+    padding-left: 0;
+
+    .p-menubar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: $menubarPadding;
+        margin: $menubarMargin;
+        margin-bottom: $menubarMarginBottom;
+        background-color: $menubarBackgroundColor !important;
+        border: $menubarBorder;
+        border-radius: $menubarBorderRadius;
+
+        .p-button {
+            border: none;
+        }
+        .p-menubar-start {
+            order: 1;
+
+            .logo {
+                height: $logoHeight;
+                margin-left: $logoMarginLeft;
+            }
+        }
+        .p-menubar-button {
+            order: 2;
+        }
+
+        .p-menubar-root-list {
+            order: 4;
+            margin-left: $rootListMarginLeft;
+
+            span {
+                color: $rootListIconColor;
+            }
+
+            & > .p-menuitem > .p-menuitem-link {
+                border-radius: $rootListLinkBorderRadius;
+
+                &:focus {
+                    box-shadow: $menuLinkShadow;
+                }
+                .p-menuitem-icon {
+                    margin-right: $rootListIconMarginRight;
+                }
+            }
+
+            .p-dropdown {
+                background-color: transparent;
+                border: none;
+                border-radius: 0;
+                padding: 0.35rem 0.7rem;
+                border-left: $rootListLinkBorder;
+                border-bottom: $rootListLinkBorderBootomHover; //2px solid transparent;
+                color: $rootListColorHover;
+
+                &:not(.p-disabled).p-focus {
+                    box-shadow: $menuLinkShadow;
+                }
+                &:not(.p-disabled):hover {
+                    box-shadow: $menuLinkShadow;
+                    background-color: $rootListBackgroundHover;
+                    border-radius: 0;
+                    border-bottom: $rootListLinkBorderBootomHover; //2px solid $rootListColorHover;
+
+                    .p-dropdown-label {
+                        color: $rootListColorHover;
+                    }
+                }
+                &:focus {
+                    border: none;
+                }
+
+                .p-dropdown-trigger {
+                    display: none;
+                }
+            }
+
+            .p-menuitem {
+                .p-menuitem-link {
+                    border-left: $rootListLinkBorder;
+                    display: block;
+                    border-bottom: $rootListLinkBorderBootom;
+
+                    &.p-user {
+                        padding: 0.95rem 1rem;
+                    }
+
+                    .p-menuitem-icon {
+                        .p-badge {
+                            color: $rootListBadgeColor;
+                            min-width: 1.25rem;
+                            height: 1.25rem;
+                            line-height: 1rem;
+                        }
+                    }
+
+                    .p-submenu-icon {
+                        display: $rootListSubmenuIconVisible;
+                    }
+
+                    .p-overlay-badge {
+                        .p-badge {
+                            color: $rootListBadgeColor;
+                            top: 0.2rem;
+                            right: 0.2rem;
+                            font-size: 0.65rem;
+                            min-width: 1rem;
+                            height: 1rem;
+                            line-height: 1rem;
+                        }
+                    }
+
+                    &:not(.p-disabled):hover {
+                        background-color: $rootListBackgroundHover;
+                        border-bottom: $rootListLinkBorderBootomHover;
+                    }
+                }
+
+                &.p-menuitem-badge {
+                    .p-menuitem-text {
+                        font-size: $rootListBadgeFontSize;
+                        color: $rootListBadgeColor;
+                        // background: $rootListBadgeBackground;
+                        border-radius: $rootListBadgeBorderRadius;
+                        // padding: $rootListBadgePadding;
+                    }
+                }
+
+                .p-button {
+                    padding: 0.9rem 1rem;
+                    min-width: 0;
+                    background-color: transparent;
+
+                    &:hover {
+                        background-color: #e9ecef;
+                    }
+
+                    .p-button-label {
+                        display: none;
+                    }
+                }
+            }
+
+            #popup_menu_user {
+                width: 30%;
+                p,
+                span {
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+
+            #popup_menu_notification {
+                width: 45%;
+
+                .btn-secondary{
+                    .p-button-label{
+                        color: $textColor;
+                    }
+                }
+
+                .p-small{
+                    color: $textColor;
+                }
+            }
+
+            .p-overlaypanel-content {
+                padding-bottom: 0;
+                padding-top: 0.7rem;
+
+                .popup-text-right {
+                    text-align: right;
+                    p {
+                        font-size: $fontSizeSmall;
+                        margin-bottom: 0;
+                        align-self: center;
+                    }
+                }
+
+                .pin-primary {
+                    &:before {
+                        background-color: $primaryColor;
+                        top: 50%;
+                        transform: translate(-50%, 0);
+                        @include ball-pin;
+                    }
+                }
+                .popup-border {
+                    padding-bottom: 0.5rem;
+                    margin-bottom: 0;
+
+                    border-bottom: 1px solid rgba($color: $dark-grey, $alpha: 0.8);
+                    align-items: center;
+
+                    h4 {
+                        margin-bottom: 0.2rem;
+                    }
+
+                    h5 {
+                        margin-bottom: 0;
+                    }
+
+                    div[class^="col-sm"] {
+                        padding-top: 0.5rem;
+                    }
+
+                    &:last-child {
+                        border-bottom-color: transparent;
+                        margin-bottom: 0;
+                        padding-bottom: 0;
+                    }
+
+                    .p-badge-user {
+                        background: #495057;
+                        color: #ffffff;
+                        font-size: 1.75rem;
+                        font-weight: 700;
+                        min-width: 3rem;
+                        height: 2.75rem;
+                        line-height: 2.5rem;
+                    }
+
+                    .p-badge-button {
+                        padding: 0.2rem 0.2rem;
+                        font-size: 0.7rem;
+                        background: #495057;
+                        color: $white;
+
+                        .p-badge {
+                            color: $white;
+                            font-size: 0.7rem;
+                        }
+                    }
+
+                    .p-overlaypanel-user {
+                        p {
+                            font-size: $fontSizeSmall;
+                            margin-bottom: 0.2rem;
+                        }
+                    }
+
+                    .exit {
+                        padding: 0;
+                        .p-exit-button {
+                            background-color: transparent !important;
+                            border: none;
+                            width: 100%;
+
+                            .p-button-label {
+                                color: $textColor;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .p-menubar-end {
+            order: 3;
+            margin-left: $endMenubarMarginLeft !important;
+
+            .p-input-icon-right {
+                padding: 0 10px;
+                background: $white;
+                border: 1px solid $white;
+                border-radius: 3px;
+
+                &:focus,
+                &:hover {
+                    box-shadow: $inputShadow;
+                    border-color: $inputBorderColorHover;
+                }
+
+                .p-inputtext {
+                    padding: 0.15rem 0.5rem;
+                    box-shadow: none;
+                    border: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: $breakpoint-large) {
+    #top-header {
+        .p-menubar {
+            margin-bottom: 4.5rem;
+            .p-menubar-root-list {
+                display: flex !important;
+                background-color: $menubarBackgroundColor;
+                top: 3rem;
+                left: 0;
+                margin-left: 0;
+                padding: 0;
+
+                .p-dropdown {
+                    padding: 0 0.5rem;
+                }
+
+                & > .p-menuitem {
+                    .p-menuitem-link {
+                        width: 100%;
+                    }
+                    .p-dropdown {
+                        width: 100%;
+                        text-align: center;
+                    }
+                    & > .p-menuitem-link,
+                    .p-menuitem-link.p-user {
+                        padding: 0.5rem;
+                        text-align: center;
+
+                        .d-print-inline-block {
+                            display: none !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-large) {
+    #popup_menu_notification,
+    #popup_menu_user {
+        width: 65% !important;
+        top: 45px !important;
+    }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+    #popup_menu_notification,
+    #popup_menu_user {
+        width: 100% !important;
+        top: 45px !important;
+    }
+}

@@ -49,11 +49,38 @@ export function getVeterinarian(config: any, vetAddress: any) {
             .then((res: any) => {
                 let response: Veterinarian = res;
                 console.log("[++++++++++ Get Veterinarian Data ++++++++++++] ", response)
-                if(response.isRegistered)
+                if (response.isRegistered) {
                     dispatch(getVeterinarianData(response))
+
+                    let data: any = {
+                        message: "Vetrinarian found",
+                        summary: "Transaction Done",
+                        type: "success"
+                    }
+                    dispatch(showToast(data))
+                } else {
+                    let data: any = {
+                        message: "Vetrinarian not found. check if address is correctly",
+                        summary: "Info",
+                        type: "info"
+                    }
+                    dispatch(showToast(data))
+                }
+
+
             })
             .catch((err: any) => {
+                let data: any = {
+                    message: "Getter Failed: ERROR " + err,
+                    summary: "Transaction Failed",
+                    type: "error"
+                }
+                dispatch(showToast(data))
+
                 console.log(err)
+            })
+            .finally(() => {
+                dispatch(hideToast())
             })
     }
 
@@ -76,11 +103,37 @@ export function getOwner(config: any, ownerAddress: any) {
         config.contract?.methods.getOwnerData(ownerAddress).call()
             .then((res: Owner) => {
                 console.log("[++++++++++ Get Owner Data ++++++++++++] ", res)
-                if(res.isRegistered)
+                if (res.isRegistered) {
                     dispatch(getOwnerData(res))
+
+                    let data: any = {
+                        message: "Owner found",
+                        summary: "Transaction Done",
+                        type: "success"
+                    }
+                    dispatch(showToast(data))
+                } else {
+                    let data: any = {
+                        message: "Owner not found. check if address is correctly",
+                        summary: "Info",
+                        type: "info"
+                    }
+                    dispatch(showToast(data))
+                }
+
             })
             .catch((err: any) => {
+                let data: any = {
+                    message: "Getter Failed: ERROR " + err,
+                    summary: "Transaction Failed",
+                    type: "error"
+                }
+                dispatch(showToast(data))
+
                 console.log(err)
+            })
+            .finally(() => {
+                dispatch(hideToast())
             })
 
     }
@@ -104,11 +157,37 @@ export function getPuppy(config: any, puppyAddress: any) {
         config.contract?.methods.getPuppyData(puppyAddress).call()
             .then((res: Puppy) => {
                 console.log("[++++++++++ Get Puppies ++++++++++++] ", res)
-                if(res.isRegistered)
+                if (res.isRegistered) {
                     dispatch(getPuppyData(res))
+
+                    let data: any = {
+                        message: "Puppy found",
+                        summary: "Transaction Done",
+                        type: "success"
+                    }
+                    dispatch(showToast(data))
+                } else {
+                    let data: any = {
+                        message: "Puppy not found. check if address is correctly",
+                        summary: "Info",
+                        type: "info"
+                    }
+                    dispatch(showToast(data))
+                }
+
             })
             .catch((err: any) => {
+                let data: any = {
+                    message: "Getter Failed: ERROR " + err,
+                    summary: "Transaction Failed",
+                    type: "error"
+                }
+                dispatch(showToast(data))
+
                 console.log(err)
+            })
+            .finally(() => {
+                dispatch(hideToast())
             })
 
     }
@@ -146,15 +225,18 @@ export const registerVeterinarian = (config: any, data: any) => {
             .then((res: any) => {
                 console.log('----- Response Register Veterinarian ----- ', res);
                 dispatch(registerVeterinarianData(res))
-                
-                let data: any
-                data.message = "Registration Successful"
-                data.type = "success"
+
+                let data: any = {
+                    message: "Registration Successful",
+                    summary: "Transaction Done",
+                    type: "success"
+                }
                 dispatch(showToast(data))
             })
             .catch((err: any) => {
                 let data: any = {
                     message: "Registration Failed: ERROR " + err,
+                    summary: "Transaction Failed",
                     type: "error"
                 }
                 dispatch(showToast(data))
@@ -199,9 +281,25 @@ export const registerPuppy = (config: any, puppyType: number, puppySex: number, 
             .then((res: any) => {
                 console.log('----- Response Register Puppy ----- ', res);
                 dispatch(registerPuppyData(res))
+
+                let data: any = {
+                    message: "Registration Successful",
+                    summary: "Transaction Done",
+                    type: "success"
+                }
+                dispatch(showToast(data))
             })
             .catch((err: any) => {
+                let data: any = {
+                    message: "Registration Failed: ERROR " + err,
+                    summary: "Transaction Failed",
+                    type: "error"
+                }
+                dispatch(showToast(data))
                 console.log('----- Register Puppy Error ----- ', err);
+            })
+            .finally(() => {
+                dispatch(hideToast())
             })
 
     }
@@ -218,13 +316,13 @@ export const registerOwner = (config: any, ownerType: number, data: any) => {
     return async (dispatch: any) => {
 
         let gasLimit = 7000000;
-        let block = await config.web3.eth.getBlock("latest").then((block:any) => {
+        let block = await config.web3.eth.getBlock("latest").then((block: any) => {
             console.log("-- Register Owner BLOCK --", block);
             console.log("Transactions Lenght: ", block.transactions.length)
             //gasLimit =  Math.floor(block.gasLimit/block.transactions.length);
             gasLimit = block.gasLimit;
         })
-        
+
         // let gasLimit = config.contract.eth.getBlock("latest")
         console.log("-- Register Owner GAS LIMIT --", gasLimit);
 
@@ -240,7 +338,7 @@ export const registerOwner = (config: any, ownerType: number, data: any) => {
         // .catch((err:any) => {
         //     console.log("Error gas estimation: ", err)
         // });
-        
+
         // console.log("-- Register Owner GAS ESTIMATION --", gasEstimation);
 
         dispatch(GeneralRequest())
@@ -258,13 +356,29 @@ export const registerOwner = (config: any, ownerType: number, data: any) => {
             //data.zipCode,
             //data.country,
             data.fiscalCode
-        ).send({ from: config.accounts[0]})//, gas: gasLimit  })
+        ).send({ from: config.accounts[0] })//, gas: gasLimit  })
             .then((res: any) => {
                 console.log('----- Response Register Owner ----- ', res);
                 dispatch(registerOwnerData(res))
+
+                let data: any = {
+                    message: "Registration Successful",
+                    summary: "Transaction Done",
+                    type: "success"
+                }
+                dispatch(showToast(data))
             })
             .catch((err: any) => {
+                let data: any = {
+                    message: "Registration Failed: ERROR " + err,
+                    summary: "Transaction Failed",
+                    type: "error"
+                }
+                dispatch(showToast(data))
                 console.log('----- Register Owner Error ----- ', err);
+            })
+            .finally(() => {
+                dispatch(hideToast())
             })
 
     }
@@ -297,9 +411,25 @@ export const addVaccine = (config: any, data: Vaccine) => {
             .then((res: any) => {
                 console.log('----- Response Register Owner ----- ', res);
                 dispatch(addVaccineData(res))
+
+                let data: any = {
+                    message: "Vaccine registered correctly",
+                    summary: "Transaction Done",
+                    type: "success"
+                }
+                dispatch(showToast(data))
             })
             .catch((err: any) => {
+                let data: any = {
+                    message: "Vaccine registration failed: ERROR " + err,
+                    summary: "Transaction Failed",
+                    type: "error"
+                }
+                dispatch(showToast(data))
                 console.log('----- Register Owner Error ----- ', err);
+            })
+            .finally(() => {
+                dispatch(hideToast())
             })
 
     }
@@ -320,9 +450,25 @@ export const transferPuppyOwnership = (config: any, data: Transfer) => {
             .then((res: any) => {
                 console.log('----- Response transferPuppyOwnership ----- ', res);
                 dispatch(addVaccineData(res))
+
+                let data: any = {
+                    message: "Puppy ownership transferred correctly",
+                    summary: "Transaction Done",
+                    type: "success"
+                }
+                dispatch(showToast(data))
             })
             .catch((err: any) => {
+                let data: any = {
+                    message: "Puppy transfert failed: ERROR " + err,
+                    summary: "Transaction Failed",
+                    type: "error"
+                }
+                dispatch(showToast(data))
                 console.log('-----transferPuppyOwnership Error ----- ', err);
+            })
+            .finally(() => {
+                dispatch(hideToast())
             })
 
     }

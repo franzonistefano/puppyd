@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="src/assets/img/logo.png"  height="100">
+</p>
+
 # Puppyd
 
 ![GitHub issues](https://img.shields.io/badge/version-beta--v1.0-green)

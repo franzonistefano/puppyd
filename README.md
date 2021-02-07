@@ -3,7 +3,6 @@
 ![GitHub issues](https://img.shields.io/badge/version-beta--v1.0-green)
 ![GitHub issues](https://img.shields.io/badge/npm-6.4.1-green)
 ![GitHub issues](https://img.shields.io/badge/web3-1.2.6-green)
-
 ![GitHub issues](https://img.shields.io/badge/sass-1.30.0-green)
 ![GitHub issues](https://img.shields.io/badge/redux-4.0.5-green)
 ![GitHub issues](https://img.shields.io/badge/truffle-5.1.62-green)

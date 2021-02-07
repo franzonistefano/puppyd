@@ -207,7 +207,7 @@ const HomeComponent = (props: any) => {
                 }}
               >
                 <div className="row justify-content-start align-items-center p-2">
-                  <div className="main-title">
+                  <div className="section-title">
                     <FormattedMessage id="homepage.why.title"></FormattedMessage>
                   </div>
                   <div className="sub-paragraph">
@@ -264,7 +264,7 @@ const HomeComponent = (props: any) => {
 
         {/* How */}
         <div id="#why">
-          <div className="row justify-content-around align-items-center pt-4 pb-4">
+          <div className="row justify-content-around align-items-center pt-4">
             <div className="col-lg-6 col-md-12 justify-content-center text-center align-items-center full-height">
               <motion.div
                 ref={ref}
@@ -290,7 +290,7 @@ const HomeComponent = (props: any) => {
                 }}
               >
                 <div className="row justify-content-start align-items-center p-2">
-                  <div className="main-title">
+                  <div className="section-title">
                     <FormattedMessage id="homepage.how.title"></FormattedMessage>
                   </div>
                   <div className="sub-paragraph">
@@ -306,7 +306,7 @@ const HomeComponent = (props: any) => {
         <div id="#howItWorks">
           <div className="row justify-content-around bordered-card pt-4 pb-4">
             <div className="col-12 text-center">
-              <div className="main-title mb-4">Come Funziona?</div>
+              <div className="section-title">Come Funziona?</div>
             </div>
 
             <div className="col-12 bordered-card timeline-demo">
@@ -325,7 +325,7 @@ const HomeComponent = (props: any) => {
         <div id="#faq" className="faq">
           <div className="row justify-content-around pt-4 pb-4">
             <div className="col-12 text-center">
-              <div className="main-title mb-4">FAQ</div>
+              <div className="section-title">FAQ</div>
             </div>
 
             <div className="col-12 custom-accordion">
@@ -386,7 +386,7 @@ const HomeComponent = (props: any) => {
         <div id="#roadmap">
           <div className="row justify-content-around bordered-card pt-4 pb-4">
             <div className="row justify-content-start align-items-center">
-              <div className="main-title mb-4">RoadMap</div>
+              <div className="section-title mb-4">RoadMap</div>
             </div>
 
             <div className="col-12 bordered-card timeline-demo">

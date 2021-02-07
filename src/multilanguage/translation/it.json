@@ -9,6 +9,9 @@
     "homepage.how.title": "Come ?",
     "homepage.how.text": "Grazie allo sviluppo di smart contract. Questi contratti intelligenti in seguito all'azione degli utenti andranno a registrare o modificare dati eseguendo transazioni su una rete blockchain. Gli smart contract sono depositati su rete Ethereum, una Network Blockchain pubblica",
 
+    "homepage.button.register": "Registrati",
+    "homepage.button.getter": "Ottieni informazioni",
+
     "homepage.timeline.step1": "Scarica Metamask",
     "homepage.timeline.step2": "Registrati",
     "homepage.timeline.step3": "Accedi ai dati",

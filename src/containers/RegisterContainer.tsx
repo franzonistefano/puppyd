@@ -75,10 +75,11 @@ const RegisterContainer = (props: any) => {
         console.log("[onChange] - formData: ", formData)
         setFormData(FormUtil.onChange(event, formData));
         setSubmitEnabled(FormUtil.isSubmitEnabled(formData));
-      }
+    }
 
     return (
         <RegisterComponent
+            account={account}
             changeIndex={(e: any) => changeIndex(e)}
             onChange={onChange}
             data={formData}
@@ -88,7 +89,7 @@ const RegisterContainer = (props: any) => {
             PuppyJSON={PuppyJSON}
             onSubmitVeterinarian={() => props.registerVeterinarian(config, _.mapValues(formData, (o) => { return o.value; }))}
             onSubmitPuppy={(puppyType: number, puppySex: number) => props.registerPuppy(config, puppyType, puppySex, _.mapValues(formData, (o) => { return o.value; }))}
-            onSubmitOwner={(ownerType: number) => props.registerOwner(config, ownerType,  _.mapValues(formData, (o) => { return o.value; }))}
+            onSubmitOwner={(ownerType: number) => props.registerOwner(config, ownerType, _.mapValues(formData, (o) => { return o.value; }))}
             toast={props.toast}
         />
     )

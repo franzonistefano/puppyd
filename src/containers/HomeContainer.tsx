@@ -6,18 +6,11 @@ import _ from "lodash";
 import HomeComponent from "../components/custom/home/HomeComponent";
 
 const HomeContainer = (props: any) => {
+  return <HomeComponent />;
+};
 
-  return (
-    <HomeComponent
+const mapDispatchToProps = (dispatch: any) => ({});
 
-    />
-
-  );
-
-}
-
-const mapDispatchToProps = (dispatch: any) => ({
-
-})
-
-export default withRouter(connect(null, mapDispatchToProps)(injectIntl(HomeContainer)));
+export default withRouter(
+  connect(null, mapDispatchToProps)(injectIntl(HomeContainer))
+);

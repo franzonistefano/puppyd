@@ -36,22 +36,6 @@ contract PuppyContract {
         _;
     }
     
-    function checkUser() private view returns(bool) {
-        bool isRegistered = false;
-        
-        if(veterinarians[msg.sender].isRegistered){
-            isRegistered = true;
-        }
-        else if(owners[msg.sender].isRegistered){
-                isRegistered = true;
-        }
-        else if (puppies[msg.sender].isRegistered){
-                isRegistered = true;
-        }
-            
-        return isRegistered;
-    }
-    
     /***********************************************/
     /*                Registration                 */
     /***********************************************/

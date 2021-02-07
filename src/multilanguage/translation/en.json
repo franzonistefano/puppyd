@@ -9,6 +9,10 @@
     "homepage.how.title": "How ?",
     "homepage.how.text": "Thanks to smart contracts. When the user performs an action over the platform the smart contract is invoked and a specific transaction is performed over the Blockchain network",
 
+    "homepage.button.register": "Register",
+    "homepage.button.getter": "Get informations",
+
+
     "homepage.timeline.step1": "Download Metamask",
     "homepage.timeline.step1.download": "Download Here",
     "homepage.timeline.step2": "Register User",

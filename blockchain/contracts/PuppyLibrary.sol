@@ -5,7 +5,7 @@ library PuppyLibrary {
 
      //model Animal
     enum Sex { M, F }
-    enum PuppyType { Dog, Cat, Rabbit }
+    enum PuppyType { DOG, CAT, RABBIT, HORSE }
     struct Puppy {
         address petAddress;
         PuppyType puppyType;
@@ -31,7 +31,7 @@ library PuppyLibrary {
     }
     
     //model Owner
-    enum OwnerType {Private, Association}
+    enum OwnerType {PRIVATE, ASSOCIATION}
     struct Owner {
         address ownerAddress;
         OwnerType ownerType;
@@ -71,22 +71,6 @@ library PuppyLibrary {
         address fromAddress;
         address toAddress;
         uint timestamp;
-    }
-
-    //Insurance Contract model
-    enum InsuranceType { HEALTH, DAMAGE }
-    struct InsuranceContract {
-        address insuranceCoAddress;
-        address puppyAddress;
-        InsuranceType insuranceType;
-        //uint insuranceAmount;
-        //uint maxCostCovered;
-    }
-
-    //Insurance Company model
-    struct InsuranceCo {
-        address companyAddress;
-        uint contractNum;
     }
 
 }

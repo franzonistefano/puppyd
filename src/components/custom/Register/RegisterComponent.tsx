@@ -5,7 +5,7 @@ import { TabView, TabPanel } from "primereact/tabview";
 import { Toast } from "primereact/toast";
 import React, { useEffect, useRef, useState } from "react";
 import FormComponent from "../../common/FormComponent";
-import "../Login/LoginComponent.scss";
+import "../../../assets/theme/CustomStyle.scss";
 
 export const PRIVATE_USER: number = 0;
 export const ASSOCIATION_USER: number = 1;
@@ -53,7 +53,7 @@ const RegisterComponent = (props: any) => {
   };
 
   return (
-    <div id="Login" className="background-primary">
+    <div id="CustomStyle" className="background-primary">
       {props.toast.loading === true && (() => showToast())()}
 
       <div className="row justify-content-center">

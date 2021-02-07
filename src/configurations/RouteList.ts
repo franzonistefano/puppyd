@@ -1,5 +1,3 @@
-import ForgotContainer from "../containers/ForgotContainer";
-import Home from "../containers/Home";
 import HomeContainer from "../containers/HomeContainer";
 import NotFoundContainer from "../containers/NotFoundContainer";
 import RegisterContainer from "../containers/RegisterContainer";

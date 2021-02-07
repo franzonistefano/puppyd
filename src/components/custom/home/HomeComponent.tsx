@@ -1,4 +1,4 @@
-import "../Login/LoginComponent.scss";
+import "../../../assets/theme/CustomStyle.scss";
 import "../../../assets/theme/custom-theme.scss";
 import "./HomeComponent.scss";
 import "primeicons/primeicons.css";
@@ -166,7 +166,7 @@ const HomeComponent = (props: any) => {
   };
 
   return (
-    <div id="Login" className="background-primary">
+    <div id="CustomStyle" className="background-primary">
       <div className="background-img">
         <div className="background-opacity">
           <div className="container custom-container">

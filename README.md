@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="src/assets/img/logo.png"  height="100">
+</p>
+
 # Puppyd
 
 ![GitHub issues](https://img.shields.io/badge/version-beta--v1.0-green)
@@ -9,9 +13,18 @@
 ![GitHub issues](https://img.shields.io/badge/typescript-4.1.2-green)
 
 
-PuppYd is the first open source animal registry in the world. There are 3 smart contract deployed over Ethereum blockchain that allows Owners, Veterinarians and Insurance companies to register themself and performs several actions. 
+PuppYd is the first open source animal registry in the world. There are 3 smart contract deployed on Ethereum blockchain that allows Owners, Veterinarians and Insurance companies to register themself and performs several actions. 
 The decentralized Application, develped in React, improve the interaction usability with the Ethereum network.
 
+---
+
+# **Table of Contents**
+
+- [Methods](#methods)
+
+---
+
+<a name="methods"></a>
 ## Methods
 
 ### Common

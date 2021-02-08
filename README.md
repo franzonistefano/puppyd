@@ -16,6 +16,15 @@
 PuppYd is the first open source animal registry in the world. There are 3 smart contract deployed on Ethereum blockchain that allows Owners, Veterinarians and Insurance companies to register themself and performs several actions. 
 The decentralized Application, develped in React, improve the interaction usability with the Ethereum network.
 
+---
+
+# **Table of Contents**
+
+- [Methods](#methods)
+
+---
+
+<a name="methods"></a>
 ## Methods
 
 ### Common

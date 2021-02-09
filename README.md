@@ -79,10 +79,6 @@ getPuppyData (address _puppyAddress)
 getVaccineData(address _puppyAddress)
 ```
 
-```
- getOwnerData (address _ownerAddress)
-```
-
 <a name="owner"></a>
 ### Owner
 ```

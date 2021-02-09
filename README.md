@@ -4,6 +4,8 @@
 
 # Puppyd
 
+[puppyd.it](https://puppyd.it)
+
 ![GitHub issues](https://img.shields.io/badge/version-beta--v1.0-green)
 ![GitHub issues](https://img.shields.io/badge/npm-6.4.1-green)
 ![GitHub issues](https://img.shields.io/badge/web3-1.2.6-green)

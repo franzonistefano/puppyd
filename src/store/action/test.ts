@@ -6,6 +6,8 @@ import { TestApi } from '../api/TestApi'
 import { Owner, Puppy, Transfer, Vaccine, Veterinarian } from '../../interface/common/ContractState'
 import { hideToast, showToast } from './toast'
 
+export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
+
 export function getTest(test: TestState[]) {
     return { type: GET_TEST, test }
 }
@@ -274,8 +276,8 @@ export const registerPuppy = (config: any, puppyType: number, puppySex: number, 
             data.birthDate,
             data.distinguishingMarks,
             data.microchipId,
-            data.dadAddress,
-            data.momAddress,
+            data.dadAddress ? data.dadAddress : ZERO_ADDRESS,
+            data.momAddress ? data.momAddress : ZERO_ADDRESS,
             data.ownerAddress
         ).send({ from: config.accounts[0] })
             .then((res: any) => {

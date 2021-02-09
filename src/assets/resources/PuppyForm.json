@@ -3,35 +3,35 @@
         "col": "col-sm-12",
         "id": "name",
         "type": "text",
-        "required": false,
+        "required": true,
         "placeholder": "name"
     },
     {
         "col": "col-sm-12",
         "id": "breed",
         "type": "text",
-        "required": false,
+        "required": true,
         "placeholder": "breed"
     },
     {
         "col": "col-sm-12",
         "id": "birthDate",
         "type": "text",
-        "required": false,
+        "required": true,
         "placeholder": "birthDate"
     },
     {
         "col": "col-sm-12",
         "id": "distinguishingMarks",
         "type": "text",
-        "required": false,
+        "required": true,
         "placeholder": "Distinguishing Marks"
     },
     {
         "col": "col-sm-12",
         "id": "microchipId",
         "type": "text",
-        "required": false,
+        "required": true,
         "placeholder": "microchipId"
     },
     {
@@ -52,7 +52,7 @@
         "col": "col-sm-12",
         "id": "ownerAddress",
         "type": "text",
-        "required": false,
+        "required": true,
         "placeholder": "ownerAddress"
     }
 ]

@@ -7,8 +7,8 @@ export interface Puppy {
     birthDate: string;
     distinguishingMarks: string;
     microchipId: string;
-    dadAddress: string;
-    momAddress: string;
+    dadAddress?: string;
+    momAddress?: string;
     ownerAddress: string;
     isRegistered?: boolean;
 }

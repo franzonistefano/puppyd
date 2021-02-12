@@ -14,14 +14,13 @@ import Feature1 from "../../../assets/img/feature/feature1.png";
 import Feature2 from "../../../assets/img/feature/feature2.png";
 import Feature3 from "../../../assets/img/feature/feature3.png";
 import MetamaskImg from "../../../assets/img/timeline/metamask.png";
-import { Messages } from "primereact/messages";
 import { Message } from "primereact/message";
-import { FormattedMessage, injectIntl } from "react-intl";
+import { FormattedMessage, injectIntl, useIntl } from "react-intl";
 import { NavLink } from "react-router-dom";
 import { Accordion, AccordionTab } from "primereact/accordion";
 
 const HomeComponent = (props: any) => {
-  const { intl } = props;
+  const intl = useIntl();
 
   const events1 = [
     {
@@ -405,4 +404,4 @@ const HomeComponent = (props: any) => {
   );
 };
 
-export default injectIntl(HomeComponent);
+export default HomeComponent;

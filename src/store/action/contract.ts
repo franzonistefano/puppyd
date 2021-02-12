@@ -1,8 +1,8 @@
 import {
     GET_TEST, GET_VETERINARIAN, GET_OWNER, GET_PUPPY, REGISTER_VETERINARIAN, GENERAL_REQUEST, REGISTER_OWNER, ADD_VACCINE
-} from '../type/test'
+} from '../type/contract'
 import TestState from '../../interface/common/TestState'
-import { TestApi } from '../api/TestApi'
+import { ContractApi } from '../api/ContractApi'
 import { Owner, Puppy, Transfer, Vaccine, Veterinarian } from '../../interface/common/ContractState'
 import { hideToast, showToast } from './toast'
 
@@ -14,7 +14,7 @@ export function getTest(test: TestState[]) {
 
 export function startGetPosts() {
     return (dispatch: any) => {
-        TestApi.GetPosts()
+        ContractApi.GetPosts()
             .then((response: any) => {
                 if (response.status === 200)
                     return response.json()

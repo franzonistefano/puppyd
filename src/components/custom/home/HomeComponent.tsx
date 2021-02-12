@@ -173,7 +173,7 @@ const HomeComponent = (props: any) => {
             <div className="row full-height justify-content-center align-items-center">
               <div className="col-md-12 col-lg-8 justify-content-center text-center align-items-center full-height">
                 <div className="main-title">
-                  Il primo registro di animali su Blockchain open source
+                  Il primo anagrafe animale su Blockchain open source
                 </div>
                 <div className="sub-title">
                   Sicuro, Semplice e Trasparente. Per padroni e veterinari

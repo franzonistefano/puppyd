@@ -1,6 +1,6 @@
-import { ADD_VACCINE, GENERAL_REQUEST, GET_OWNER, GET_PUPPY, GET_TEST, GET_VETERINARIAN, REGISTER_OWNER, REGISTER_PUPPY, REGISTER_VETERINARIAN } from '../type/test'
-import TestState from '../../interface/common/TestState'
+import { ADD_VACCINE, GENERAL_REQUEST, GET_OWNER, GET_PUPPY, GET_TEST, GET_VETERINARIAN, REGISTER_OWNER, REGISTER_PUPPY, REGISTER_VETERINARIAN } from '../type/contract'
 import { ANIMAL, OWNER, VETERINARIAN } from '../../assets/resources/UserType'
+import TestState from '../../interface/common/TestState'
 
 const defaultState: TestState = {
     loading: false,

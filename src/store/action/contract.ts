@@ -1,14 +1,14 @@
 import {
     GET_TEST, GET_VETERINARIAN, GET_OWNER, GET_PUPPY, REGISTER_VETERINARIAN, GENERAL_REQUEST, REGISTER_OWNER, ADD_VACCINE
 } from '../type/contract'
-import TestState from '../../interface/common/TestState'
+import DataState from '../../interface/common/DataState'
 import { ContractApi } from '../api/ContractApi'
 import { Owner, Puppy, Transfer, Vaccine, Veterinarian } from '../../interface/common/ContractState'
 import { hideToast, showToast } from './toast'
 
 export const ZERO_ADDRESS = '0x0000000000000000000000000000000000000000';
 
-export function getTest(test: TestState[]) {
+export function getTest(test: DataState[]) {
     return { type: GET_TEST, test }
 }
 

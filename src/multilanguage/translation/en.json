@@ -4,6 +4,9 @@
     "app.notFound.text": "404 - ",
     "app.notFound.link": "Go home",
 
+    "homepage.title": "The first open source animal registry based on Blockchain,",
+    "homepage.subtitle": "Simple, safe and trasparent.",
+
     "homepage.why.title": "Why ?",
     "homepage.why.text": "Thanks to blockchain technology it's possible to grant a total transparency and traceability of the animals data. Owners, Veterinarian and Associations can handle the data in an easy way thanks to global and immutable register stored over the blockchain network, accessible from everywhere.",
     "homepage.how.title": "How ?",
@@ -13,24 +16,34 @@
     "homepage.button.getter": "Get informations",
 
 
-    "homepage.timeline.step1": "Download Metamask",
-    "homepage.timeline.step1.download": "Download Here",
-    "homepage.timeline.step2": "Register User",
-    "homepage.timeline.step3": "Easy Access to your data",
-    "homepage.timeline.step4": "Download Metamask",
+    "homepage.timeline.step1": "Download here",
+    "homepage.timeline.step2": "Register user",
+    "homepage.timeline.step3": "Easy access to your data",
+    "homepage.timeline.step1.download": "Download Metamask",
+    "homepage.timeline.step3.download": "Access to your data here",
+    "homepage.timeline.step2.download": "Register here",
+    "homepage.timeline.step4.download": "Download Metamask",
 
-    "homepage.timeline.step1.text": "Olaaa",
-    "homepage.timeline.step2.text": "Olaaa",
-    "homepage.timeline.step3.text": "Olaaa",
+    "homepage.roadmap.step1.title" : "Beta version",
+    "homepage.roadmap.step1.text" : "Release first version in running on Ethereum Ropsten testnet.",
+    "homepage.roadmap.step2.title" : "New stakeholder",
+    "homepage.roadmap.step2.text" : "Release new feature with a new user types. We aim to integrate the insurace companies in order to simplify the insurance subscription process.",
+    "homepage.roadmap.step3.title" : "Collaborations",
+    "homepage.roadmap.step3.text" : "We are looking for collaborations in order to test the processes as best as we can for the official release.",
+
+
+    "homepage.timeline.step1.text": "Download Metamask for Chrome or the smartphone application. Create your own account and your own wallet to start using PuppYd.",
+    "homepage.timeline.step2.text": "Register yourself on PuppYd as Owner, Veterinarian or register your animal. ",
+    "homepage.timeline.step3.text": "Once you register yourself you can get your data.",
 
     "homepage.feature.data.title": "Handle of data",
-    "homepage.feature.data.text": "Trasparente e organizzata. Accesso istantaneo allo storico delle visite e libretto sanitario dell'animale. Utile per il veterinario, i padroni e le associazioni.",
+    "homepage.feature.data.text": "Open access to all data about the animal. Access to historical archive of medical examinations and health card.",
 
     "homepage.feature.track.title": "Traceability",
-    "homepage.feature.track.text": "In caso di smarrimento o di trasferimento dell'animale sarà più semplice risalire ai dati ad esso collegati. Ogni animale avrà un QRCode personale contenente tutti i dati salvati su Blockchain.",
+    "homepage.feature.track.text": "In case of loss is easear trace the informations and data of the animal.",
 
     "homepage.feature.genealogy.title": "Genealogy",
-    "homepage.feature.genealogy.text": "Garantendo trasparenza e tracciabilità dell'animale si facilita la costruzione della genealogia dello stesso. Oltre a migliorare significativamente la prevenzione nei confronti di eventuali patologie ereditarie.",
+    "homepage.feature.genealogy.text": "The genealogy is easier to track. This feature is useful to prevent hereditary diseases.",
 
     "app.homepage.faq.question1.title": "Who can access to the platform ?",
     "app.homepage.faq.question1.content": "Owners, Associations, Veterinarians and Insurance companies. Each type of user have specific permissions over the platform, allowing users to perform a set of actions inside it.",

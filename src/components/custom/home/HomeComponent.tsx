@@ -172,10 +172,10 @@ const HomeComponent = (props: any) => {
             <div className="row full-height justify-content-center align-items-center">
               <div className="col-md-12 col-lg-8 justify-content-center text-center align-items-center full-height">
                 <div className="main-title">
-                  Il primo anagrafe animale su Blockchain open source
+                  <FormattedMessage id="homepage.title" />
                 </div>
                 <div className="sub-title">
-                  Sicuro, Semplice e Trasparente. Per padroni e veterinari
+                  <FormattedMessage id="homepage.subtitle" />
                 </div>
               </div>
               <div className="col-sm-12 col-lg-6  text-center m-4">

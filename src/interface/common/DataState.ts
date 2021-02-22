@@ -1,6 +1,6 @@
 import { Owner, Puppy, Veterinarian } from "./ContractState";
 
-export default interface TestState {
+export default interface DataState {
     loading: boolean,
     veterinarian: Veterinarian | null,
     owner: Owner | null,

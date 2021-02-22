@@ -4,6 +4,9 @@
     "app.notFound.text": "404 - ",
     "app.notFound.link": "Torna alla home",
 
+    "homepage.title": "Il primo anagrafe animale su Blockchain open source",
+    "homepage.subtitle": "Sicuro, semplice e trasparente. Per padroni e veterinari",
+
     "homepage.why.title": "Perchè ?",
     "homepage.why.text": "Grazie alla tecnologia Blockchain è possibile garantire la totale trasparenza e tracciabilità dei dati sugli animali. Proprietari, Veterinari e Associazioni potranno gestire i propri animali avendo un registro globale, immutabile e accessibile in qualunque momento, contenente tutte le informazioni relative all'animale",
     "homepage.how.title": "Come ?",

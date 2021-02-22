@@ -54,7 +54,15 @@
 
     "app.homepage.faq.question3.title": "How is certified the ownership of the animal inside the platform?",
     "app.homepage.faq.question3.content": "The Veterinarian confirms the ownership request of the animal that can access to overall information about owner and animal.",
-    "app.homepage.faq.question3.message": "During the Beta the ownership is automatically approved"
+    "app.homepage.faq.question3.message": "During the Beta the ownership is automatically approved",
+
+    "app.profile.user.type.owner": "Owner",
+    "app.profile.user.type.association": "Association",
+    "app.profile.animal.type.dog": "Dog",
+    "app.profile.animal.type.cat": "Cat",
+    "app.profile.animal.type.rabbit": "Rabbit",
+    "app.profile.animal.gender.male": "Male",
+    "app.profile.animal.gender.female": "Female"
 
 
 }

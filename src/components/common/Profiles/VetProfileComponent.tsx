@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import { injectIntl } from "react-intl";
 import VetProfile from "../../../assets/img/vet.png";
+import "./ProfileComponent.scss";
 
 const VetProfileComponent = (props: any) => {
   return (
@@ -26,15 +27,15 @@ const VetProfileComponent = (props: any) => {
 
             <div className="row justify-content-center">
               <div className="col-sm-12 mb-3">
-                <h2>{props.address}</h2>
+                <span className="address">{props.address}</span>
               </div>
             </div>
 
             <div className="row justify-content-center">
-              <div className="col-12 profile-item">
+              {/* <div className="col-12 profile-item">
                 <h4 className="bold">Address: </h4>{" "}
                 <p className="ml-4">{props.data.vetAddress}</p>
-              </div>
+              </div> */}
               <div className="col-12 profile-item">
                 <h4 className="bold">Name: </h4>{" "}
                 <p className="ml-4">{props.data.name}</p>

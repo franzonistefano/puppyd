@@ -1,6 +1,12 @@
 import React, { Fragment } from "react";
-import { injectIntl } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import OwnerProfile from "../../../assets/img/owner.png";
+import "./ProfileComponent.scss";
+
+export const OwnerTypes = [
+  "app.profile.user.type.owner",
+  "app.profile.user.type.association",
+];
 
 const UserProfileComponent = (props: any) => {
   return (
@@ -26,20 +32,22 @@ const UserProfileComponent = (props: any) => {
 
             <div className="row justify-content-center">
               <div className="col-sm-12 mb-3">
-                <h2>{props.address}</h2>
+                <span className="address">{props.address}</span>
               </div>
             </div>
 
             <div className="row justify-content-center">
               <div className="col-sm-5 mb-3">
                 <div className="row justify-content-center">
-                  <div className="col-12 profile-item">
+                  {/* <div className="col-12 profile-item">
                     <h4 className="bold">Address: </h4>{" "}
                     <p className="ml-4">{props.data.ownerAddress}</p>
-                  </div>
+                  </div> */}
                   <div className="col-12 profile-item">
                     <h4 className="bold">Owner Type: </h4>{" "}
-                    <p className="ml-4">{props.data.ownerType}</p>
+                    <p className="ml-4">
+                      <FormattedMessage id={OwnerTypes[props.data.ownerType]} />
+                    </p>
                   </div>
                   <div className="col-12 profile-item">
                     <h4 className="bold">Name: </h4>{" "}

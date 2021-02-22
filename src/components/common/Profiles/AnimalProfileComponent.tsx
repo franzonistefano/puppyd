@@ -1,6 +1,18 @@
 import React, { Fragment } from "react";
-import { injectIntl } from "react-intl";
+import { FormattedMessage, injectIntl } from "react-intl";
 import PuppyProfile from "../../../assets/img/animal.png";
+import "./ProfileComponent.scss";
+
+export const AnimalTypes = [
+  "app.profile.animal.type.dog",
+  "app.profile.animal.type.cat",
+  "app.profile.animal.type.rabbit",
+];
+
+export const SexTypes = [
+  "app.profile.animal.gender.male",
+  "app.profile.animal.gender.female",
+];
 
 const AnimalProfileComponent = (props: any) => {
   return (
@@ -26,22 +38,26 @@ const AnimalProfileComponent = (props: any) => {
 
             <div className="row justify-content-center">
               <div className="col-sm-12 mb-3">
-                <h2>{props.address}</h2>
+                <span className="address">{props.address}</span>
               </div>
             </div>
 
             <div className="row justify-content-center">
-              <div className="col-12 profile-item">
+              {/* <div className="col-12 profile-item">
                 <h4 className="bold">Address: </h4>{" "}
                 <p className="ml-4">{props.data.petAddress}</p>
-              </div>
+              </div> */}
               <div className="col-12 profile-item">
                 <h4 className="bold">Puppy Type: </h4>{" "}
-                <p className="ml-4">{props.data.puppyType}</p>
+                <p className="ml-4">
+                  <FormattedMessage id={AnimalTypes[props.data.puppyType]} />
+                </p>
               </div>
               <div className="col-12 profile-item">
                 <h4 className="bold">Sex: </h4>{" "}
-                <p className="ml-4">{props.data.sex}</p>
+                <p className="ml-4">
+                  <FormattedMessage id={SexTypes[props.data.sex]} />
+                </p>
               </div>
               <div className="col-12 profile-item">
                 <h4 className="bold">Name: </h4>{" "}

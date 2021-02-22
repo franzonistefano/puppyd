@@ -52,8 +52,14 @@
     
     "app.homepage.faq.question3.title": "Come viene certificata la proprietà dell'animale sulla piattaforma?",
     "app.homepage.faq.question3.content": "L'attribuzione della proprietà dell'animale al proprietario verrà confermata dal veterinario, avente una visione globale dello stato e della proprietà del microchip installato sull'animale.",
-    "app.homepage.faq.question3.message": "Nella fase beta l'approvazione della proprietà sarà automatica, senza passare dall'approvazione dai veterinari"
+    "app.homepage.faq.question3.message": "Nella fase beta l'approvazione della proprietà sarà automatica, senza passare dall'approvazione dai veterinari",
 
 
-
+    "app.profile.user.type.owner": "Proprietario",
+    "app.profile.user.type.association": "Associazione",
+    "app.profile.animal.type.dog": "Cane",
+    "app.profile.animal.type.cat": "Gatto",
+    "app.profile.animal.type.rabbit": "Coniglio",
+    "app.profile.animal.gender.male": "Maschio",
+    "app.profile.animal.gender.female": "Femmina"
 }

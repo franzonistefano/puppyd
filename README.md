@@ -82,7 +82,7 @@ getVaccineData(address _puppyAddress)
 <a name="owner"></a>
 ### Owner
 ```
-getVeterinarianData (address _veterinarianAddress)
+transferOwner (address _puppyAddress, address newOwner)
 ```
 
 <a name="vet"></a>

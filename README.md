@@ -22,9 +22,17 @@ The decentralized application, developed in React, improve the UI and UX for the
 
 # **Table of Contents**
 
+- [Use Case](#usecase)
 - [Methods](#methods)
 
 ---
+
+<a name="usecase"></a>
+## Use Case
+
+<p align="center">
+  <img src="assets/img/docs/use_case.png"  height="100">
+</p>
 
 <a name="methods"></a>
 ## Methods

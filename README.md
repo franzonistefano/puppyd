@@ -31,7 +31,7 @@ The decentralized application, developed in React, improve the UI and UX for the
 ## Use Case
 
 <p align="center">
-  <img src="assets/img/docs/use_case_overall.png" height="50%" width="50%" >
+  <img src="assets/img/docs/use_case.png" height="50%" width="50%" >
 </p>
 
 <a name="methods"></a>

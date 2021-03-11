@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { FormattedMessage, injectIntl } from "react-intl";
 import PuppyProfile from "../../../assets/img/animal.png";
 import "./ProfileComponent.scss";
@@ -15,6 +15,14 @@ export const SexTypes = [
 ];
 
 const AnimalProfileComponent = (props: any) => {
+  const [qrCodeUrl, setQrCodeUrl] = useState<string>();
+
+  useEffect(() => {
+    setQrCodeUrl(
+      `https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=${props.address}=UTF-8`
+    );
+  });
+
   return (
     <Fragment>
       <div className="background-primary profile">
@@ -37,6 +45,9 @@ const AnimalProfileComponent = (props: any) => {
             </div>
 
             <div className="row justify-content-center">
+              <div className="col-sm-12 mb-3">
+                <img alt="profile" src={qrCodeUrl} className="m-2" />
+              </div>
               <div className="col-sm-12 mb-3">
                 <span className="address">{props.address}</span>
               </div>

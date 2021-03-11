@@ -1,9 +1,17 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { injectIntl } from "react-intl";
 import VetProfile from "../../../assets/img/vet.png";
 import "./ProfileComponent.scss";
 
 const VetProfileComponent = (props: any) => {
+  const [qrCodeUrl, setQrCodeUrl] = useState<string>();
+
+  useEffect(() => {
+    setQrCodeUrl(
+      `https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=${props.address}=UTF-8`
+    );
+  });
+
   return (
     <Fragment>
       <div className="background-primary profile">
@@ -26,6 +34,9 @@ const VetProfileComponent = (props: any) => {
             </div>
 
             <div className="row justify-content-center">
+              <div className="col-sm-12 mb-3">
+                <img alt="profile" src={qrCodeUrl} className="m-2" />
+              </div>
               <div className="col-sm-12 mb-3">
                 <span className="address">{props.address}</span>
               </div>
